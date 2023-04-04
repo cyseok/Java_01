@@ -17,6 +17,7 @@ public class _09_UpAndDownExample_0404 {
 		Scanner scanner = new Scanner(System.in);
 		
 		int count = 0; // 기회 제공 횟수 저장변수
+		
 		while (true) {
 			
 			int random = (int)(Math.random()*100)+1;
