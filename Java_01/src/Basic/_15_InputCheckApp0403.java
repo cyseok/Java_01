@@ -5,32 +5,43 @@ import java.util.Scanner;
 public class _15_InputCheckApp0403 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		
 		/*
-		 * System.out.print("점수 입력[0~100] >> "); int score=scanner.nextInt();
-		 */
+		 System.out.print("점수 입력[0~100] >> "); int score=scanner.nextInt();
+		 
 
-		/*
-		 * //반복문의 조건식이 무조건 참이 되도록 비정상적인 값을 초기값으로 저장 int score=-1; //비정상적인 입력값인 경우 반복문
-		 * 실행하고 정상적인 값이 입력된 경우 반복문 종료 while(score<0 || score>100) {
-		 * System.out.print("점수 입력[0~100] >> "); score=scanner.nextInt(); if(score<0 ||
-		 * score>100) { System.out.println("[에러]점수는 0~100 범위의 정수값만 입력 가능합니다."); } }
-		 */
+		
+		 //반복문의 조건식이 무조건 참이 되도록 비정상적인 값을 초기값으로 저장 
+		  
+		  * int score=-1;  //비정상적인 입력값인 경우 반복문을 실행하고 정상적인 값이 입력된 경우 반복문 종료 
+		 while(score<0 || score>100) {
+		 System.out.print("점수 입력[0~100] >> "); 
+		 score=scanner.nextInt(); if(score < 0 || score > 100) { 
+		 System.out.println("[에러]점수는 0~100 범위의 정수값만 입력 가능합니다."); } }
+		 
 
-		/*
-		 * int score; do { System.out.print("점수 입력[0~100] >> ");
-		 * score=scanner.nextInt(); if(score<0 || score>100) {
-		 * System.out.println("[에러]점수는 0~100 범위의 정수값만 입력 가능합니다."); } } while(score<0 ||
-		 * score>100);
-		 */
+		
+		 int score; 
+		 do { System.out.print("점수 입력[0~100] >> ");
+		 score=scanner.nextInt(); 
+		 if(score < 0 || score > 100) {
+		 System.out.println("[에러]점수는 0~100 범위의 정수값만 입력 가능합니다."); } 
+		 } while(score<0 || score>100);
+		 
+		 */   // 조건이 두 개라 밑에 코드가 더 좋다
 
 		int score;
+		
 		while (true) {// 조건식 대신 [true]를 사용하면 무조건 참 - 무한루프
 			System.out.print("점수 입력[0~100] >> ");
 			score = scanner.nextInt();
-			// 입력값이 정상적인 값인 반복문 종료
-			if (score >= 0 && score <= 100)
+			// 입력값이 "정상적인 값인 경우" 반복문 종료
+			
+			if (score >= 0 && score <= 100)  // 예외범위 
 				break;
-			// 비정상적인 값이 입렵된 경우 에러 메세지 출력 후 반복문 재실행
+			
+			// "비정상적인 값이 입렵된 경우" 에러 메세지 출력 후 반복문 재실행
+			
 			System.out.println("[에러]점수는 0~100 범위의 정수값만 입력 가능합니다.");
 		}
 
@@ -55,7 +66,7 @@ public class _15_InputCheckApp0403 {
 
 		System.out.println("[결과]" + score + "점 = " + grade + "학점");
 
-		scanner.close();
+		scanner.close(); // 종료하기
 	}
 
 }

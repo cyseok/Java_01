@@ -21,6 +21,8 @@ public class _13_ContinueApp0403 {
 			}
 		}
 		System.out.println("==============================================================");
+		
+		// for문 앞에 라벨을 만들어 그 라벨만 종료시킬 수 있다.
 		loop: for (int i = 1; i <= 5; i++) {
 			for (int j = 1; j <= 5; j++) {
 				if (j == 3)
