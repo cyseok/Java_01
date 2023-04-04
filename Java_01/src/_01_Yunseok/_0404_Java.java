@@ -32,6 +32,15 @@ public class _0404_Java {
 			System.out.println();
 		}
 		System.out.println("========================================");
+		
+		int cnt = 0, gae = 1;// cnt : 접는 횟수, gae : 사각형 모양의 갯수
+
+		while (gae < 500) {
+			cnt++;
+			gae *= 2; } System.out.println(cnt + "번 " + gae + "개");
+			
+		
+
 	}
 
 }
