@@ -70,6 +70,9 @@ public class _19_LottoApp_0404 {
 							lotto1[i] = lotto1[j];
 							lotto1[j] = temp;
 							
+				// 0번째 숫자부터 비교하는데 0번째 +1 번째 숫자가  앞의 숫자보다 크면 바꾸고
+				// 바꾼 숫자를 기존 숫자로 지정한다.
+							
 						}
 						
 					}
@@ -85,9 +88,6 @@ public class _19_LottoApp_0404 {
 				System.out.println();
 				
 				System.out.println("=================================");
-		
-		
-
 		
 	
 	}
