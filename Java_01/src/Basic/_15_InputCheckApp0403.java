@@ -68,6 +68,7 @@ public class _15_InputCheckApp0403 {
 
 		scanner.close(); // 종료하기
 		
+		
 	}
 
 }
