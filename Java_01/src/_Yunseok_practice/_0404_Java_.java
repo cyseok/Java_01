@@ -1,6 +1,6 @@
-package Basic;
+package _Yunseok_practice;
 
-public class _00_Java_ {
+public class _0404_Java_ {
 	public static void main(String[] args) {
 		
 //0404

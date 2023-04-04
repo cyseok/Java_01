@@ -1,4 +1,4 @@
-package _01_Yunseok;
+package _Yunseok_practice;
 
 public class _0404_Java {
 	public static void main(String[] args) {

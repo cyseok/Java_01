@@ -1,4 +1,4 @@
-package _01_Yunseok;
+package _Yunseok_practice;
 
 public class gfjhcfgj {
 

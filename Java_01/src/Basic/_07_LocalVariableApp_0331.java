@@ -4,7 +4,7 @@ package Basic;
 //=> 지역변수는 선언된 구문에서만 사용 가능
 //=> 지역변수가 선언된 구문이 종료되면 지역변수 자동 소멸
 
-public class _07_LocalVariableApp0331 {
+public class _07_LocalVariableApp_0331 {
 	public static void main(String[] args) {
 
 		int num1 = 100;

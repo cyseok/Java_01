@@ -3,7 +3,7 @@ package Basic;
 //break : switch 구문 또는 반복문을 강제로 종료하기 위해 사용하는 제어문
 // if (i ==3) break;
 
-public class _12_BreakApp0403 {
+public class _12_BreakApp_0403 {
 	
 	public static void main(String[] args) {
 		

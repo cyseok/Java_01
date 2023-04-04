@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 //사용자로부터 키보드로 이름과 나이를 입력받아 화면에 출력하는 프로그램 작성
 
-public class _14_ScannerApp0403 {
+public class _14_ScannerApp_0403 {
 	
 	public static void main(String[] args) {
 		

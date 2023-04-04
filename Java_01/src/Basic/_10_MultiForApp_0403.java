@@ -1,6 +1,6 @@
 package Basic;
 
-public class _10_MultiForApp0403 {
+public class _10_MultiForApp_0403 {
 	public static void main(String[] args) {
 		int cnt = 0;// 이동방법의 갯수를 저장하기 위한 변수
 

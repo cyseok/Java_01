@@ -15,7 +15,7 @@ package Basic;
 // do { 명령; 명령; 명령
 //		}  while (조건식)
 
-public class _11_WhileApp0403 {
+public class _11_WhileApp_0403 {
 	
 	public static void main(String[] args) {
 		

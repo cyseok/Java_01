@@ -6,7 +6,7 @@ import java.util.Scanner;
 // => 사용자가 이길경우 반복실행, 질경우 대결종료
 // => 대결종료 후 사용자의 승리 횟수 출력
 
-public class _17_RpaGameApp0404 {
+public class _17_RpaGameApp_0404 {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

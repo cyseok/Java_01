@@ -12,7 +12,7 @@ package Basic;
 //초기식과 증감식은 , 기호를 사용하여 나열 작성 가능
 //초기식, 조건식, 증감식은 생략 가능 - 조건식이 생략된 경우 무조건 참으로 처리
 
-public class _09_ForApp0331 {
+public class _09_ForApp_0331 {
 	public static void main(String[] args) {
 		// "Java Programming"를 화면에 5번 출력
 		System.out.println("Java Programming");
