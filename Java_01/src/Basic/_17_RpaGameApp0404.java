@@ -26,24 +26,29 @@ public class _17_RpaGameApp0404 {
 			
 			int user;
 			
-			while(true) {
-				System.out.print("가위바위보[1:가위, 2:바위, 3:보]"); 
-				user = scanner.nextInt(); 
-				if (user >= 1 && user <= 3); break; // 정상적인 값이 입력된경우 반복문 종료
-			}
-				System.out.println("Error 가위,바위,보중 하나를 입력해주세요"); 
 			
 			
+			while(true) {//입력값 검증을 위한 반복문
+				
+				System.out.print("가위바위보[1:가위,2:바위,3:보] >> ");
+				user=scanner.nextInt();
+				
+				if(user>=1 && user<=3) break;
+				//정상적인 값이 입력된 경우 반복문 종료
+				System.out.println("[에러]가위,바위,보 중 하나를 선택하여 입력해 주세요.");
+				
+			} 
 			
+				
 			// 컴퓨터와 사용자의 가위바위보 출력
-			System.out.println("[입력] 컴퓨터 -> ");
+			System.out.print("[입력] 컴퓨터 -> ");
 			switch (computer) {
 			case 1 : System.out.print("가위"); break;
 			case 2 : System.out.print("바위"); break;
 			case 3 : System.out.print("보"); break;
 			}
 			
-			System.out.println(", 사용자 -> ");
+			System.out.print(", 사용자 -> ");
 			switch(user) {
 			case 1 : System.out.print("가위"); break;
 			case 2 : System.out.print("바위"); break;
@@ -59,6 +64,8 @@ public class _17_RpaGameApp0404 {
 				System.out.println("컴퓨터승리");
 				break;
 		
+		} System.out.println();
+		
 		}
 		System.out.println("=====================================");
 		// 승리횟수 출력
@@ -67,8 +74,7 @@ public class _17_RpaGameApp0404 {
 			
 		} else {
 			System.out.println("[메시지] 사용자 승리 횟수 " + count );
-		}
-			
+		
 		}
 		scanner.close();
 	}
