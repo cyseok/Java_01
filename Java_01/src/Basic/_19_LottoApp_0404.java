@@ -58,15 +58,31 @@ public class _19_LottoApp_0404 {
 				}
 				// ****************************** 정렬 *******************************
 				// 배열의 모든 요소값을 서로 비교해 오름차순 정렬
-				// => 선택
+				// => 선택 정렬(Selection sort Algorithm)을 사용하여 오름차순 정렬 
+				// 첫번째 부터 뒤에있는 수랑 비교하며 더 작으면 바꾸고 계속 진행 하고 끝나면
+				// 두번째 부터 또 실행
+				
+				for (int i = 0; i < lotto1.length; i++) {
+					
+					for(int j = i+1; j <lotto1.length; j++) { // 비교 요소의 첨차를 표현하는 반복문 -> 비교+1 ~ 끝까지
+						if (lotto1[i] > lotto1[j]) {
+							int temp = lotto[i];
+							lotto1[i] = lotto1[j];
+							lotto1[j] = temp;
+							
+						}
+						
+					}
+					
+				}
 				
 				System.out.print("로또 번호 -> ");
-				
 				
 				// 숫자 반복해서 출력
 				for (int number : lotto1) {
 					System.out.print(number + " ");
-				} System.out.println();
+				} 
+				System.out.println();
 				
 				System.out.println("=================================");
 		
