@@ -67,6 +67,7 @@ public class _15_InputCheckApp0403 {
 		System.out.println("[결과]" + score + "점 = " + grade + "학점");
 
 		scanner.close(); // 종료하기
+		
 	}
 
 }
