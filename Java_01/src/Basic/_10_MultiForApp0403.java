@@ -30,7 +30,7 @@ public class _10_MultiForApp0403 {
 		// 2*9=18 3*9=27 ... 8*9=72 9*9=81
 		for (int i = 1; i <= 9; i++) {
 			for (int j = 2; j <= 9; j++) {
-				System.out.print(j + "*" + i + "=" + (i * j) + "\t");
+				System.out.print(j + " * " + i + " = " + (i * j) + "\t");
 			}
 			System.out.println();
 		}
