@@ -3,6 +3,7 @@ package Basic;
 // 2차원 배열 : 1차원 배열(요소의 모임)의 모임
 
 public class _20_DoubleArrayApp_0404 {
+	
 	public static void main(String[] args) {
 		// 형식 : 자료형[][] 참조변수 = new 자료형 [행 갯수][열갯수]
 		// => 행의 갯수 : 2차원 배열에 생성되는 1차원 배열의 갯수    

@@ -5,8 +5,11 @@ package Basic;
 //=> 반복문에서 continue 명령 하단에 작성된 명령을 실행하지 않고 처음부터 다시 실행할 경우 사용
 
 public class _13_ContinueApp_0403 {
+	
 	public static void main(String[] args) {
+		
 		for (int i = 1; i <= 5; i++) {
+			
 			if (i == 3)
 				continue;
 			System.out.print(i + "\t");

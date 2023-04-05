@@ -23,6 +23,7 @@ package Basic;
 //=> 스네이크 표기법(SnakeCase) : 조합된 단어를 _로 구분하여 작성 - 상수(Constant : 상수명은 무조건 대문자로 작성)
 
 public class _02_VariableApp {
+	
 	public static void main(String[] args) {
 		// 깃허브(GitHub) : 분산 버전 관리 툴인 깃 저장소 호스팅을 제공하는 웹 서비스
 		// 깃(Git) : 여러명의 사용자들 간에 파일의 작업을 조율하기 위한 분산 버전 관리 시스템(프로그램)

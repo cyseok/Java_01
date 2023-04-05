@@ -11,11 +11,13 @@ package Basic;
 //Byte : 영문자 하나를 저장할 수 있는 표현의 최소 단위 - 8Bit
 
 public class _05_DataTypeApp {
+	
 	public static void main(String[] args) {
 		// 정수형(IntegerType) 리터럴 : 소숫점이 없는 숫자값
 		// => Java에서 정수형 리터럴은 기본적으로 4Byte(Integer)로 표현 >> -2147483648~2147483647
 		System.out.println("<<정수형(IntegerType)>>");
 		System.out.println("정수값(10진수 100) = " + 100);// 숫자값 - 10진수 정수형 리터럴
+		
 		// println() 메소드는 정수값을 무조건 10진수로 변환하여 출력
 		System.out.println("정수값(8진수 100) = " + 0100);// 0숫자값 - 8진수 정수형 리터럴
 		System.out.println("정수값(16진수 100) = " + 0x100);// 0x숫자값 - 16진수 정수형 리터럴
@@ -43,6 +45,7 @@ public class _05_DataTypeApp {
 		long a5 = 100;// 자료형이 큰 변수에 작은 리터럴 저장 가능
 		System.out.println("a5 = " + a5);
 		System.out.println("==============================================================");
+		
 		// 실수형(DoubleType) 리터럴 : 소숫점이 있는 숫자값
 		// => Java에서 실수형 리터럴은 기본적으로 8Byte(Double)로 표현 >> 부동 소수점 형식으로 숫자값 표현
 		System.out.println("<<실수형(DoubleType)>>");
@@ -60,6 +63,7 @@ public class _05_DataTypeApp {
 		System.out.println("b1 = " + b1);
 		System.out.println("b2 = " + b2);
 		System.out.println("==============================================================");
+		
 		// 문자형(CharacterType) 리터럴 : ' ' 안에 하나의 문자로 표현
 		// => Java에서 문자형 리터럴은 기본적으로 2Byte(Character)로 표현
 		// => 문자형 리터럴은 일반문자외에 회피문자(제어문자)가 존재
@@ -86,6 +90,7 @@ public class _05_DataTypeApp {
 		char c4 = 45000;
 		System.out.println("c4 = " + c4);
 		System.out.println("==============================================================");
+		
 		// 논리형(BooleanType) 리터럴 : false(거짓), true(참)
 		// => Java에서 논리형 리터럴은 기본적으로 1Byte(BooleanType)로 표현
 		System.out.println("<<논리형(BooleanType)>>");
@@ -102,6 +107,7 @@ public class _05_DataTypeApp {
 		System.out.println("d1 = " + d1);
 		System.out.println("d2 = " + d2);
 		System.out.println("==============================================================");
+		
 		// 문자열(StringType) 리터럴 : " " 안에 0개 이상의 문자들로 표현 - String 객체
 		// => 문자열은 원시형(기본형)이 아닌 참조형으로 String 클래스로 표현
 		System.out.println("<<문자열(StringType)>>");

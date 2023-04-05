@@ -1,6 +1,7 @@
 package Basic;
 
 public class _10_MultiForApp_0403 {
+	
 	public static void main(String[] args) {
 		int cnt = 0;// 이동방법의 갯수를 저장하기 위한 변수
 
@@ -12,6 +13,7 @@ public class _10_MultiForApp_0403 {
 
 		System.out.println("이동방법의 갯수 = " + cnt);
 		System.out.println("==============================================================");
+		
 		// ★★★★★★★
 		// ★★★★★★★
 		// ★★★★★★★
@@ -23,6 +25,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 		// 2*1=2 3*1=3 ... 8*1=8 9*1=9
 		// 2*2=4 3*2=6 ... 8*2=16 9*2=18
 		// ...
@@ -35,6 +38,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 		// ★ i=1 별=1
 		// ★★ i=2 별=2
 		// ★★★ i=3 별=3
@@ -47,6 +51,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 		// ★★★★★ i=1 별=5
 		// ★★★★ i=2 별=4
 		// ★★★ i=3 별=3
@@ -59,6 +64,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 		// ★★★★★ i=5 별=5
 		// ★★★★ i=4 별=4
 		// ★★★ i=3 별=3
@@ -71,6 +77,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 		// ☆☆☆☆★ i=1 흰별=4 검은별=1
 		// ☆☆☆★★ i=2 흰별=3 검은별=2
 		// ☆☆★★★ i=3 흰별=2 검은별=3
@@ -86,6 +93,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 		// 1 2 3 4 5 >> j
 		// ☆☆☆☆★ i=1
 		// ☆☆☆★★ i=2
@@ -103,6 +111,7 @@ public class _10_MultiForApp_0403 {
 			System.out.println();
 		}
 		System.out.println("==============================================================");
+		
 	}
 
 }

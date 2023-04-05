@@ -17,6 +17,7 @@ package Basic;
 //=> case 키워드로 제공되는 값이 모든 다른 경우 default 키워드의 명령 실행 - 생략 가능
 
 public class _06_SwitchApp {
+	
 	public static void main(String[] args) {
 		// int choice=1;
 		// int choice=2;

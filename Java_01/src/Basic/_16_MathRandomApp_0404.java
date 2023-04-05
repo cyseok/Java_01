@@ -4,6 +4,7 @@ package Basic;
 // 컴퓨터로부터 난수값을 제공받아 출력하는 프로그램
 
 public class _16_MathRandomApp_0404 {
+	
 	public static void main(String[] args) {
 		
 		// Math class : 수학관련 기능 제공 클래스

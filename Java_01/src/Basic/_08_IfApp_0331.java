@@ -23,6 +23,7 @@ package Basic;
 // - 프로그램 강제 종료(Terminate : Ctrl + F2) - Java Perspective 변환 - 중지점 제거
 
 public class _08_IfApp_0331 {
+	
 	public static void main(String[] args) {
 int num = 12;
 		

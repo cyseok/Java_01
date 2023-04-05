@@ -1,4 +1,4 @@
-package oop;
+package oop_Object_Oriented_Programming;
 
 import java.util.Arrays;
 
@@ -34,7 +34,7 @@ public class _01_ArraySortApp_0405 {
 		 System.out.println();
 	System.out.println("=================================================================");
 		  
-		int[] array1 = {30, 50, 10, 40, 20};
+		int[] array1 = {30, 50, 10, 40, 20, 70, 60, 90, 80};
 		
 		// Array 클래스 : 배열의 요소를 제어하는 기능의 메소드를 제공하는 클래스
 		// Arrays.toString(Object[] array) : 배열을 전달받아 배열의 요소값들을 문자열로 변환하여 반환

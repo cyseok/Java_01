@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class _17_RpaGameApp_0404 {
 	
 	public static void main(String[] args) {
+		
 		Scanner scanner = new Scanner(System.in);
 		
 		int count = 0; // 사용자 승리 횟수를 저장하기위한 변수

@@ -4,6 +4,7 @@ package Basic;
 //=> 자동 형변환(JVM), 강제 형변환(프로그래머)
 
 public class _03_TypeCastApp {
+	
 	public static void main(String[] args) {
 		// 자동 형변환 : 자료형이 다른 값을 연산하기 위해 JVM(Java Virtual Machine : Java
 		// 프로그램을 실행하기 위한 가상의 플렛폼)이 자료형을 일시적으로 변환
@@ -31,6 +32,7 @@ public class _03_TypeCastApp {
 		int su3 = su1 + su2;
 		System.out.println("su3 = " + su3);
 		System.out.println("==============================================================");
+		
 		// 강제 형변환 : 프로그래머가 Cast 연산자를 사용하여 원하는 자료형의 값으로 일시적으로
 		// 변환하여 명령을 작성하는 방법 - (자료형)값
 		int num = (int) 12.3;// (int)12.3 >> 12
