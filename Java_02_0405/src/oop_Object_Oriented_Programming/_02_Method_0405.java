@@ -14,6 +14,7 @@ package oop_Object_Oriented_Programming;
 
 // => 반환형(ReturnType) : 메소드를 호출하여 얻을 수 있는 결과값에 대한 자료형
 // => 무반환형(= Void 자료형) : 메소드를 호출하여 얻을 수 있는 결과값이 없는 경우 사용하는 자료형
+
 // 메소드의 () 기호 안에는 변수를 나열하여 선언 = 매개변수(Parameter = Argument(C언어에서 사용))
 // => 메소드에 작성된 명령을 실행하기 위해 메소드 "호출시" 전달된 값은 저장하기 위한 변수
 // => 메소드에 작성된 명령을 실행하기 위한 "값이 필요없는 경우 매개변수" 생략가능
@@ -36,6 +37,67 @@ package oop_Object_Oriented_Programming;
 // 객체 생성이 목적인 메소드 -> main 메소드 미작성
 public class _02_Method_0405 { 
 	
+	// 무반환형 = void 자료형 (결과값이 없는 경우)
+	void displayOne() {
+		System.out.println("Method 클래스의 displayOne() 메소드 호출");
+		
+	}
 	
-
+	void displayTwo () { 
+		System.out.println("Method 클래스의 displayTwo() 메소드 호출");
+	}
+	
+	void printOne () {
+		int tot = 0;
+		for (int i = 1; i <= 100; i++) {
+			tot += i;
+		}
+		System.out.println("1부터 100까지 정수의 합계 = " + tot );
+	}
+	
+	void printTwo (int num) { // (int num -> parameter = 매개변수)
+		// 매개변수에 정상적인 값을 전달해야 호출된다.
+		int tot = 0;
+		for (int i = 1; i <= num; i++) {
+			tot += i;
+		}
+		System.out.println("1부터" + num + "까지 정수의 합계 = " + tot );
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
