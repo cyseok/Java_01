@@ -61,8 +61,18 @@ public class _02_Method_0405 {
 		for (int i = 1; i <= num; i++) {
 			tot += i;
 		}
-		System.out.println("1부터" + num + "까지 정수의 합계 = " + tot );
+		System.out.println("1부터 " + num + "까지 정수의 합계 = " + tot );
 	}
+	
+	void printThree (int num1, int num2) { // 자료형 변수명, 자료형 변수명, ...
+		// 매개변수에 정상적인 값을 전달해야 호출된다.
+		int tot = 0;
+		for (int i = num1; i <= num2; i++) {
+			tot += i;
+		}
+		System.out.println(num1+ "~" + num2 + "까지 정수의 합계 = " + tot );
+	}
+	
 	
 }
 
