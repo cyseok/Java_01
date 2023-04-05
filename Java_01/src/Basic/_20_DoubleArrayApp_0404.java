@@ -66,7 +66,7 @@ public class _20_DoubleArrayApp_0404 {
 		// Java는 다차원 배열을 가변배열로 선언한다.
 		int [][] array = {{10,20,30},{40,50},{60,70,80,90}};
 		
-		for (int [] arr : array) {S
+		for (int [] arr : array) {
 			for (int temp : arr) {
 				System.out.print(temp + "\t");
 			}
