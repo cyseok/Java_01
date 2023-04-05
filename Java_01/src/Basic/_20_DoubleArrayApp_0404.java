@@ -54,6 +54,7 @@ public class _20_DoubleArrayApp_0404 {
 		
 		// 2차원 배열의 참조요소에 1차원 배열을 생성하여 메모리 주소 저장
 		// => 1차원 배열의 요소의 갯수를 다르게 생성하여 저장 가능 -> 가변배열
+		// 메모리 절약차원
 		value[0] = new int[3];
 		value[1] = new int[2];
 		value[2] = new int[5];
@@ -65,7 +66,7 @@ public class _20_DoubleArrayApp_0404 {
 		// Java는 다차원 배열을 가변배열로 선언한다.
 		int [][] array = {{10,20,30},{40,50},{60,70,80,90}};
 		
-		for (int [] arr : array) {
+		for (int [] arr : array) {S
 			for (int temp : arr) {
 				System.out.print(temp + "\t");
 			}

@@ -46,6 +46,7 @@ public class _19_LottoApp_0404 {
 						boolean result = false;
 						
 						for (int j = 0; j < i; j++) {  //기존 요소에 저장된 난수값(첨자)을 표현하기위한 반복문
+							// lotto[i] : 새로운 난수값이 저장된 배열요소, lotto[j] : 기본난수값이 저장된 배열요소
 							if (lotto1[i] == lotto1[j]) {
 								result = true;
 								break;
@@ -65,6 +66,7 @@ public class _19_LottoApp_0404 {
 				for (int i = 0; i < lotto1.length; i++) {
 					
 					for(int j = i+1; j <lotto1.length; j++) { // 비교 요소의 첨차를 표현하는 반복문 -> 비교+1 ~ 끝까지
+						// lotto[i] : 비교하는 요소 , lotto[j] : 비교당하는 요소
 						if (lotto1[i] > lotto1[j]) {
 							int temp = lotto[i];
 							lotto1[i] = lotto1[j];

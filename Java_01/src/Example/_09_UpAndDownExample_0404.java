@@ -16,49 +16,47 @@ public class _09_UpAndDownExample_0404 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		int count = 0; // 기회 제공 횟수 저장변수
+		int random = (int)(Math.random()*100)+1;
 		
-		while (true) {
+		// 정답상태를 저장하기 위한 변수
+		// false : 불일치, true : 일치
+		
+		// 난수값을 입력받아 맞추는 기회 10번제공
+		for (int i =1; i <=10; i++) {
 			
-			int random = (int)(Math.random()*100)+1;
+			// 사용자로부터 정수값을 입력받아 변수에 저장
+			// => 비정상적인 값이 입력된경우 에러메시지 출력
+			 int input;
+			 
+			 while(true) {
+				 System.out.print(i + "번째 시도, 1~100 정수값입력 -> ");
+				 
+				 input = scanner.nextInt();
+				 
+				 if(input >= 1 && input <= 100) break;
+				 System.out.println("[error] 1~100정수값으로 입력해주세요");
+			 }  System.out.println((int)(Math.random()*100)+1);
 			
-			int user;
-			
-			while (true) {
-				
-				System.out.print("1부터 100까지 \"숫자 하나\"를 선택하여 입력해주세요 -> ");
-				user = scanner.nextInt();
-				
-				
-					
-				if (user >= 1 && user <= 100) break;
-				
-				
-				
-				System.out.println("[error] 1부터 100까지 숫자를 입력해주세요");
-				
-			} System.out.println("Random number -> " + random);
-			
-			if (user == random)  {
-				System.out.println("축하합니다. 숫자가 일치합니다."); break;
-			} else { 
-				System.out.print("1부터 100까지 \"숫자 하나\"를 선택하여 입력해주세요 -> ");
-				user = scanner.nextInt();
-				
-			}
-			
+			// 난수값과 입력값을 비교하려 결과 출력
+			 if (random == input) {
+				 System.out.println("[일치]" + i + "번시도"); break;
+			 } else {
+				 System.out.println("[불일치]" + i + "번시도");
+			 }
+		} System.out.println("종료");
+		
+		
+		scanner.close();
+		
+		
+		
+		
+		
+		
+	
 			
 		
-			
-			if (count > 10) {
-				System.out.println("10번의 기회가 끝났습니다."); break;
-				
-			
-			
-			}
-			
-		}
-		
+
 	}
 
 }
