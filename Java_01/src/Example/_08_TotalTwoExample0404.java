@@ -24,7 +24,7 @@ public class _08_TotalTwoExample0404 {
 		}
 		System.out.print("[결과] 합계 = " + total);
 			
-
+		scanner.close();
 	}
 
 }
