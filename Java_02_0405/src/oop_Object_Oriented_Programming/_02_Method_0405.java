@@ -1,5 +1,7 @@
 package oop_Object_Oriented_Programming;
 
+import javax.sql.rowset.serial.SQLOutputImpl;
+
 // 메소드(Method) : 클래스 내부에 선언된 함수 = 멤버함수(C언어에서 불림)
 // => 필드(멤버변수)를 이용하여 필요한 기능을 제공하기 위한 명령들의 모임
 // => 명령(Statement)은 "메소드 내부"에서만 작성가능
@@ -57,6 +59,12 @@ public class _02_Method_0405 {
 	
 	void printTwo (int num) { // (int num -> parameter = 매개변수)
 		// 매개변수에 정상적인 값을 전달해야 호출된다.
+		
+		// 입력값(매개변수에 저장된 값)에 대한 검증
+		if (num <= 0) { 
+			System.out.println("[error] 매개변수에는 0보다 큰 값 입력바람");
+			return;  // 메소드 종료 -> 메소드를 호출한 쪽으로 다시 되돌아감(아래는 실행이 안된다는 의미)
+		}
 		int tot = 0;
 		for (int i = 1; i <= num; i++) {
 			tot += i;
@@ -66,6 +74,21 @@ public class _02_Method_0405 {
 	
 	void printThree (int num1, int num2) { // 자료형 변수명, 자료형 변수명, ...
 		// 매개변수에 정상적인 값을 전달해야 호출된다.
+		if(num1 > num2) { // 비정상적인 값이 전달된 경우
+			System.out.println("큰 숫자를 뒤에 입력바람");
+			return; // return으로 인해 아래식이 실행되지않고 다시 되돌아가버린다
+			
+			/* ************************
+			 종료시킬 수도 있지만 숫자를 치환시켜 실행에 문제없게 할 수도 있다.
+			 if (num1 > num2) {  
+			  int temp = num1;
+			  num1 = num2;
+			  num2 = temp;
+			  }
+			 **************************/ 
+			 
+		}
+		
 		int tot = 0;
 		for (int i = num1; i <= num2; i++) {
 			tot += i;
@@ -73,6 +96,15 @@ public class _02_Method_0405 {
 		System.out.println(num1+ "~" + num2 + "까지 정수의 합계 = " + tot );
 	}
 	
+	int returnTot(int num1, int num2) {  // int값을 반환하려면 void말고 int를 사용한것처럼 같아야한다. 
+		int tot = 0;
+		for (int i = num1; i <= num2; i++) {
+			tot += i;
+		}
+		// 변수에 저장된 값을 메소드를 종료하여 메소드를 호출하는 명령에게 반환
+		// => 반환되는 값의 자료형과 메소드의 반환형의 자료형이 동일해야한다.
+		return tot;
+	}
 	
 }
 

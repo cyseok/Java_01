@@ -24,6 +24,7 @@ public class _03_MethodApp_0405 {
 		method.displayTwo(); 
 		method.displayOne(); 
 		System.out.println("==========================================================");
+		
 		method.printOne();
 		System.out.println("==========================================================");
 		
@@ -31,13 +32,46 @@ public class _03_MethodApp_0405 {
 		System.out.println("==========================================================");
 		
 		method.printTwo(80);
+		method.printTwo(-50);  // 잘못된 숫자에 대한 검증필요
 		
 		// method.printTwo(80.0);  int 매개변수에 double 매개변수는 불가
+		
 		System.out.println("==========================================================");
 		
 		// 여러개의 매개변수 설정 가능
 		method.printThree(35, 79);
+		method.printThree(19, 99);
+		method.printThree(67, 12);  // 잘못된 숫자에 대한 검증 필요
 		System.out.println("==========================================================");
+		
+		// 반환값이 존재하는 메소드 호출
+		// 메소드를 호출하면 반환되는 값이 존제 -> 반환값을 변수에 저장
+		// => 메소드의 반환값을 지속적으로 사용하고자 할 경우 반환값을 변수에 저장
+		// returnTot의 값을 result에 저장한후 출력
+		int result = method.returnTot(30, 70);
+		System.out.println("[합계]메소드 호출의 반환값 = " + result);
+		
+		
+		// 메소드의 반환값을 일시적으로 사용할 경우에는 아래처럼 반환값을 변수에 저장하지않아도 된다.
+		System.out.println("[합계]메소드 호출의 반환값 = " + method.returnTot(30, 70));
+		System.out.println("==========================================================");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
