@@ -56,10 +56,47 @@ public class _03_MethodApp_0405 {
 		System.out.println("[합계]메소드 호출의 반환값 = " + method.returnTot(30, 70));
 		System.out.println("==========================================================");
 		
+		boolean result1 = method.isOddEven(10);
+		if (result1) {
+			System.out.println("매개변수로 전달된 값은 [짝수]");
+		} else {
+			System.out.println("매개변수로 전달된 값은 [홀수]");
+		}
+			
+			// 조선식 대신 메소드의 반환값을 이용하여 명령을 선택 실행한다.
+			if (method.isOddEven(9)) {
+				System.out.println("매개변수로 전달된 값은 [짝수]");
+			} else {
+				System.out.println("매개변수로 전달된 값은 [홀수]");
+		}
 		
+		System.out.println("==========================================================");
 		
+		// 배열의 메모리 주소를 반환하는 메소드를 호출하면 반환된 메모리 주소를 참조변수에 저장
+		int [] array = method.returnArray();
 		
+		for (int num : array) {
+			System.out.print(num + " ");
+		}
+		System.out.println();
+		System.out.println("==========================================================");
+	
+		System.out.println("합계 = " + method.sumOne(10, 20, 30));
+		// System.out.println("합계 = " + method.sumOne();  -> error
+		// System.out.println("합계 = " + method.sumOne(10, 20));  -> error
+		// System.out.println("합계 = " + method.sumOne(10, 20, 30, 40));  -> error
+		System.out.println("==========================================================");
 		
+		// System.out.println("합계 = " + method.sumTwo(10, 20, 30));  -> error
+		// 매개변수의 배열의 메모리 주소를 전달하여 메소드 호출
+		System.out.println("합계 = " + method.sumTwo(new int[] {10, 20, 30})); 
+		System.out.println("합계 = " + method.sumTwo(new int[] {})); 
+		System.out.println("==========================================================");
+		
+		System.out.println("합계 = " + method.sumThree(10, 20, 30));
+		System.out.println("합계 = " + method.sumThree());
+		System.out.println("합계 = " + method.sumThree(10, 20));
+		System.out.println("합계 = " + method.sumThree(10, 20, 30, 40, 50));
 		
 		
 		

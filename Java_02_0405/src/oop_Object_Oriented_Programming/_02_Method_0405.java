@@ -106,7 +106,74 @@ public class _02_Method_0405 {
 		return tot;
 	}
 	
+	
+	// 매개변수로 정수값을 전달 받아 홀수와 짝수를 구분하여 반환하는 메소드
+	// => false 반환 : 홀수, true 반환 : 짝수
+	boolean isOddEven(int num) {
+		if (num % 2 != 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	// 배열을 반환하는 메소드
+	int [] returnArray () {
+		int [] array = {10, 20, 30, 40, 50};   // array에 배열을 저장한다.
+		return array;  // 배열의 메모리 주소를 반환 = 배열을 반환하는 것
+		
+		// return  {10, 20, 30, 40, 50};  // 배열(X) ->error
+		// return new int[] {10, 20, 30, 40, 50}; // 배열(O) new 연산자를 꼭 사용해야한다.
+	}
+	
+	
+	// 매개변수 3개에 전달된 정수들의 합계를 계산하여 반환하는 메소드
+	int sumOne(int num1, int num2, int num3) {
+		return num1 + num2 + num3;
+	}
+	
+	// 매개변수로 배열을 전달받아 배열의 모든 요소값들의 합계를 계산하여 반환하는 메소드
+	int sumTwo(int[] array) {
+		int tot = 0;
+		for (int num : array) {
+			tot += num;
+		}
+		return tot;
+	}
+	
+	
+	/// (...) : 매개변수 생략기호를 사용하여 매개변수를 작성하면 전달값 0개 이상을 전달받아 메소드에서 배열처럼 사용가능
+	int sumThree(int...array) {
+		int tot = 0;
+		for (int num : array) {
+			tot += num;
+		}
+		return tot;
+	}
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
