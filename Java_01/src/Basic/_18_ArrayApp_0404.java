@@ -68,14 +68,13 @@ public class _18_ArrayApp_0404 {
 		int index = 0;
 		num[index] = 10;
 		
-		// 배열 요소를 구분하는 첨자는 변수 또는 연산식 사용가능
+		// 배열 요소를 구분하는 첨자는 "변수" 또는 "연산식" 사용가능
 		num[index] = 10;
 		num[index+1] = 20;
 		num[index+2] = 30;
 		
 		// for 구문을 사용하여 배열요소에 대한 일괄처리 가능
 		// => for 구문의 초기식; 조건식; 증감식에서 사용하는 변수를 첨자로 표현하여 일괄 처리
-		
 		for (int i = 0; i < num.length; i++)
 		{
 			System.out.println("num[" + i + "] = " + num[i]);
