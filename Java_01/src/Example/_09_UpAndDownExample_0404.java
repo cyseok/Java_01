@@ -56,10 +56,9 @@ public class _09_UpAndDownExample_0404 {
 			
 			
 			}
-			}
-		
+			
+		}
 		
 	}
-
 
 }
