@@ -1,6 +1,6 @@
 package _Yunseok_practice;
 
-public class _0404_Java_ {
+public class _0404_for_01 {
 	public static void main(String[] args) {
 		
 //0404

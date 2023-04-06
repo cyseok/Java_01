@@ -1,6 +1,6 @@
 package _Yunseok_practice;
 
-public class gfjhcfgj {
+public class _0405_Array_01 {
 	public static void main(String[] args) {
 		
 	

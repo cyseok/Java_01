@@ -1,6 +1,6 @@
 package _Yunseok_practice;
 
-public class _0404_Java {
+public class _0404_for_02 {
 	public static void main(String[] args) {
 		
 		for (int i = 1; i <= 9; i++) {
