@@ -25,7 +25,7 @@ package oop_Object_Oriented_Programming;
 // => 자동차의 속성 : 모델명, 엔진상태, 현재속도 -> 필드
 // => 행위 : 시동 켜기(on), 시동 끄기(off), 속도증가, 속도감소, 중지 -> 메소드
 
-public class _04_Car_0406 { // 객체를 만들기 위한 클래스 생성한 것 ( 실행목적X )
+public class _04_Car_0406 {  // 객체를 만들기 위한 클래스 생성한 것 ( 실행목적X )
 	
 	// 필드(Field)
 	// 모델명 -> String  
@@ -56,20 +56,43 @@ public class _04_Car_0406 { // 객체를 만들기 위한 클래스 생성한 �
 	
 	// 속도증가
 	void speedUp(int speed) {  // 매개변수 생성
+		if (!engineStatus /* 엔진 off 상태*/) {  // if문 쓰는이유 :  시동이 off일때 속도가 변하는 상황 제거
+			System.out.println(modelName + "시동 off 상태");
+			return;  // 다시 되돌아 갈 수 있게 return; 사용해줌
+		}
+		
+		// 최고 속도 제한 생성위한 if문
+		if (currentSpeed + speed > 150) {
+			speed = 150 - currentSpeed;
+		}
+		
 		currentSpeed += speed;
 		System.out.println(modelName + "의 속도" + speed +"km/h 증가, 현재 속도는 " + currentSpeed + "km/h"  );
 	}
 	
 	// 속도감소
 	void speedDown (int speed) {  // 매개변수 생성
+		if (!engineStatus /* 엔진 off 상태*/) {
+			System.out.println(modelName + "시동 off 상태");
+			return;  // 다시 되돌아 갈 수 있게 return; 사용해줌
+		}
+		
+		if (currentSpeed < speed) {
+			speed = currentSpeed;
+		}
+		
 		currentSpeed -= speed;
 		System.out.println(modelName + "의 속도" + speed +"km/h 감소, 현재 속도는 " + currentSpeed + "km/h"  );
 	}
 	
 	// 중지
+	
 	void speedZero () {  // 매개변수 필요x
-		currentSpeed = 0;
-		System.out.println(modelName + " 멈춤");
+		// 속도가 0일때만 "정지상태" 출력
+		if (currentSpeed == 0) {
+			System.out.println(modelName + " 정지상태");
+		}
+		
 	}
 	
 	

@@ -56,9 +56,9 @@ public class _05_CarApp_0406 {
 		// 참조변수.메소드명(값, 값, ...) : 참조변수에 저장된 객체가 (.) 연산자를 사용하여 메소드를 호출한다.
 		carOne.StartEngine();
 		carOne.speedUp(50);
-		carOne.speedUp(40);
+		carOne.speedUp(30);
 		carOne.speedUp(20);
-		carOne.speedDown(30);
+		carOne.speedDown(100);
 		carOne.speedZero();
 		System.out.println("==========================================================");
 	
