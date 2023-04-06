@@ -34,16 +34,23 @@ public class _05_CarApp_0406 {
 		
 		// (기존) carOne.modelName = "싼타페";  // 객체의 필드값 변경
 		carOne.setModelName("싼타페"); // (은닉화) *** 필드값을 변경하는 Setter 메소드 호출
-		carOne.engineStatus = false;
-		carOne.currentSpeed = 0;
+		carOne.setEngineStatus(false);
+		carOne.setCurrentSpeed(0);
 		
 		// 객체의 필드값 사용
-		System.out.println("first car modelName = " + carOne.modelName);
-		System.out.println("first car modelName = " + carOne.modelName);
+		/*
+		 * System.out.println("first car modelName = " + carOne.modelName);
 		System.out.println("first car engineStatus = " + carOne.engineStatus);
-		System.out.println("first car currentSpeed = " + carOne.currentSpeed);
+		System.out.println("first car currentSpeed = " + carOne.currentSpeed); 
+		*/
+		
+		System.out.println("first car modelName = " + carOne.getModelName());
+		System.out.println("first car engineStatus = " + carOne.isEngineStatus());
+		System.out.println("first car currentSpeed = " + carOne.getCurrentSpeed());		
 		System.out.println("==========================================================");
 		
+		
+		/* private 하기 전 (기존내용)
 		// 객체 필드가 초기값을 사용한다.
 		System.out.println("second car modelName = " + carTwo.modelName);
 		System.out.println("second car engineStatus = " + carTwo.engineStatus);
@@ -55,9 +62,17 @@ public class _05_CarApp_0406 {
 		carTwo.engineStatus = true;
 		carTwo.currentSpeed =80;
 		
+		
 		System.out.println("second car modelName = " + carTwo.modelName);
 		System.out.println("second car engineStatus = " + carTwo.engineStatus);
 		System.out.println("second car currentSpeed = " + carTwo.currentSpeed);
+		*/
+		
+		System.out.println("second car modelName = " + carTwo.getModelName());
+		System.out.println("second car engineStatus = " + carTwo.isEngineStatus());
+		System.out.println("second car currentSpeed = " + carTwo.getCurrentSpeed());
+		
+		
 		System.out.println("==========================================================");
 		
 		// 참조변수.메소드명(값, 값, ...) : 참조변수에 저장된 객체가 (.) 연산자를 사용하여 메소드를 호출한다.
