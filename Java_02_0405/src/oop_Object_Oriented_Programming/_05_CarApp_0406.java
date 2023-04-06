@@ -27,11 +27,18 @@ public class _05_CarApp_0406 {
 		System.out.println("=============================================================");
 		
 		// 참조변수.필드명 : 참조변수에 저장된 객체가 (.) 연산자를 사용하여 필드에 접근
-		carOne.modelName = "싼타페";
+		// => 객체의 필드에는 기본값이 초기값으로 자동저장
+		// 문제점) 객체를 사용하여 필드에 직접적인 접근은 허용하면 필드에 비정상적인 값이 저장될 수 있다.
+		// 해결법) 클래스의 필드를 은닉화 처리하여 선언 하여
+		//          은닉화 선언된 필드에 접근할 경우 error가 발생하도록 만들어준다.
+		
+		// (기존) carOne.modelName = "싼타페";  // 객체의 필드값 변경
+		carOne.setModelName("싼타페"); // (은닉화) *** 필드값을 변경하는 Setter 메소드 호출
 		carOne.engineStatus = false;
 		carOne.currentSpeed = 0;
 		
 		// 객체의 필드값 사용
+		System.out.println("first car modelName = " + carOne.modelName);
 		System.out.println("first car modelName = " + carOne.modelName);
 		System.out.println("first car engineStatus = " + carOne.engineStatus);
 		System.out.println("first car currentSpeed = " + carOne.currentSpeed);
