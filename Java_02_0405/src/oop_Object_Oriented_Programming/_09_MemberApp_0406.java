@@ -41,7 +41,6 @@ public class _09_MemberApp_0406 {
 		member3.display();
 		
 		
-		
 	}
 
 }

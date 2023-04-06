@@ -1,6 +1,6 @@
 package oop_Object_Oriented_Programming;
 
-import java.lang.reflect.Member;
+// import java.lang.reflect.Member;
 
 // 회원정보(ID, PW, E-Mail)를 저장하기 위한 클래스
 // => VO(Value Object)클래스 : 특정 대상의 값을 저장하는 객체를 생성하기 위한 클래스
