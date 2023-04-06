@@ -24,7 +24,8 @@ package oop_Object_Oriented_Programming;
 // 자동차를 객체 모델링하여 클래스로 작성
 // => 자동차의 속성 : 모델명, 엔진상태, 현재속도 -> 필드
 // => 행위 : 시동 켜기(on), 시동 끄기(off), 속도증가, 속도감소, 중지 -> 메소드
-public class _04_Car_0406 {
+
+public class _04_Car_0406 { // 객체를 만들기 위한 클래스 생성한 것 ( 실행목적X )
 	
 	// 필드(Field)
 	// 모델명 -> String  
