@@ -32,10 +32,17 @@ public class _05_CarApp_0406 {
 		// 해결법) 클래스의 필드를 은닉화 처리하여 선언 하여
 		//          은닉화 선언된 필드에 접근할 경우 error가 발생하도록 만들어준다.
 		
-		// (기존) carOne.modelName = "싼타페";  // 객체의 필드값 변경
+	   // 객체의 필드값 변경
+		
+		/* private 변경 전 (기존)
+		carTwo.modelName = "산타페";
+		carTwo.engineStatus = false;
+		carTwo.currentSpeed = 0;
+		*/
 		carOne.setModelName("싼타페"); // (은닉화) *** 필드값을 변경하는 Setter 메소드 호출
 		carOne.setEngineStatus(false);
 		carOne.setCurrentSpeed(0);
+		
 		
 		// 객체의 필드값 사용
 		/*
@@ -50,14 +57,17 @@ public class _05_CarApp_0406 {
 		System.out.println("==========================================================");
 		
 		
-		/* private 하기 전 (기존내용)
+		
 		// 객체 필드가 초기값을 사용한다.
-		System.out.println("second car modelName = " + carTwo.modelName);
-		System.out.println("second car engineStatus = " + carTwo.engineStatus);
-		System.out.println("second car currentSpeed = " + carTwo.currentSpeed);
+		System.out.println("second car modelName = " + carTwo.getModelName());
+		System.out.println("second car engineStatus = " + carTwo.isEngineStatus());
+		System.out.println("second car currentSpeed = " + carTwo.getCurrentSpeed());
+		
 		System.out.println("==========================================================");
 		
 		// 매개변수를 다시 정해준다. -> 정해주는 것 보다 메소드를 호출해 사용하는 것이 정석
+		
+		/*
 		carTwo.modelName = "쏘나타";
 		carTwo.engineStatus = true;
 		carTwo.currentSpeed =80;
