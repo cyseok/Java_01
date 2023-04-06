@@ -69,9 +69,10 @@ public class _04_Car_0406 { // 객체를 만들기 위한 클래스 생성한 �
 	// 중지
 	void speedZero () {  // 매개변수 필요x
 		currentSpeed = 0;
-		System.out.println(modelName + "중지");
-
+		System.out.println(modelName + " 멈춤");
 	}
+	
+	
 	
 	
 	
@@ -79,6 +80,9 @@ public class _04_Car_0406 { // 객체를 만들기 위한 클래스 생성한 �
 	
 
 }
+
+
+
 
 
 
