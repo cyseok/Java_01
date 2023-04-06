@@ -49,7 +49,15 @@ public class _04_Car_0406 {  // 객체를 만들기 위한 클래스 생성한 �
 	}
 	
 	// 시동 off
-	void stopEngine() {
+	void stopEngine() {  // 속도가 0이어야 off 되게 작성
+		if (currentSpeed != 0) {
+			currentSpeed = 0;
+			System.out.println("정지상태");
+			
+			// 코드의 중복성을 최소화하여 프로그램의 생산성 및 유지보수의 효율성을 
+			//  증가시킬 수 있어 위 " currentSpeed = 0;  System.out.println("정지상태");  "
+			//   대신에  speedZero(); 사용가능
+		}
 		engineStatus = false;
 		System.out.println(modelName + " 시동 off ");
 	}
@@ -59,6 +67,7 @@ public class _04_Car_0406 {  // 객체를 만들기 위한 클래스 생성한 �
 		if (!engineStatus /* 엔진 off 상태*/) {  // if문 쓰는이유 :  시동이 off일때 속도가 변하는 상황 제거
 			System.out.println(modelName + "시동 off 상태");
 			return;  // 다시 되돌아 갈 수 있게 return; 사용해줌
+			// 위 return을 사용하는 것 대신에 speedZero(); 사용해도 된다.
 		}
 		
 		// 최고 속도 제한 생성위한 if문

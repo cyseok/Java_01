@@ -58,8 +58,9 @@ public class _05_CarApp_0406 {
 		carOne.speedUp(50);
 		carOne.speedUp(30);
 		carOne.speedUp(20);
-		carOne.speedDown(100);
+		carOne.speedDown(80);
 		carOne.speedZero();
+		carOne.stopEngine();
 		System.out.println("==========================================================");
 	
 	
