@@ -51,11 +51,14 @@ public class _01_ArraySortApp_0405 {
 		
 		// Array 클래스 : 배열의 요소를 제어하는 기능의 메소드를 제공하는 클래스
 		// Arrays.toString(Object[] array) : 배열을 전달받아 배열의 요소값들을 문자열로 변환하여 반환
+		// Object : 모든 객체의 배열을 전달받는 다는 뜻
 		System.out.println("정렬 전 -> " + Arrays.toString(array1));
 		
 		// Arrays.sort(Object[] array) : 배열을 전달받아 배열의 요소값들을 오름차순 정렬
 		Arrays.sort(array1);
 		System.out.println("정렬 후 -> " + Arrays.toString(array1));
+		
+		// 정석은 클래스 가지고 객체를 만든 후 기능을 가져오는것
 		 
 		 
 		 

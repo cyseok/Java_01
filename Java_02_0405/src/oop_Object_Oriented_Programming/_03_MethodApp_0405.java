@@ -7,11 +7,13 @@ public class _03_MethodApp_0405 {
 	
 	public static void main(String[] args) { 
 		
-		//(String[] args)  => 참조변수(프로그램 실행기 JVM(Java Virtual Machine)에 의해 자동호출하는 특별한 메소드)
+		//(String[] args)  => 매개변수(프로그램 실행기 JVM(Java Virtual Machine)에 의해 자동호출하는 특별한 메소드)
 		// => 같은 패키지에 작성된 클래스는 패키지 표현없이 클래스 사용가능
 		// => 참조변수를 사용하여 객체의 필드 또는 메소드 접근가능
 		
 		_02_Method_0405 method = new _02_Method_0405();
+		// new _02_Method_0405() -> 객체
+		//  method -> 참조변수
 		
 		// 참조변수를 출력할 경우 "자료형@메모리주소" 형식의 문자열을 제공받아 출력
 		System.out.println("method = " + method);
@@ -88,7 +90,7 @@ public class _03_MethodApp_0405 {
 		System.out.println("==========================================================");
 		
 		// System.out.println("합계 = " + method.sumTwo(10, 20, 30));  -> error
-		// 매개변수의 배열의 메모리 주소를 전달하여 메소드 호출
+		// 매개변수의 배열의 "메모리 주소"를 전달하여 메소드 호출
 		System.out.println("합계 = " + method.sumTwo(new int[] {10, 20, 30})); 
 		System.out.println("합계 = " + method.sumTwo(new int[] {})); 
 		System.out.println("==========================================================");
@@ -98,8 +100,9 @@ public class _03_MethodApp_0405 {
 		System.out.println("합계 = " + method.sumThree(10, 20));
 		System.out.println("합계 = " + method.sumThree(10, 20, 30, 40, 50));
 		
-		
-		
+
+
+		  
 		
 		
 		

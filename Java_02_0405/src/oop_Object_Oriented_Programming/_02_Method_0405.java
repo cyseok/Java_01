@@ -39,7 +39,7 @@ import javax.sql.rowset.serial.SQLOutputImpl;
 // 객체 생성이 목적인 메소드 -> main 메소드 미작성
 public class _02_Method_0405 { 
 	
-	// 무반환형 = void 자료형 (결과값이 없는 경우)
+	// 무반환형 -> "void 자료형" (결과값이 없는 경우)
 	void displayOne() {
 		System.out.println("Method 클래스의 displayOne() 메소드 호출");
 		
@@ -122,8 +122,8 @@ public class _02_Method_0405 {
 		int [] array = {10, 20, 30, 40, 50};   // array에 배열을 저장한다.
 		return array;  // 배열의 메모리 주소를 반환 = 배열을 반환하는 것
 		
-		// return  {10, 20, 30, 40, 50};  // 배열(X) ->error
-		// return new int[] {10, 20, 30, 40, 50}; // 배열(O) new 연산자를 꼭 사용해야한다.
+		// *** return  {10, 20, 30, 40, 50};  // 배열(X) ->error
+		// *** return new int[] {10, 20, 30, 40, 50}; // 배열(O) new 연산자를 꼭 사용해야한다.
 	}
 	
 	
@@ -133,6 +133,7 @@ public class _02_Method_0405 {
 	}
 	
 	// 매개변수로 배열을 전달받아 배열의 모든 요소값들의 합계를 계산하여 반환하는 메소드
+	// int num 말고 int[] array
 	int sumTwo(int[] array) {
 		int tot = 0;
 		for (int num : array) {
@@ -142,7 +143,7 @@ public class _02_Method_0405 {
 	}
 	
 	
-	/// (...) : 매개변수 생략기호를 사용하여 매개변수를 작성하면 전달값 0개 이상을 전달받아 메소드에서 배열처럼 사용가능
+	/// (...) : 매개변수 생략기호를 사용하여 賣매개변수를 작성하면 전달값 0개 이상을 전"달받아 메소드에서 배열처럼 사용가능
 	int sumThree(int...array) {
 		int tot = 0;
 		for (int num : array) {
