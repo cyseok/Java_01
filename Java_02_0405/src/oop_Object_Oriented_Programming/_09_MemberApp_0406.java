@@ -16,6 +16,7 @@ public class _09_MemberApp_0406 {
 		System.out.println("==========================================");
 		
 		// Setter 메소드를 호출하여 Membet 메소드의 객체 필드값(현재 null) 변경
+		// (정리) -> setter는 나중에 필드값을 원하는 값으로 바꿔야할때 사용
 		member1.setId("abc123");
 		member1.setName("홍길동");
 		member1.setEmail("abc123@naver.com");
@@ -39,6 +40,7 @@ public class _09_MemberApp_0406 {
 		
 		_08_Member_0406 member3 = new _08_Member_0406("agsgad");
 		member3.display();
+
 		
 		
 	}

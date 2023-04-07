@@ -58,8 +58,8 @@ public class _05_CarApp_0406 {
 		
 		
 		
-		// 객체 필드가 초기값을 사용한다.
-		System.out.println("second car modelName = " + carTwo.getModelName());
+		// N객체 필드가 초기값을 사용한다.
+		System.out.println("second car modelame = " + carTwo.getModelName());
 		System.out.println("second car engineStatus = " + carTwo.isEngineStatus());
 		System.out.println("second car currentSpeed = " + carTwo.getCurrentSpeed());
 		
@@ -67,7 +67,7 @@ public class _05_CarApp_0406 {
 		
 		// 매개변수를 다시 정해준다. -> 정해주는 것 보다 메소드를 호출해 사용하는 것이 정석
 		
-		/*
+		/*  (기존)
 		carTwo.modelName = "쏘나타";
 		carTwo.engineStatus = true;
 		carTwo.currentSpeed =80;
@@ -77,6 +77,10 @@ public class _05_CarApp_0406 {
 		System.out.println("second car engineStatus = " + carTwo.engineStatus);
 		System.out.println("second car currentSpeed = " + carTwo.currentSpeed);
 		*/
+		
+		carTwo.setModelName("쏘나타");
+		carTwo.setEngineStatus(true);
+		carTwo.setCurrentSpeed(80);
 		
 		System.out.println("second car modelName = " + carTwo.getModelName());
 		System.out.println("second car engineStatus = " + carTwo.isEngineStatus());
