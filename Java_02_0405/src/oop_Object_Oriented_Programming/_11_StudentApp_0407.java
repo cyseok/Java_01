@@ -24,6 +24,7 @@ public class _11_StudentApp_0407 {
 		student5.display();
 		System.out.println("==========================================");
 		
+		// 나중에 변수를 바꾸는 것
 		student1.setKor(100);
 		// student1.calTot();
 		student1.display();
@@ -71,6 +72,14 @@ public class _11_StudentApp_0407 {
 		for(_10_Student_0407 student : students) {
 			student.display();
 			tot += student.getTotal();
+			
+			// 정적 필드는 public 접근 제한자로 설정된 경우엔 클래스를 이용하여 접근가능
+			// => 객체로 접근 가능하지만 경고발생
+			
+			// student.tot += student.getTotal();
+			// 정적 필드가 private 접근 제한자로 설정된 경우 메소드를 이용하여 접근 가능
+			// => 객체가 아닌 클래스로 접근하여 호출할 수 있다.
+			student.setTot(student.getTot() + student.getTotal());
 		}
 		
 		System.out.println("==================================================");
@@ -78,8 +87,14 @@ public class _11_StudentApp_0407 {
 		// 모든 학생들의 점수들의 합계를 계산하여 출력
 		System.out.println("총합계 = " + tot);
 		System.out.println("==================================================");
+		System.out.println("총합계 = " + _10_Student_0407.getTot());
+		System.out.println("==================================================");
+		
+		
 		
 	}
+	
+	
 	
 }
 
