@@ -21,6 +21,71 @@ public class _14_Singleton_0407 {
 	}
 	
 	
-
+	// 정적 영역 (Static Block) : 클래스를 메모리(Method Area)에 저장된 후 
+	//                             자동으로 실행될 명령을 작성하기 위한 영역
+	// => 프로그램에서 한번만 실행되는 명령
+	// => 정적필드 or 정적메소드만 사용 가능
+	static {  
+		// 클래스로 객체를 생성하여 시스템 필드에 저장
+		// => 프로그램에서 객체를 하나만 생성하여 필드 저장
+		_instance = new _14_Singleton_0407();
+		
+	}
 	
+	// 시스템 필드에 저장된 객체를 반환하는 메소드
+	// _instance에 저장된 것을 하나만 계속 반환해준다.
+	public static _14_Singleton_0407 getInstance() {
+		return _instance;
+		
+	}
+	
+	// 인스턴스 메소드 작성
+	public void display () {
+		System.out.println("Singleton 클래스의 display() 메소드 호출");
+	}
+
+	// 싱글톤 클래스 -> 생성자가 은닉되어 있다 -> 상속이 불가능
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
