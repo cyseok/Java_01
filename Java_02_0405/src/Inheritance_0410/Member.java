@@ -32,6 +32,7 @@ public class Member {
 		this.name = name;
 	}
 	
+	// ★★★ 출력 선언하기
 	public void display () {
 		System.out.println("아이디 = " + id);
 		System.out.println("이름 = " + name);
