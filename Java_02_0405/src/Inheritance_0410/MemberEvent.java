@@ -102,8 +102,19 @@ public class MemberEvent extends Member {
 		this.email = email;
 	}
 	
+	
+	// ★★★ 메소드 오버라이딩(Method Overriding) :  상속관계에서 부모클래스의 메소드를 자식클래스에서
+	// 재선언하는 기능
+	// => 부모클래스의 메소드를 자식클래스의 객체가 사용하기 부적절한 경우 부모클래스의 메소드를
+	//    자식클래스에서 재선언하여 사용하는 방법
+	// => 부모클래스의 메소드는 숨겨지고(Hide Method) 자식클래스의 메소드만 접근 가능하게 만듬
+	// ★ 메소드 오버라이드의 작성 규칙 :  부모클래스의 메소드와 같은 
+	//     접근지정자, 반환형, 메소드명, 매개변수, 예외전달을 사용하여 메소드를 작성해야 한다.
+	
 	public void display() {
+		// System.out.println("아이디 = " + id);
 		System.out.println("아이디 = " + getId());
+		// System.out.println("이름 = " + name);
 		System.out.println("이름 = " + getName());
 		System.out.println("이메일 = " + email);
 	}
