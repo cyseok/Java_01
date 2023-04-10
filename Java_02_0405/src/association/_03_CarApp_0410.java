@@ -34,6 +34,19 @@ public class _03_CarApp_0410 {
 		carTwo.displayCar();
 		System.out.println("===============================================");
 		
+		// 엔진정보만 확인
+		System.out.print(carOne.getModelName() + "의 엔진정보 -> ");
+		engine.dispalyEngine();
+		System.out.println("===============================================");
+		
+		// 참조변수를 만들지 않고 필드에 저장되어 있는 정보 가져온다
+		// " carTwo.getCarEngine().dispalyEngine(); "
+		
+		System.out.print(carTwo.getModelName() + "의 엔진정보 -> ");
+		// 자동차(Car객체)에 저장된 엔진정보(engine 필드값 - Engine 객체)를 Getter메소드로
+		//  반환 받아 Engine 객체의 메소드 호출
+		carTwo.getCarEngine().dispalyEngine();
+		
 		
 		
 	}
