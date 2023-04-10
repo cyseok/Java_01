@@ -21,15 +21,71 @@ package association;
 
 // 자동차 정보(모델명, 생산년도, 엔진정보)를 저장하기 위한 클래스
 public class _01_Car_0410 {
+	
 	private String modelName;
 	private int productionYear;
-	
 	// 엔진정보를 저장하기 위한 필드 생성 -> Engine 클래스가 자료형으로 선언된 필드
 	// => 필드에는 Engine 객체를 제공받아 저장 -> 포함 관계
+	// └-> 생성자 or Setter 메소드를 이용하여야 한다.
+	private _02_Engine_0410 carEngine;  // 생성한 클래스를 선언한다.(관계를 맺고있는 필드에 값을 저장시켜야한다.)
 	
+	public _01_Car_0410() {
+		// TODO Auto-generated constructor stub
+	}
 	
+
+	public _01_Car_0410(String modelName, int productionYear, _02_Engine_0410 carEngine) {
+		super();
+		this.modelName = modelName;
+		this.productionYear = productionYear;
+		this.carEngine = carEngine;
+	}
+
+
+	public String getModelName() {
+		return modelName;
+	}
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+
+	public int getProductionYear() {
+		return productionYear;
+	}
+
+	public void setProductionYear(int productionYear) {
+		this.productionYear = productionYear;
+	}
+
+	public _02_Engine_0410 getCarEngine() {
+		return carEngine;
+	}
+
+	public void setCarEngine(_02_Engine_0410 carEngine) {
+		this.carEngine = carEngine;
+	}
 	
-	
+	// 자동차 정보(필드값)를 출력하는 메소드
+	public void displayCar() {
+		System.out.println("모델명 = " + modelName);
+		System.out.println("생산년도 = " + productionYear);
+		
+		/*
+		System.out.println("엔진정보 = " + carEngine);
+		// 그냥 출력시 : 엔진정보 = association._02_Engine_0410@1e643faf
+		// -> 객체의 메모리 주소가 출력되서 필드에 저장된 객체를 이용하여 메소드를 호출해야 한다.
+		// => 포함관계로 설정된 클래스(객체)의 메소드를 호출하여 원하는 기능 구형
+		// => 포함관계가 설정되지 않은 상태에서 메소드가 호출될 경우 NullPointException 발생
+		// └-> 객체를 제공받아 저장해야한다는 뜻 ( 이렇게 만들어줘야함 -> carOne.setCarEngine(engine); )
+		// 따라서 밑에 gettter메소드로 호출해줘야한다
+		System.out.println("연료타입 = " + carEngine.getFuelType());
+		System.out.println("배기량 = " + carEngine.getDisplacement());
+		*/
+		
+		carEngine.dispalyEngine();  // 위에 주석처리 대신 사용가능하고, 코드 중복성을 최소화 할 수 있다.
+		
+	}
 	
 
 }
