@@ -49,7 +49,7 @@ public class MemberEvent extends Member {
 	// 형식 : super(값, 값, ...);
 	// => 생략된 경우 부모클래스의 매개변수가 없는 기본 생성자를 호출하여 초기화 처리
 	// => 생성자에서 다른 생성자를 호출하는 명령은 반드시 첫번째 명령으로 작성된다.
-	
+	// 2. 자식클래스의 메소드에서 오버라이드 선언되어 숨겨진 부모클래스의 메소드를 호출할 경우 super 키워드를 사용한다.
 	
 	public MemberEvent(String id, String name, String email) {
 		
@@ -111,6 +111,8 @@ public class MemberEvent extends Member {
 	// ★ 메소드 오버라이드의 작성 규칙 :  부모클래스의 메소드와 같은 
 	//     접근지정자, 반환형, 메소드명, 매개변수, 예외전달을 사용하여 메소드를 작성해야 한다.
 	
+	
+	/*
 	public void display() {
 		// System.out.println("아이디 = " + id);
 		System.out.println("아이디 = " + getId());
@@ -118,7 +120,30 @@ public class MemberEvent extends Member {
 		System.out.println("이름 = " + getName());
 		System.out.println("이메일 = " + email);
 	}
-
+	*/
+	// 이클립스에서는 부모클래스의 메소드를 자식클래스에서 오버라이드 선언되도록 
+	// 자동 완성하는 기능 제공
+	// => 오버라이드 선언하고 싶은 부모클래스의 메소드명 입력 -> Ctrl + Space
+	//   └-> Override Method 선택
+	// @Override 오버라이드 선언된 메소드를 표현하기 위한 어노테이션
+	// 어노테이션(Annotation) : API문서에서 특별한 설명을 제공하기 위한 기능의 자료형(인터페이스)
+	// => Java Source 작성에 필요한 특별한 기능을 제공하기 위해 사용되는 자료형
+	// => @Override, @Deprecated, @SuppressWarings
+	// @Deprecated : 유지보수가 중단되어 곧 사라질 수 있는 메소드
+	// @SuppressWarings : 경고 제거할 때
+	
+	@Override
+	public void display() {
+		// TODO Auto-generated method stub
+		super.display(); //super를 사용하면 부모클래스에 있는 숨겨진 메소드를 사용할 수 있다.
+		System.out.println("이메일 = " + email);
+	
+	}
+	
+	
+	 
+	
+	
 }
 
 

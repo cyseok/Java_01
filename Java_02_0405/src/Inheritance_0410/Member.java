@@ -32,7 +32,7 @@ public class Member {
 		this.name = name;
 	}
 	
-	public void diaplay () {
+	public void display () {
 		System.out.println("아이디 = " + id);
 		System.out.println("이름 = " + name);
 	}

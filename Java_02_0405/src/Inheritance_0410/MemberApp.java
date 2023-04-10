@@ -9,11 +9,11 @@ public class MemberApp {
 		member1.setId("abc123");
 		member1.setName("홍길동");
 		
-		member1.diaplay();
+		member1.display();
 		System.out.println("===================================");
 		
 		Member member2 = new Member("zxc789", "임꺽정");
-		member2.diaplay();
+		member2.display();
 		System.out.println("===================================");
 		
 		
