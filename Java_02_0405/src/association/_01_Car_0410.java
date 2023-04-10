@@ -27,7 +27,11 @@ public class _01_Car_0410 {
 	// 엔진정보를 저장하기 위한 필드 생성 -> Engine 클래스가 자료형으로 선언된 필드
 	// => 필드에는 Engine 객체를 제공받아 저장 -> 포함 관계
 	// └-> 생성자 or Setter 메소드를 이용하여야 한다.
-	private _02_Engine_0410 carEngine;  // 생성한 클래스를 선언한다.(관계를 맺고있는 필드에 값을 저장시켜야한다.)
+	
+	// ★★★★★ 생성한 클래스를 선언한다.(관계를 맺고있는 필드에 값을 저장시켜야한다.)
+	private _02_Engine_0410 carEngine; 
+	
+	
 	
 	public _01_Car_0410() {
 		// TODO Auto-generated constructor stub
