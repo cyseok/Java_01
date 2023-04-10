@@ -2,14 +2,14 @@ package oop_Object_Oriented_Programming;
 
 // static 키워드 : "객체가 아닌 클래스"로 접근하기 위한 기능을 제공하는 제한자
 // => 클래스(내부클래스에서만 가능), 필드, 메소드에 사용가능
-// 제한자(Modifier) : 특별한 기능을 제공(제한)하기 위해 사용하는 키워드
+// 제한자(Modifier) : 특별한 기능(= 제한)을 제공하기 위해 사용하는 키워드
 // => Access Modifier(private, package, protected, public), static, final, abstract 
 
 
 // 학생정보(학번, 이름, 국어, 영어, 총점)를 저장하기 위한 클래스 -> VO클래스
 public class _10_Student_0407 {
 
-	// 필드(= instance field)에  -> 필드 : 객체가 생성될 때 메모리(HeapArea)에 생성되는 필드
+	// 객체 필드(= instance field)에  -> 필드 : 객체가 생성될 때 메모리(HeapArea)에 생성되는 필드
 	// 학생정보(학번, 이름, 국어, 영어, 총점)선언
 	private int num;
 	private String name;
@@ -21,7 +21,7 @@ public class _10_Student_0407 {
 	// => ★생성자에서 초기화 처리하지 않고, 직접 초기값을 필드에 저장시킨다.
 	// => 클래스로 생성된 모든 객체가 정적 필드를 사용할 수 있다. (=공유값) -> 메모리 절약 및 필드값 변경 용이
 	// => 클래스 외부에서는 객체가 아닌 클래스를 사용하여 접근 가능
-	private static int tot;  // "기본값을 초기값"으로 사용할 경우 초기값 저장 생략 가능
+	private static int tot =0;  // "기본값을 초기값"으로 사용할 경우 초기값 저장 생략 가능
 	
 	
 	// 생성자(Constructor) : 객체를 생성하면서 instance field에 원하는 초기값을 저장하기 위해 작성
@@ -104,6 +104,7 @@ public class _10_Student_0407 {
 		total = kor + eng;
 	}
 
+	
 	public void display () {
 		System.out.print("[" + name + "] 님의 성적 -> ");
 		System.out.println("국어 = " + kor + ", 영어 = " + eng + ", 총점 = " + total);
