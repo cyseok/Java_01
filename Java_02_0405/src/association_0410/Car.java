@@ -1,4 +1,4 @@
-package association;
+package association_0410;
 
 // 클래스와 클래스의 관계 (= 객체관계)
 // => UML(Unified Modeling Language)을 사용하여 클래스 다이어그램으로 표현
@@ -20,7 +20,7 @@ package association;
 // => TV << 리모콘
 
 // 자동차 정보(모델명, 생산년도, 엔진정보)를 저장하기 위한 클래스
-public class _01_Car_0410 {
+public class Car {
 	
 	private String modelName;
 	private int productionYear;
@@ -29,16 +29,16 @@ public class _01_Car_0410 {
 	// └-> 생성자 or Setter 메소드를 이용하여야 한다.
 	
 	// ★★★★★ 생성한 클래스를 선언한다.(관계를 맺고있는 필드에 값을 저장시켜야한다.)
-	private _02_Engine_0410 carEngine; 
+	private Engine carEngine; 
 	
 	
 	
-	public _01_Car_0410() {
+	public Car() {
 		// TODO Auto-generated constructor stub
 	}
 	
 
-	public _01_Car_0410(String modelName, int productionYear, _02_Engine_0410 carEngine) {
+	public Car(String modelName, int productionYear, Engine carEngine) {
 		super();
 		this.modelName = modelName;
 		this.productionYear = productionYear;
@@ -62,11 +62,11 @@ public class _01_Car_0410 {
 		this.productionYear = productionYear;
 	}
 
-	public _02_Engine_0410 getCarEngine() {
+	public Engine getCarEngine() {
 		return carEngine;
 	}
 
-	public void setCarEngine(_02_Engine_0410 carEngine) {
+	public void setCarEngine(Engine carEngine) {
 		this.carEngine = carEngine;
 	}
 	

@@ -1,10 +1,10 @@
-package association;
+package association_0410;
 
-public class _03_CarApp_0410 {
+public class CarApp {
 	public static void main(String[] args) {
 		
 		// 엔진 생성
-		_02_Engine_0410 engine = new _02_Engine_0410();
+		Engine engine = new Engine();
 		
 		engine.setFuelType("경유");
 		engine.setDisplacement(2000);
@@ -13,7 +13,7 @@ public class _03_CarApp_0410 {
 		
 		
 		// 자동차 생성
-		_01_Car_0410 carOne = new _01_Car_0410();
+		Car carOne = new Car();
 		
 		carOne.setModelName("쏘렌토");
 		carOne.setProductionYear(2020);
@@ -29,7 +29,7 @@ public class _03_CarApp_0410 {
 		// 다른방법
 		// 이렇게도 생성자 만들 수 있음, 엔진을 생성하여 필드에 저장해 포함관계 성립
 		// 생성자를 호출하여 매개변수에 엔진정보(_02_Engine_0410 객체)를 전달받아 필드에 저장
-		_01_Car_0410 carTwo = new _01_Car_0410("싼타페", 2023, new _02_Engine_0410("휘발유", 3000));
+		Car carTwo = new Car("싼타페", 2023, new Engine("휘발유", 3000));
 		
 		carTwo.displayCar();
 		System.out.println("===============================================");

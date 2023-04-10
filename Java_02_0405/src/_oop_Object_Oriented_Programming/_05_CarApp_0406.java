@@ -1,4 +1,4 @@
-package oop_Object_Oriented_Programming;
+package _oop_Object_Oriented_Programming;
 
 // 클래스로 객체를 생성하는 방법
 // 형식 : 클래스명 참조변수 = new 클래스명 ();

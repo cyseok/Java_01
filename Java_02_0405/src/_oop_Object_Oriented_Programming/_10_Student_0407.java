@@ -1,4 +1,4 @@
-package oop_Object_Oriented_Programming;
+package _oop_Object_Oriented_Programming;
 
 // static 키워드 : "객체가 아닌 클래스"로 접근하기 위한 기능을 제공하는 제한자
 // => 클래스(내부클래스에서만 가능), 필드, 메소드에 사용가능

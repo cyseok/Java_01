@@ -1,4 +1,4 @@
-package oop_Object_Oriented_Programming;
+package _oop_Object_Oriented_Programming;
 
 // 클래스 : 객체(Object)를 생성하기 위한 자료형 -> 참조형
 // => Java에서는 객체 대신 인스턴스(Instace) 사용
