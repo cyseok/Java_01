@@ -9,6 +9,8 @@ public class _13_RunTimeApp_0407 {
 	
 	public static void main(String[] args) throws IOException { // exec 예외처리한 것
 		
+		// static -> 정적메소드 이므로 클래스로 접근해야 함
+		
 		// 생성자가 은닉화 선언되어 있어 new 연산자로 생성 불가능
 		// => Runtime 클래스는 프로그램에 객체를 하나만 제공하기 위한 클래스 -> 싱글톤 글래스
 		// Runtime runtime = new Runtime();
