@@ -64,7 +64,7 @@ public class MemberEvent extends Member {
 		setId(id);
 		// └-> super.setId(id); 로 써야하는데
 		// => 자식클래스의 메소드에서 super 키워드를 쓰지않아도 자식클래스의 메소드에서는 
-				//     this키워드로 참조되는 필드와 메소드가 없으면 자동으로 부모클래스 객체의 필드 또는 메소드를 참조한다.
+		//     this키워드로 참조되는 필드와 메소드가 없으면 자동으로 부모클래스 객체의 필드 또는 메소드를 참조한다.
 
 		// this.name = name;
 		setName(name);
