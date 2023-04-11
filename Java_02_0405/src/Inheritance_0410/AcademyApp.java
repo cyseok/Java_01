@@ -19,7 +19,7 @@ public class AcademyApp {
 		// 사람정보(AcademyPerson 객체)를 저장하기 위한 요소들이 존재하는 배열 생성
 		// => 배열요소에 학생정보(AcademyStudent 객체), 강사정보(AcademyInstructor 객체), 
 		//    직원정보(AcademyStaff 객체) 저장이 가능하다
-		// ★★ 모든 클래스의 부모이기 때문에 가능하다...
+		// ★★ 위 3개 클래스의 부모이기 때문에 가능하다...
 		AcademyPerson[] persons = new AcademyPerson[500];
 	}
 
