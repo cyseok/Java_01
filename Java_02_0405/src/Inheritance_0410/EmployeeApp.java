@@ -39,6 +39,9 @@ public class EmployeeApp {
 			// 자동으로 참조변수가 자식클래스로 형변환 되어 자식클래스의 메소드 호출이 가능
 			System.out.println("사원급여 = " + employee.computePay());
 			// └-=> 자동으로 오버라이드된 결과를 출력한다
+			
+			// 사원은 인센티브 결과를 반환받아 출력
+			System.out.println("인센티브 = " + employee.computeIncentive());
 			System.out.println("========================================");
 		
 		}

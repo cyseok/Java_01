@@ -32,6 +32,7 @@ public class EmployeeRegular extends Employee {
 	public int computePay() {
 		// TODO Auto-generated method stub
 		return anuualSalary / 12;
+		
 	}
 
 }
