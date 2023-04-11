@@ -6,6 +6,8 @@ package Inheritance_0410;
 // Object 클래스 : 모든 Java클래스의 최선조(Root) 클래스
 //                  Class Object is the root of the class hierarchy. Every class has Object as a superclass.
 //                  All objects, including arrays, implement the methods of this class.
+// => Object 클래스로 만든 클래스에는 모든 클래스로 생성된 객체 저장 가능 
+
 
 // 자동차 정보(모델명, 소유자명)를 저장하기 위한 클래스
 public class Car {   // extends Object가 생략되어있다.
