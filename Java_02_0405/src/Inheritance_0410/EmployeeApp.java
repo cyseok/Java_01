@@ -40,6 +40,7 @@ public class EmployeeApp {
 			System.out.println("사원급여 = " + employee.computePay());
 			// └-=> 자동으로 오버라이드된 결과를 출력한다
 			System.out.println("========================================");
+		
 		}
 		
 	}
