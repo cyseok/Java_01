@@ -4,6 +4,8 @@ package Inheritance_0410;
 // └-> extends Object가 생략되어있다.
 // 모든 Java클래스는 무조건 Object클래스를 상속받아 사용가능함.
 // Object 클래스 : 모든 Java클래스의 최선조(Root) 클래스
+//                  Class Object is the root of the class hierarchy. Every class has Object as a superclass.
+//                  All objects, including arrays, implement the methods of this class.
 
 // 자동차 정보(모델명, 소유자명)를 저장하기 위한 클래스
 public class Car {   // extends Object가 생략되어있다.
