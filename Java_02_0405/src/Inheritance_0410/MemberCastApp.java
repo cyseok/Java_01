@@ -55,7 +55,7 @@ public class MemberCastApp {
 		// 자식클래스로 변경하면 일시적으로 참조변수에 자식클래스의 객체가 자동 저장됨.
 		// => 명시적 객체 형변환에 의해 자식클래스로 자료형이 변경된 참조변수는 자식클래스의 객체가 저장되므로
 		//    자식클래스의 메소드가 호출 가능하다.
-		MemberEvent event = (MemberEvent)member4;
+		MemberEvent event = (MemberEvent) member4;
 		//                                └-> 부모가 아닌 자식으로 형변환
 		// event.setEmail("asfafafaf");  변환하면 아래처럼 쓸 수 있음
 		// (.)연산자보다 Cast 연산자가 먼저 실행되도록 ()연산자 사용해준다.

@@ -37,7 +37,7 @@ public class Engine {
 	
 	public void dispalyEngine() {
 		System.out.println("연료 타입 = " + fuelType);
-		System.out.println("배기량 = " + displacement);
+		System.out.println("배기량 = " + displacement + "cc");
 	}
 	
 	

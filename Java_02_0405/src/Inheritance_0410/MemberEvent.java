@@ -44,7 +44,7 @@ public class MemberEvent extends Member {
 	//     this키워드로 참조되는 필드와 메소드가 없으면 자동으로 부모클래스 객체의 필드 또는 메소드를 참조한다.
 
 	// super 키워드를 사용하는 경우
-	// 1. 자식클래스의 생성자에서 부모클래스의 생성자를 호출하기 위해 super 키워드를 사용한다.
+	// 1. ★자식클래스의 생성자에서 부모클래스의 매개변수가 있는 생성자를 호출하여 객체를 생성하기 위해 super 키워드를 사용한다.
 	// => 부모클래스 객체가 생성될 떄 필드에 원하는 초기값 저장 가능
 	// 형식 : super(값, 값, ...);
 	// => 생략된 경우 부모클래스의 매개변수가 없는 기본 생성자를 호출하여 초기화 처리
@@ -59,7 +59,7 @@ public class MemberEvent extends Member {
 		// => 부모클래스의 필드 또는 메소드가 은닉화 선언된 경우 접근 불가능
 		
 		super();  // 부모클래스의 매개변수가 없는 기본 생성자 호출(생략가능)
-		// ★ set으로 다시 선언
+		/* ★ set으로 다시 선언
 		// this.id = id;
 		setId(id);
 		// └-> super.setId(id); 로 써야하는데
@@ -71,8 +71,9 @@ public class MemberEvent extends Member {
 		*/
 		
 		// 위에 범위주석 부분 대신에
-		// super(id,name); 으로 간단하게 쓰면된다(부모클래스의 매개변수가 없는 기본 생성자 호출)
+		// super(id,name); 으로 간단하게 쓰면된다 (부모클래스의 매개변수가 없는 기본 생성자 호출)
 		// └=> Alt + Shift + s 에서 O -> 부모클래스 생성자를 (String,...) 선택해주면된다.(이때는 default로 하면 안된다 )
+		super(id,name);
 		this.email = email;
 	}
 	
