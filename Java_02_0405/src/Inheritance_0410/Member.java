@@ -1,4 +1,4 @@
-package Inheritance_0410;
+package Inheritance_0410; // 04/10
 
 // 회원정보(아이디, 이름)를 저장하기 위한 클래스
 

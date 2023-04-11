@@ -1,4 +1,4 @@
-package Inheritance_0410;
+package Inheritance_0410; // 04/11
 
 // 학원 인적자원(강사, 학생, 직원) 관리 프로그램
 

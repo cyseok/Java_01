@@ -1,4 +1,4 @@
-package Inheritance_0410;
+package Inheritance_0410; // 04/11
 
 // 클래스 선언시 상속받은 부모클래스가 없는 경우 기본적으로 Object 클래스를 자동으로 상속받는다.
 // └-> extends Object가 생략되어있다.
@@ -41,5 +41,39 @@ public class Car {   // extends Object가 생략되어있다.
 	}
 	
 	
+	// Object 클래스의 toString() 메소드를 오버라이드 선언
+	// => Object 클래스의 toString() 메소드는 숨겨지고 Car클래스의 toString() 메소드가 호출된다.
+	// => VO 클래스에서는 필드값을 문자열로 변환하여 반환하는 명령을 작성한다. -> 필드값을 확인하기 위해
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		// return super.toString();
+		return "모델명 = " + modelName + ", 소유자 = " + userName;
+	}
+	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
