@@ -22,8 +22,9 @@ public class EmployeeApp {
 		
 		for (Employee employee : empArray) {
 			System.out.println("사원번호 = " + employee.getEmpNo());
-			System.out.println("사원번이름= " + employee.getEmpName());
 			
+			System.out.println("사원번이름= " + employee.getEmpName());
+			/*
 			if (employee instanceof EmployeeRegular) {
 				System.out.println("급여 = " + ((EmployeeRegular)employee).computeSalary());
 			} else if (employee instanceof Employeetime) {
@@ -32,8 +33,13 @@ public class EmployeeApp {
 				System.out.println("급여 = " + ((EmployeeContract)employee).computeContract());
 			}
 			System.out.println("========================================");
+			*/
 			
-			
+			// 자식클래스에서 부모클래스의 메소드를 오버라이드 선언하면 묵시적 객체 형변환에의해
+			// 자동으로 참조변수가 자식클래스로 형변환 되어 자식클래스의 메소드 호출이 가능
+			System.out.println("사원급여 = " + employee.computePay());
+			// └-=> 자동으로 오버라이드된 결과를 출력한다
+			System.out.println("========================================");
 		}
 		
 	}

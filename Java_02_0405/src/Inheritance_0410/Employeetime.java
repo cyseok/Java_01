@@ -38,5 +38,11 @@ public class Employeetime extends Employee {
 	public int computeTimePay () {
 		return moneyPerHour * workedHour;
 	}
+	
+	@Override
+	public int computePay() {
+		// TODO Auto-generated method stub
+		return moneyPerHour * workedHour;
+	}
 
 }

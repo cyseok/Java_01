@@ -26,5 +26,11 @@ public class EmployeeContract extends Employee {
 	public int computeContract () {
 		return contractPay;
 	}
+	
+	@Override
+	public int computePay() {
+		// TODO Auto-generated method stub
+		return contractPay;
+	}
 
 }

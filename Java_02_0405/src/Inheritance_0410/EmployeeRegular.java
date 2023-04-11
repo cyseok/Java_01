@@ -27,5 +27,11 @@ public class EmployeeRegular extends Employee {
 	public int computeSalary () {
 		return anuualSalary / 12;
 	}
+	
+	@Override
+	public int computePay() {
+		// TODO Auto-generated method stub
+		return anuualSalary / 12;
+	}
 
 }
