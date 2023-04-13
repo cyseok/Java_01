@@ -1,6 +1,8 @@
 package xyz.itwill.app_0413;
 
 
+import xyz.itwill.subject_0413.JavaSubject;
+
 // 패키지(package) : 같은 목적의 자료형(참조형)을 명확하게 구분하여 그룹화 하기 위해 사용
 // => Java 참조형 : Class, Interface, Enum(열거형)
 // => Java 자료형을 보다 쉽게 관리하기 위해 패키지를 사용한다.
@@ -18,10 +20,11 @@ import xyz.itwill.subject_0413.OracleSubject;
 // 형식 : import 패키지경로.자료형(자료형대신에 '*'을 쓰게되면 모든자료형을 뜻함)
 // => package 키워드로 작성된 명령 하단에 선언하며 자료형 선언 위에 선언되어야함
 // => 이클립스에서는 다른패키지에 작성된 자료형을 사용할 경우 import 명령을 자동완성기능 제공 
-// 제공 -> Ctrl + Space
+// 제공 -> Ctrl + Space -> 같은 이름의 자료형이 여러개인 경우 선택 잘 해야함
 // => Ctrl + Shift + o -> import명령을 정리하는 단축키 : 불필요한 자료형에 대한 import설정을
 //                         제거하거나 필요한 자료형에 대한 import 설정을 추가해준다.
 
+// import 자료형의 이름이 같은 경우 사용불가
 
 public class SubjectApp {
 	public static void main(String[] args) {
@@ -34,6 +37,13 @@ public class SubjectApp {
 		// 다른 패키지에 작성된 클래스를 import처리한 경우 패키지 경로 표현없이 클래스 접근 가능
 		OracleSubject subject1 = new OracleSubject();
 		
+		subject1.display();
+		
+		JavaSubject subject2 = new JavaSubject();
+		subject2.display();
+		
+		xyz.uniwill.subject_0413.JavaSubject subject3 = new xyz.uniwill.subject_0413.JavaSubject();
+		subject3.display();
 	}
 
 }
