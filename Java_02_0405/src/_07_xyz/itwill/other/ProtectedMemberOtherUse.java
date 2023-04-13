@@ -1,6 +1,6 @@
 package _07_xyz.itwill.other;
 
-import _07_xyz.itwill.access.ProtectedMember;
+import _07_xyz.itwill.access_0413.ProtectedMember;
 
 public class ProtectedMemberOtherUse {
 	

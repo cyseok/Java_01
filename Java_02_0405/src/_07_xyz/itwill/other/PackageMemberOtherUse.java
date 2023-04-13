@@ -1,7 +1,7 @@
 package _07_xyz.itwill.other;
 
 
-import _07_xyz.itwill.access.PackageMember;
+import _07_xyz.itwill.access_0413.PackageMember;
 
 public class PackageMemberOtherUse {
 	
