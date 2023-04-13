@@ -42,8 +42,45 @@ package xyz.itwill.exception;
 //     └-> 참조변수에 저장된 예외 관련 메소드를 호출하여 예외를 처리한다.
 // => try 키워드로 생성된 블럭에서 예외처리가 발생되면 프로그램이 종료되지 않고
 //    catch 키워드의 블럭으로 프로그램의 흐름(스레드)이 이동하여 예외처리 명령을 실행
+// => catch 키워드로 블럭을 여러개 작성 가능 -> 다양한 예외를 구분하여 예외처리 가능
+// finally 키워드의 블럭에는 예외 발생과 상관없이 무조건 실행될 명령 작성
+// => 사용 자원에대한 제거 명령 실행
+
+
+
 
 public class ExceptionHandleApp {
+	
+	public static void main(String[] args) {
+		
+		int[] array = {10, 20, 30, 40, 50};
+		
+		try {
+		// 배열 요소의 첨자가 사용범위를 벗어난 경우 ArrayIndexOutOfBoundsException 발생
+		// └-> 실행예외
+		for(int i = 0; i <= array.length; i++) { 
+			System.out.println("array[" + i + "] = " + array[i]);
+			}
+			System.out.println("정상실행");
+		
+		} catch (ArrayIndexOutOfBoundsException e) { // 예외객체를 전달받아 참조변수에 저장
+			// 프로그램 사용자에게 예외관련 메시지 출력 => 선택
+			// System.out.println("오류"); 
+			
+			// 프로그램 개발자에게 예외관련 메시지를 기록하여 제공 -> 에러 로그 => 필수
+			// => 참조변수에 저장된 예외 관련 객체의 메소드를 호출하여 작성한다.
+			// Throwable.getMessage() : 예외 객체에 저장된 예외 메시지를 반환하는 메소드
+			System.out.println("예외 -> " + e.getMessage());
+			
+			//Throwable.printStackTrace() : 예외가 발생된 경로를 역추적하여 발생된 정보를 제공 받아 출력
+			e.printStackTrace();
+			e.getStackTrace();  // -> 로그파일에 저장
+			
+		} finally {
+			System.out.println("예외상관없이 실행됨");
+		}
+		
+	}
 
 }
 
