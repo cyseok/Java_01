@@ -1,6 +1,6 @@
 package realization_0412;
 
-//이클립스를 사용하여 클래스로 인터페이스 추출 가능
+// 이클립스를 사용하여 클래스로 인터페이스 추출 가능
 // => 클래스 >> 오른쪽 버튼 >> 메뉴 : Refactor >> Extract Interface... 
 //    >> 인터페이스 이름 입력 >> 추상메소드 선택 >> Ok
 public class JdbcMysql implements Jdbc {

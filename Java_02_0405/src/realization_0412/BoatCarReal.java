@@ -8,7 +8,7 @@ public class BoatCarReal implements BoatCar {
 
 	@Override
 	public void navigate() {
-		System.out.println("바다를 향해하는 능력");
+		System.out.println("바다를 항해하는 능력");
 	}
 
 	@Override
