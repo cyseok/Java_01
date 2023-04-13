@@ -6,12 +6,12 @@ public class PrintableApp {
 		Printable printOne=new PrintSingle();
 		
 		printOne.print();
-		printOne.scan();  //인터페이스의 기본 메소드 호출
+		printOne.scan();  // 인터페이스의 기본 메소드 호출
 		System.out.println("=============================================================");
 		Printable printTwo=new PrintMulti();
 		
 		printTwo.print();
-		printTwo.scan();  //자식클래스의 메소드 호출
+		printTwo.scan();  // 자식클래스의 메소드 호출
 		System.out.println("=============================================================");
 	}
 }

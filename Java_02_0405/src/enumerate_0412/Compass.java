@@ -28,4 +28,6 @@ public enum Compass {
 	public String getValue() {
 		return value;
 	}
+	
+	// final은 필드값을 변경하지못해 setter값 설정불가능
 }

@@ -8,7 +8,7 @@ public interface Printable {
 	// 기본메소드(Default Method) :  인터페이스를 상속받은 자식클래스에서 오버라이드 선언
 	// 하지 않아도 되는 메소드 - 오버라이드 선언하지 않은 경우 기본메소드 호출
 	// 형식) default 반환명 메소드명(자료형 매개변수,...) { 명령; ... }
-	default void scan() {
+	default void scan() {  // -> 기본메소드
 		System.out.println("[에러]스캔 기능을 제공하지 않습니다.");
 	}
 }
