@@ -1,4 +1,4 @@
-package xyz.itwill.exception;
+package xyz.itwill.exception_0414;
 
 // 예외(exception) : 사용자에 의해 프로그램이 잘못 실행되거나 프로그램이 잘못 개발되어
 //                    실행될 경우 발생될 수 있는 프로그램 오류
