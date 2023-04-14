@@ -170,10 +170,6 @@ public class StringApp {
 		System.out.println("numString = " + numString);
 		
 		
-		
-		
-		
-		
 	}
 
 }
