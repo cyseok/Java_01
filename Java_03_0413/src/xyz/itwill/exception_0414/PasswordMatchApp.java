@@ -34,14 +34,27 @@ public class PasswordMatchApp {
 			// 인위적으로 예외 객체를 생성하여 예외를 발생시키는 방법
 			// 형식 : throw new 예외클래스 (String message);
 			//                    (└-> 예외클래스의 생성자를 가리킴) 
-			throw new Exception();
-			}
+			
+			// throw new Exception();
+			
+			
+			// ★★ if문이 너무많이 발생하게 되서 예외를 일부로 발생시킨 후
+			//  그 예외들을 처리하면서 결과들을 출력해준다.
+		throw new PasswordMismatchException("결과, 비빌번호가 틀립니다.");
+		}
+		// 예외가 발생되지 않은 경우 실행될 명령
+		System.out.println("맞습니다.");
+		
 		} catch (InputMismatchException e) {
 			System.out.println("에러, 숫자만 입력가능합니다.");
+		} catch (PasswordMismatchException e) {	
+			System.out.println(e.getMessage());
+			
 		} catch (Exception e) {
 			System.out.println("이상한 에러");
+		} finally {
+			scanner.close();  // finally 생성 후 그 안쪽에 실행시켜준다.
 		}
-		scanner.close();
 	}
 
 }
