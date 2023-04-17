@@ -16,7 +16,10 @@ package _03_xyz.itwll.lang.thread_0417;
 public class MultiThreadApp {
 	
 	// JVM에 의해 main 스레드가 자동으로 생성되어 main 메소드를 호출해 명령이 실행된다.
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
+		
+		// throws InterruptedException : 메인 메소드에 의해 전달된 예외인데 이것은 JVM에 의해
+		//                               자동으로 처리된다.
 		
 		/*
 		// Thread 클래스로 직접 객체를 생성하여 start 메소드 호출
@@ -34,7 +37,9 @@ public class MultiThreadApp {
 			System.out.print(i); 
 			
 			// 매개변수로 전달된 시간동안 스레드가 일시중지됨.
-			Thread.sleep(500);  // InterruptedException 예외처리 필수!!
+			Thread.sleep(200);  // InterruptedException 예외처리 필수!!
+			// => throws InterruptedException 이걸로 넘겨도 되지만 try catch를 사용하는 것이 좋다.
+			
 			
 			}
 			
@@ -42,15 +47,6 @@ public class MultiThreadApp {
 		
 		
 	}
-
-
-
-
-
-
-
-
-
 
 
 
