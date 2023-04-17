@@ -22,8 +22,8 @@ public class Account {
 		this.balance = balance;
 	}
 	
-	// 입금 처리 메소드
-	public void deposit (int amount, String name) {
+	// 입금 처리 메소드 // -> 다수의 스레드로 인한 오류방지 synchronized
+	public synchronized void deposit (String name, int amount) {
 		balance += amount;
 		System.out.println("[입금] " + name + "님이 " + amount + "원 입금하여 잔액은 " + balance + "원 입니다.");
 		
@@ -31,7 +31,7 @@ public class Account {
 	
 	
 	// 출금 처리 메소드
-	public void withDraw (int amount, String name) {
+	public void withDraw (String name, int amount) {
 		
 		if (balance < amount) {
 			System.out.println("[에러] " + name + "님, 잔액이 " + balance + "원 남아 " + amount + "원 출금 불가" );

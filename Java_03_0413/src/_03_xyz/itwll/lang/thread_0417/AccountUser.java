@@ -1,7 +1,7 @@
 package _03_xyz.itwll.lang.thread_0417;
 
 // 은행계좌 사용자정보(은행계좌, 사용자명)를 저장하기 위한 클래스
-public class AccountUser {
+public class AccountUser extends Thread {
 	private Account account;  // 은행 계좌 정보 -> 포함관계
 	private String userName;  // 사용자명
 	
@@ -9,7 +9,7 @@ public class AccountUser {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AccountUser(Account account, String userName) {
+	public AccountUser (Account account, String userName) {
 		super();
 		this.account = account;
 		this.userName = userName;
@@ -32,4 +32,50 @@ public class AccountUser {
 	}
 	
 	
+	@Override
+	public void run() {
+		// 개발자에 의해 생성된 스레드로 run 메소드를 호출하여 명령 실행
+		// => 사용자 은행계좌에 입금처리하는 메소드 호출
+		
+		// -> 다수의 스레드로 인한 오류방지 synchronized
+		synchronized (account) {
+			account.withDraw(userName, 5000);
+			
+		}
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
