@@ -144,10 +144,10 @@ public class StringApp {
 		System.out.println("전화번호 = " + str9);
 		System.out.println("=======================================");
 		
-		// String.split() : 문자열을 매개변수로 전달받은 문자열(정규표현식)로 분리하여 문자열 배열로반환
+		// ★ String.split() : 문자열을 매개변수로 전달받은 문자열(정규표현식)로 분리하여 문자열 배열로반환
 		// => 정규표현식에서 사용되는 메타문자를 일반문자로 변환하여 사용하기 위해 \\를 사용하여 회피문자로 처리
 		String[] numArray = str9.split("-");
-	// 	String[] numArray = str9.split("\\*");
+		// 	String[] numArray = str9.split("\\*");
 		
 		System.out.println("전화번호 앞부분 = " + numArray[0]);
 		System.out.println("전화번호 중간부분 = " + numArray[1]);

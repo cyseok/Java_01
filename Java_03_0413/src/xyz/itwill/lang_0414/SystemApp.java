@@ -52,7 +52,7 @@ public class SystemApp {
 		
 		System.out.println("실행시간 = " + (endTime - startTime) + "ms");
 		
-		// System.gc() : 메모리를 청소하는 프로그램(Garbage Collector)을 실행하는 메소드
+		// System.gc(); : 메모리를 청소하는 프로그램(Garbage Collector)을 실행하는 메소드
 		
 		scanner.close();
 		
