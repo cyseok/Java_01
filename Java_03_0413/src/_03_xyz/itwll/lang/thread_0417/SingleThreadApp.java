@@ -10,6 +10,8 @@ package _03_xyz.itwll.lang.thread_0417;
 
 public class SingleThreadApp {
 	public static void main(String[] args) {
+		
+		/*
 		System.out.println("SingleThreadApp 클래스의 main() 메소드 시작");    
 		
 		// Thread 클래스 : 스레드 관련 정보를 저장하고 스레드 관련 제어 기능을 메소드로 제공하기 위한 클래스
@@ -22,7 +24,15 @@ public class SingleThreadApp {
 		new SingleThread().display();  // 객체를 생성하여 직접 메소드호출
 		
 		System.out.println("SingleThreadApp 클래스의 main() 메소드 종료");
+		*/
 		
+		
+
+		for(char i ='A'; i <= 'Z'; i++) {
+			System.out.print(i);
+		}
+		
+		new SingleThread().display();
 		
 	}
 
