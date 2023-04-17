@@ -29,9 +29,18 @@ public class MultiThreadApp {
 		*/
 		
 		
+		
 		MultiThreadOne one = new MultiThreadOne();
 		one.start();  // -> start 메소드로 새로운 스레드를 생성한 것
 		//  자식클래스의 오버라이드 선언된 run 메소드가 호출되어 명령 실행
+		// one.start();  하나의 Thread 객체는 하나의 스레드만 생성가능
+		// => Thread 객체를 사용하여 start 메소드를 여러번 호출할 경우 IllegalThreadStateException 발생
+		// => 다중 스레드 프로그램에서 예외가 발생된 경우 예외가 발생된 스레드만 종료(소멸)
+
+		
+		// new MultiThreadOne().start();   => 위 대신에 이렇게 작성해도됨.
+		
+		
 		
 		for(char i ='A'; i <= 'Z'; i++) {
 			System.out.print(i); 
