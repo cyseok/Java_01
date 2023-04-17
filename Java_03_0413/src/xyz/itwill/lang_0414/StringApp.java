@@ -146,6 +146,7 @@ public class StringApp {
 		
 		// ★ String.split() : 문자열을 매개변수로 전달받은 문자열(정규표현식)로 분리하여 문자열 배열로반환
 		// => 정규표현식에서 사용되는 메타문자를 일반문자로 변환하여 사용하기 위해 \\를 사용하여 회피문자로 처리
+		// 분리 !!!!!
 		String[] numArray = str9.split("-");
 		// 	String[] numArray = str9.split("\\*");
 		
