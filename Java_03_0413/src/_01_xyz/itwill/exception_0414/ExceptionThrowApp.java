@@ -1,4 +1,4 @@
-package xyz.itwill.exception_0414;
+package _01_xyz.itwill.exception_0414;
 
 public class ExceptionThrowApp {
 	

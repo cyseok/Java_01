@@ -1,4 +1,4 @@
-package xyz.itwill.lang_0414;
+package _02_xyz.itwill.lang_0414;
 
 // String 클래스 : 문자열을 저장하기 위한 클래스
 // => String 객체에 저장된 문자열에 대한 다양한 기능을 메소드로 제공
