@@ -65,7 +65,7 @@ public class WrapperApp {
 		String str1 = "100", str2 = "200";
 		System.out.println("합계 = " + str1 + str2);
 		
-		// Integer.parseInt : 문자열을 정수값으로 변환
+		// ★★★ Integer.parseInt : 문자열을 정수값으로 변환
 		// => 문자열이 전달되면 정수값으로 변환되지 못해 NumberFormatException 오류발생
 		System.out.println("합계 = " + (Integer.parseInt(str1) +  Integer.parseInt(str2)));
 		System.out.println("============================================================");
