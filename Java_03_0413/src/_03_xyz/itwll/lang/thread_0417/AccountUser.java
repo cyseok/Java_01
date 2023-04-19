@@ -37,7 +37,7 @@ public class AccountUser extends Thread {
 		// 개발자에 의해 생성된 스레드로 run 메소드를 호출하여 명령 실행
 		// => 사용자 은행계좌에 입금처리하는 메소드 호출
 		
-		// -> 다수의 스레드로 인한 오류방지 synchronized
+		// -> ★★ 다수의 스레드로 인한 오류방지 synchronized
 		synchronized (account) {
 			account.withDraw(userName, 5000);
 			

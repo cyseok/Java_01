@@ -22,7 +22,7 @@ public class Account {
 		this.balance = balance;
 	}
 	
-	// 입금 처리 메소드 // -> 다수의 스레드로 인한 오류방지 synchronized
+	// 입금 처리 메소드 // -> ★★ 다수의 스레드로 인한 오류방지 synchronized
 	public synchronized void deposit (String name, int amount) {
 		balance += amount;
 		System.out.println("[입금] " + name + "님이 " + amount + "원 입금하여 잔액은 " + balance + "원 입니다.");
