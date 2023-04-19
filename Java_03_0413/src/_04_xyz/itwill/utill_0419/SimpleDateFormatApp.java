@@ -1,5 +1,6 @@
 package _04_xyz.itwill.utill_0419;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -27,6 +28,18 @@ public class SimpleDateFormatApp {
 		System.out.println("현재 = " + dateFormat.format(now));
 		
 		
+		String want = "2000-01-01 00:00:00";
+		try {
+			
+			// SimpleDateFormat.parse : SimpleDateFormat의 패턴정보와 같은 정보사용한 Date 객체 생성
+			// 패턴정보와 일치하지 않은 문자열이 전달될 경우 ParseException오류 발생
+			Date wanDate = dateFormat.parse(want);
+			System.out.println(wanDate);
+		} catch(ParseException e) {
+			System.out.println("에러");
+			
+			
+		}
 		
 	}
 
