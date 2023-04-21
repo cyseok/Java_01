@@ -1,5 +1,6 @@
 package _05_xyz.itwill.awt_0421;
 
+import java.awt.Button;
 import java.awt.Frame;
 
 
@@ -11,6 +12,8 @@ public class FrameTwoApp extends Frame {
 	// 생성자에서 프레임을 구정하는 디자인을 설정
 	public FrameTwoApp(String title) {  // 생성자를 이용하여 프레임 객체 생성
 		super(title);
+		
+		Button button = new Button("버튼");
 		
 		// setTitle(title);  -> 프레임의 제목을 변경하는 메소드
 		
