@@ -13,22 +13,22 @@ public class MapApp {
 	public static void main(String[] args) {
 		
 		// 이름(k)과 객체(v)에 대한 2개 타입
-		Map<String, String> map = new HashMap<String, String>();
+		Map<Integer, String> map = new HashMap<Integer, String>();
 		
 		// Map.put(K key, V value) : Map 객체에 엔트리를 추가하는 메소드
 		// => Map객체에 저장되는 엔트리는 이름(key)을 set객체로 저장
 		// => 이름은 중복저장 불가능
-		map.put("1000", "홍길동");
-		map.put("3000", "ㅇ");
-		map.put("4000", "ㄴ");
-		map.put("5000", "ㄹ");
-		map.put("2000", "ㅁ");
+		map.put(1000, "홍길동");
+		map.put(3000, "ㅇ");
+		map.put(4000, "ㄴ");
+		map.put(5000, "ㄹ");
+		map.put(2000, "ㅁ");
 		
 		System.out.println("map = " + map);
 		System.out.println("============================================");
 		
 		// 이름이 중복된경우 객체가 변경됨.
-		map.put("2000", "ㅁㅁ");
+		map.put(2000, "ㅁㅁ");
 		System.out.println("map = " + map);
 		System.out.println("============================================");
 		
@@ -43,17 +43,17 @@ public class MapApp {
 		System.out.println("============================================");
 		
 		// Map.keySet() : Map객체에 저장된 모든 엔트리의 이름(key)을 Set객체로 반환
-		Iterator<String> iteratorKey = map.keySet().iterator();
+		Iterator<Integer> iteratorKey = map.keySet().iterator();
 		
 		while (iteratorKey.hasNext()) {
-			String key = iteratorKey.next();
+			Integer key = iteratorKey.next();
 			String value = map.get(key);
 			System.out.println(key + " = " + value);
 		}
 		System.out.println("============================================");
 		
 		// 향상된 for 구문 이용
-		for(String key : map.keySet()) {
+		for(Integer key : map.keySet()) {
 			System.out.println(key + " = " + map.get(key));
 		}
 		System.out.println("============================================");
@@ -71,9 +71,6 @@ public class MapApp {
 			System.out.println(value);
 		}
 		System.out.println("============================================");
-		
-		
-		
 		
 		
 	}
