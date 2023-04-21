@@ -71,8 +71,10 @@ public class RegularExpressionApp {
 		String password = scanner.nextLine();
 		
 		if(password == null || password.equals("")) {
+			
 			System.out.println("error : 비밀번호를 입력해주세요.");
 			System.exit(0);
+			
 		}
 		
 		// -는 범위를 지정하는 의미가 되서 맨마지막에 입력해야함.
@@ -80,23 +82,26 @@ public class RegularExpressionApp {
 		String passwordReg = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()_+=-].{8,20})";
 		
 		if(!Pattern.matches(passwordReg, password)) {
+			
 			System.out.println("error : 비밀번호를 형식에 맞게 입력해주세요.");
 			System.exit(0);
-			 
+			
 		}
 		System.out.println("＃형식에 맞는 비밀번호");
 		
 		//==============================================================================================
 		
 		// 이메일 형식 : 아이디@도메인
-		
-		System.out.print("이메일 입력 : ");
+	
+		 System.out.print("이메일 입력 : ");
 		
 		String email = scanner.nextLine();
 		
 		if(email == null || email.equals("")) {
+			
 			System.out.println("error : 이메일을 입력해주세요.");
 			System.exit(0);
+			
 		}
 		
 		String emailReg = "^([a-zA-Z0-9_-] + @[a-zA-Z0-9_-] + (\\.[a-zA-Z0-9_-] +)+)*$";
@@ -112,8 +117,8 @@ public class RegularExpressionApp {
 		scanner.close();
 		
 		
+	
 	}
-
 }
 
 
