@@ -143,7 +143,6 @@ public class EventSourceGetApp extends Frame {
 			
 		}
 		
-		
 	}
 
 }
