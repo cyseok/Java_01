@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 // 1. 컴퍼넌트와 컨테이너 관련 클래스를 사용하여 디자인 클래스 작성 -> UI 구현
 // => Frame 클래스를 상속받아 디자인 클래스 작성
 // => 컴퍼넌트 또는 컨테이너에서 다양한 이벤트 발생 -> 이벤트관련 XXXEvent 클래스로 객체 자동 생성
-// ex) Button을 누른경우 ActionEvent 클래스로 객체 생성 -> ActionEvent발생
+// ex) ★ Button을 누른경우 ActionEvent 클래스로 객체 생성 -> ActionEvent발생
 
 // 2. 이벤트 소스에서 발생된 이벤트를 처리하는 클래스작성
 // => 이벤트를 처리하기 위한 XXXListener 인터페이스를 상속받아 클래스 작성
