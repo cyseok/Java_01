@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 // 문자데이터 기반의 스트림(CharacterStream) : 원시데이터를 가공처리 한 문자데이터를 전달하기위한 출력 스트림
 // => 원시데이터를 가공하여 문자데이터(2Byte)로 변환 -> 인코딩(문자형태 - CharSet)
@@ -26,7 +27,12 @@ public class CharacterStreamApp {
 	
 	// OutputStreamWriter 클래스 : OutputStream 객체를 전달받아 문자데이터를 출력하기 위한
 	//    출력스트림(write 객체)을 생성하기 위한 클래스
-	OutputStreamWriter out = new OutputStreamWriter(System.out);
+	// OutputStreamWriter out = new OutputStreamWriter(System.out);
+	
+	// PrintWriter 클래스 : OutputStream 객체를 전달받아 문자데이터를 출력하기 위한 
+	//     출력스트림(write 객체)을 생성하기 위한 클래스
+	// => OutputStream 객체보다 많은 출력 메소드 제공
+	PrintWriter out = new PrintWriter(System.out);
 	
 	int readByte;
 	
