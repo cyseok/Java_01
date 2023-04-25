@@ -31,7 +31,19 @@ public class ByteStreamApp {
 			// => ★★ IOException은 일반 예외이므로 반드시 예외처리 필요
 			readByte = System.in.read();
 			
+			// 입력종료신호)(Ctrl + z) = EOF)가 전달될 경우 반복문 종료
+			
+			if(readByte == 1) break;
+			
+			// System.out.write() : 출력스트림이 저장된 필드
+			// OutputStream 클래스를 기반으로 제공되는 입력스트림 -> PrintStream 클래스
+			// 출력스트림에 값을 전달하여 모니터가 출력처리
+			// OutputStream.write() : 출력스트림으로 값(원시데이터=1Byte)을 전달하는 메소드
+			System.out.write(readByte);
+			
+			
 		}
+		System.out.println("종료");
 		
 		
 		
