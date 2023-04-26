@@ -13,7 +13,7 @@ public class MemberSaveApp {
 	public static void main(String[] args) throws IOException {
 		
 		// ObjectOutputStreamApp으로 확장시켜줌
-		ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("c:/data/member.txt"));
+		ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("c:/data/membet.txt"));
 		
 		// ObjectOutputStream.writeObject(Object obj) : 메소드 호출시 NotSerializableException 발생
 		// NotSerializableException : ★ 객체직렬화 처리 되지 않은 클래스의 객체를 출력스트림으로 전달할 경우 발생되는 예외
