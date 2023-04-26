@@ -13,6 +13,8 @@ import java.io.IOException;
 public class FileCopyCharApp {
 	public static void main(String[] args) throws IOException {
 		
+		// ★★ 속도 많이 빠름
+		
 		// BufferedReader 클래스 : Reader 객체를 전달받아 대량의 문자데이터를 읽기위한 입력스트림 생성 클래스
 		BufferedReader in = null;
 		// BufferedWriter 클래스 : Reader 객체를 전달받아 대량의 문자데이터를 전달하기위한 출력스트림 생성 클래스
