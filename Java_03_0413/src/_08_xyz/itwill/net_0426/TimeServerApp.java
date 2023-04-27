@@ -22,7 +22,7 @@ public class TimeServerApp {
 			 ntpServer = new ServerSocket(2000);
 			 
 			 // ServerSocket.toString() : ServerSocket 객체에 저장된 접속 관련 정보를 문자열로 반환
-			 System.out.println("ntpServer = " + ntpServer);
+			 // System.out.println("ntpServer = " + ntpServer);
 			 // => ServerSocket[addr=0.0.0.0/0.0.0.0,localport=2000]
 			 
 			 System.out.println("메시지) NTP Server Running...");
@@ -61,7 +61,8 @@ public class TimeServerApp {
 				 // 로그 처리 -> 기록
 				 // Socket.getInetAddress() : 서버의 소켓과 연결된 외부 컴퓨터의 네트워크 식별자가 저장된 
 				 //                            InetAddress객체를 반환하는 메소드
-				 System.out.println("정보) 클라이언트[" + socket.getInetAddress().getHostAddress() + "]에게 날짜와 시간을 제공");
+				 System.out.println("정보) 클라이언트[" 
+				 + socket.getInetAddress().getHostAddress() + "]에게 날짜와 시간을 제공");
 				 
 				 // 클라이언트와의 접속 해체
 				 socket.close();
