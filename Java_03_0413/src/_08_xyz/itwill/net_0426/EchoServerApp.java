@@ -33,7 +33,7 @@ public class EchoServerApp {
 				
 		} catch (IOException e) {
 			System.out.println("error) 서버 네트워크 문제");
-			// TODO: handle exception
+			
 		}
 		
 	}
