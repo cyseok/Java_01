@@ -45,5 +45,5 @@ public class BorderLayoutApp extends Frame{
 		new BorderLayoutApp("BorderLayout");
 	
 	}
-
+ 
 }
