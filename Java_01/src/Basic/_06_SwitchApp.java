@@ -132,6 +132,6 @@ public class _06_SwitchApp {
 		 }
 		 System.out.println(kor + "을 영어로 " + eng);
 
-	}
+	} 
 
 }
