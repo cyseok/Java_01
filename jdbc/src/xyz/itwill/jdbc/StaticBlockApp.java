@@ -1,4 +1,4 @@
-package _01_xyz.itwill.jdbc;
+package xyz.itwill.jdbc;
 
 // Class 객체(Clazz)를 수동으로 생성하는 방법
 // 1. Class.forName(String className) 메소드를 호출하는 방법

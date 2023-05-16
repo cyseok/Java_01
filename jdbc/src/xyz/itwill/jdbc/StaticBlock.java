@@ -1,4 +1,4 @@
-package _01_xyz.itwill.jdbc;
+package xyz.itwill.jdbc;
 
 public class StaticBlock {
 	// 정적 영역 (StaticBlock) : 클래스가 메모리에 저장된 후 자동 실행될 명령을 작성하는 영역
