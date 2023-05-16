@@ -1,4 +1,4 @@
-package _01_xyz.itwill.jdbc_05_11;
+package _01_xyz.itwill.jdbc;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
