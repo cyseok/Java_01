@@ -33,6 +33,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 		return _dao;
 	}
 	
+	// ★오버라이드
 	//====================================================================
 	// 학생정보를 전달받아 STUDENT 테이블에 삽입하고 삽입행의 개수를 반환하는 메소드
 	@Override
@@ -125,6 +126,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	@Override
 	public StudentDTO selectStudent(int no) {
 		// TODO Auto-generated method stub
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -165,26 +167,68 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	
 	//================================================================================
 	// 이름을 전달받아 STUDENT 테이블에 저장된 해당 이름의 학생 정보 검색
+	
 	@Override
-	public List<StudentDTO> selectNameStudent(String name) {
+	public List<StudentDTO> selectNameStudentList(String name) {
+		// TODO Auto-generated method stub
+				Connection con=null;
+				PreparedStatement pstmt=null;
+				ResultSet rs=null;
+				List<StudentDTO> studentList=new ArrayList<>();
+				
+				try {
+					con=getConnection();
+					
+					String sql="select * from student where name=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setString(1, name);
+					
+					rs=pstmt.executeQuery();
+					
+					//검색행이 0개 이상인 경우 반복문 사용
+					while(rs.next()) {
+						//하나의 검색행을 DTO 객체로 매핑 처리
+						StudentDTO student=new StudentDTO();
+						student.setNo(rs.getInt("no"));
+						student.setName(rs.getString("name"));
+						student.setPhone(rs.getString("phone"));
+						student.setAddress(rs.getString("address"));
+						student.setBirthday(rs.getString("birthday").substring(0, 10));
+						
+						//DTO 객체를 List 객체의 요소로 추가 
+						studentList.add(student);
+					}
+				} catch (SQLException e) {
+					System.out.println("[에러]selectNameStudentList() 메소드의 SQL 오류 = "+e.getMessage());
+				} finally {
+					close(con, pstmt, rs);
+				}
+				return studentList;
+	}
+	
+	
+	//================================================================================
+	// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 반환하는 메소드
+	@Override
+	public List<StudentDTO> selectAllStudentList() {
 		// TODO Auto-generated method stub
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		List<StudentDTO> studentList=new ArrayList<>();
+		
 		try {
 			con=getConnection();
 			
-			String sql="select * from student where name=?";
+			String sql="select * from student order by no";
 			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, name);
-			
+
 			rs=pstmt.executeQuery();
 			
-			//검색행이 0개 이상인 경우 반복문 사용
+			// 검색행이 0개 이상인 경우 반복문 사용
 			while(rs.next()) {
 				//하나의 검색행을 DTO 객체로 매핑 처리
-				StudentDTO student=new StudentDTO();
+				StudentDTO student = new StudentDTO();
 				student.setNo(rs.getInt("no"));
 				student.setName(rs.getString("name"));
 				student.setPhone(rs.getString("phone"));
@@ -195,24 +239,15 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 				studentList.add(student);
 			}
 		} catch (SQLException e) {
-			System.out.println("[에러]selectNameStudentList() 메소드의 SQL 오류 = "+e.getMessage());
+			System.out.println("[에러]selectAllStudentList() 메소드의 SQL 오류 = "+e.getMessage());
 		} finally {
 			close(con, pstmt, rs);
 		}
+		
 		return studentList;
 	}
-	
-	
-	//================================================================================
-	// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 반환하는 메소드
-	@Override
-	public List<StudentDTO> selectAllStudentList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 
-	
+
 	
 
 }

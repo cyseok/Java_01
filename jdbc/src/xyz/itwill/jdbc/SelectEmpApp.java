@@ -13,40 +13,37 @@ public class SelectEmpApp {
 	
 	public static void main(String[] args) {
 		
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
+		Connection con=null;
+		Statement stmt=null;
+		ResultSet rs=null;
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "scott";
-			String password = "tiger";
-			con = DriverManager.getConnection(url, user, password);
+			String url="jdbc:oracle:thin:@localhost:1521:xe";
+			String user="scott";
+			String password="tiger";
+			con=DriverManager.getConnection(url, user, password);
 			
-			stmt = con.createStatement();
+			stmt=con.createStatement();
 			
-			String sql = "select empno, ename, sal from emp order by sal desc";
-			rs = stmt.executeQuery(sql);
+			String sql="select empno,ename,sal from emp order by sal desc";
+			rs=stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				System.out.println("사원번호 = " + rs.getString("empno") + "사원이름 = "
-			+ rs.getString("ename") + ", 급여 = " + rs.getInt("sal"));
-			}
-		} catch(ClassNotFoundException e) {
-			System.out.println("Error) OracleDriver 클래스를 찾을 수 없습니다.");
-		} catch(SQLException e) {
-			System.out.println("Error) JDBC 관련 오류 = " + e.getMessage());
+				System.out.println("사원번호 = "+rs.getString("empno")+", 사원이름 = "
+						+rs.getString("ename")+", 급여 = "+rs.getInt("sal"));
+			} 
+		} catch (ClassNotFoundException e) {
+			System.out.println("[에러]OracleDriver 클래스를 찾을 수 없습니다.");
+		} catch (SQLException e) {
+			System.out.println("[에러]JDBC 관련 오류 = "+e.getMessage());
 		} finally {
 			try {
 				if(rs != null) rs.close();
 				if(stmt != null) stmt.close();
 				if(con != null) con.close();
-				
 			} catch (SQLException e) {}
 		}
-		
 	}
-
 }
