@@ -78,6 +78,7 @@ public class login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
 		btnNewButton.setBounds(409, 261, 71, 53);
 		contentPane.add(btnNewButton);
 		
