@@ -19,7 +19,7 @@ BIRTH            DATE
 
 
 // STUDENT 테이블에 저장된 하나의 행을 저장
-public class StudentDTO {
+public class UserDTO_1 {
 	
 	
 	private int no;
@@ -28,11 +28,11 @@ public class StudentDTO {
 	private String address;
 	private String birthday;
 	
-	public StudentDTO() {
+	public UserDTO_1() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public StudentDTO(int no, String name, String phone, String address, String birthday) {
+	public UserDTO_1(int no, String name, String phone, String address, String birthday) {
 		super();
 		this.no = no;
 		this.name = name;

@@ -37,7 +37,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	//====================================================================
 	// 학생정보를 전달받아 STUDENT 테이블에 삽입하고 삽입행의 개수를 반환하는 메소드
 	@Override
-	public int insertStudent(StudentDTO student) {
+	public int insertStudent(UserDTO_1 student) {
 		// TODO Auto-generated method stub
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -68,7 +68,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	//====================================================================
 	// 학생정보를 전달받아 STUDENT 테이블에 저장된 정보를 변경하고 변경행 개수를 반환하는 메소드
 	@Override
-	public int updateStudent(StudentDTO student) {
+	public int updateStudent(UserDTO_1 student) {
 		// TODO Auto-generated method stub
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -124,13 +124,13 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	//================================================================================
 	// 학번을 전달받아  STUDENT 테이블에 저장된 정보를 검색하여 반환하는 메소드
 	@Override
-	public StudentDTO selectStudent(int no) {
+	public UserDTO_1 selectStudent(int no) {
 		// TODO Auto-generated method stub
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		StudentDTO student = null;
+		UserDTO_1 student = null;
 		
 		try {
 			con = getConnection();
@@ -145,7 +145,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 			
 			// ResultSet 객체에 저장된 검색행을 Java 객체로 매핑 처리
 			if(rs.next()) {  // 검색행이 있는 경우
-				student = new StudentDTO();
+				student = new UserDTO_1();
 				// 처리행의 컬럼값을 반환받아 DTO 객체의 필드값으로 변경
 				student.setNo(rs.getInt("no"));
 				student.setName(rs.getString("name"));
@@ -169,12 +169,12 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	// 이름을 전달받아 STUDENT 테이블에 저장된 해당 이름의 학생 정보 검색
 	
 	@Override
-	public List<StudentDTO> selectNameStudentList(String name) {
+	public List<UserDTO_1> selectNameStudentList(String name) {
 		// TODO Auto-generated method stub
 				Connection con=null;
 				PreparedStatement pstmt=null;
 				ResultSet rs=null;
-				List<StudentDTO> studentList=new ArrayList<>();
+				List<UserDTO_1> studentList=new ArrayList<>();
 				
 				try {
 					con=getConnection();
@@ -188,7 +188,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 					//검색행이 0개 이상인 경우 반복문 사용
 					while(rs.next()) {
 						//하나의 검색행을 DTO 객체로 매핑 처리
-						StudentDTO student=new StudentDTO();
+						UserDTO_1 student=new UserDTO_1();
 						student.setNo(rs.getInt("no"));
 						student.setName(rs.getString("name"));
 						student.setPhone(rs.getString("phone"));
@@ -210,12 +210,12 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 	//================================================================================
 	// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 반환하는 메소드
 	@Override
-	public List<StudentDTO> selectAllStudentList() {
+	public List<UserDTO_1> selectAllStudentList() {
 		// TODO Auto-generated method stub
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		List<StudentDTO> studentList=new ArrayList<>();
+		List<UserDTO_1> studentList=new ArrayList<>();
 		
 		try {
 			con=getConnection();
@@ -228,7 +228,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 			// 검색행이 0개 이상인 경우 반복문 사용
 			while(rs.next()) {
 				//하나의 검색행을 DTO 객체로 매핑 처리
-				StudentDTO student = new StudentDTO();
+				UserDTO_1 student = new UserDTO_1();
 				student.setNo(rs.getInt("no"));
 				student.setName(rs.getString("name"));
 				student.setPhone(rs.getString("phone"));

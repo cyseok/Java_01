@@ -9,23 +9,23 @@ import java.util.List;
 
 public interface StudentDAO {
 	// 학생정보를 전달받아 STUDENT 테이블에 삽입하고 삽입행의 개수를 반환하는 메소드
-	int insertStudent(StudentDTO student);
+	int insertStudent(UserDTO_1 student);
 	
 	// 학생정보를 전달받아 STUDENT 테이블에 저장된 정보를 변경하고 변경행 개수를 반환하는 메소드
-	int updateStudent(StudentDTO student);
+	int updateStudent(UserDTO_1 student);
 	
 	// 학번을 전달받아 STUDENT 테이블에 저장된 정보를 삭제하고 삭제행 개수를 반환하는 메소드
 	int deleteStudent(int no);
 	
 	// 학번을 전달받아  STUDENT 테이블에 저장된 정보를 검색하여 반환하는 메소드
 	// => 단일행은 값 또는 DTO 객체 반환
-	StudentDTO selectStudent(int no);
+	UserDTO_1 selectStudent(int no);
 	
 	// 이름을 전달받아 STUDENT 테이블에 저장된 해당 이름의 학생 정보 검색
-	List<StudentDTO> selectNameStudentList(String name);
+	List<UserDTO_1> selectNameStudentList(String name);
 	
 	// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 반환하는 메소드
-	List<StudentDTO> selectAllStudentList();
+	List<UserDTO_1> selectAllStudentList();
 	
 
 }
