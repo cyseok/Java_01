@@ -396,12 +396,12 @@ public class MoviePage extends JFrame implements ActionListener {
 			return;
 		}
 
-		String MOVIE_COUNTRYREG = "[가-힣][a-zA-Z]*$";
-		if (!Pattern.matches(MOVIE_COUNTRYREG, MOVIE_COUNTRY)) {
-			JOptionPane.showMessageDialog(this, "국가를 형식에 맞게 입력해 주세요.");
-			MOVIE_COUNTRY_TF.requestFocus();
-			return;
-		}
+		//String MOVIE_COUNTRYREG = "[가-힣][a-zA-Z]+$";
+		//if (!Pattern.matches(MOVIE_COUNTRYREG, MOVIE_COUNTRY)) {
+		//	JOptionPane.showMessageDialog(this, "국가를 형식에 맞게 입력해 주세요.");
+		//	MOVIE_COUNTRY_TF.requestFocus();
+		//	return;
+		//}
 
 		String MOVIE_DIRECTOR = MOVIE_DIRECTOR_TF.getText();
 
