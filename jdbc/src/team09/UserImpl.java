@@ -183,7 +183,7 @@ public class UserImpl extends JdbcDAO implements UserDAO{
 				UserList.add(user);
 			}
 		} catch (SQLException e) {
-			System.out.println("[에러]selectNameStudentList() 메소드의 SQL 오류 = "+e.getMessage());
+			System.out.println("[에러]selectNameUserList() 메소드의 SQL 오류 = "+e.getMessage());
 		} finally {
 			close(con, pstmt, rs);
 		}
@@ -220,7 +220,7 @@ public class UserImpl extends JdbcDAO implements UserDAO{
 				UserList.add(user);
 			}
 		} catch (SQLException e) {
-			System.out.println("[에러]selectAllStudentList() 메소드의 SQL 오류 = "+e.getMessage());
+			System.out.println("[에러]selectAllUserList() 메소드의 SQL 오류 = "+e.getMessage());
 		} finally {
 			close(con, pstmt, rs);
 		}

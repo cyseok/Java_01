@@ -1,4 +1,4 @@
-package xyz.itwill.student;
+package team09;
 
 import java.awt.EventQueue;
 
@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class join extends JFrame {
+public class JoinPage extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -26,7 +26,7 @@ public class join extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					join frame = new join();
+					JoinPage frame = new JoinPage();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,8 +38,7 @@ public class join extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public join() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public JoinPage() {
 		setBounds(100, 100, 580, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
