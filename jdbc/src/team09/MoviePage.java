@@ -30,7 +30,7 @@ public class MoviePage extends JFrame implements ActionListener {
 	public static final int UPDATE_CHANGE = 4;
 	public static final int SEARCH = 5;
 
-	JTextField MOVIE_TITLE_TF, MOVIE_GENRE_TF, MOVIE_COUNTRY_TF, MOVIE_TIME_TF, MOVIE_DIRECTIO_TF;
+	JTextField MOVIE_NO_TF, MOVIE_TITLE_TF, MOVIE_GENRE_TF, MOVIE_COUNTRY_TF, MOVIE_TIME_TF, MOVIE_DIRECTIO_TF;
 	JButton addB, deleteB, updateB, searchB, cancelB;
 
 	JTable table;
@@ -64,9 +64,9 @@ public class MoviePage extends JFrame implements ActionListener {
 		JPanel left = new JPanel();
 		left.setLayout(new GridLayout(5, 1));
 
-		//JPanel pMOVIE_No = new JPanel();
-		//pMOVIE_No.add(new JLabel("번호"));
-		//pMOVIE_No.add(MOVIE_TIME_TF = new JTextField(10));
+		JPanel pMOVIE_No = new JPanel();
+		pMOVIE_No.add(new JLabel("영화 번호"));
+		pMOVIE_No.add(MOVIE_NO_TF = new JTextField(10));
 		
 		JPanel pMOVIE_Name = new JPanel();
 		pMOVIE_Name.add(new JLabel("영화제목"));
@@ -84,12 +84,11 @@ public class MoviePage extends JFrame implements ActionListener {
 		pMOVIE_Country.add(new JLabel("국가"));
 		pMOVIE_Country.add(MOVIE_COUNTRY_TF = new JTextField(10));
 		
-
-
 		JPanel pMOVIE_DIRECTOR = new JPanel();
 		pMOVIE_DIRECTOR.add(new JLabel("감독"));
 		pMOVIE_DIRECTOR.add(MOVIE_DIRECTIO_TF = new JTextField(10));
 
+		left.add(pMOVIE_No);
 		left.add(pMOVIE_Name);
 		left.add(pMOVIE_Genre);
 		left.add(pMOVIE_Time);
@@ -137,6 +136,7 @@ public class MoviePage extends JFrame implements ActionListener {
 	}
 
 	public void initialize() {
+		MOVIE_NO_TF.setEditable(false);
 		MOVIE_TITLE_TF.setEditable(false);
 		MOVIE_GENRE_TF.setEditable(false);
 		MOVIE_COUNTRY_TF.setEditable(false);
@@ -154,22 +154,24 @@ public class MoviePage extends JFrame implements ActionListener {
 			MOVIE_DIRECTIO_TF.setEditable(true);
 			break;
 		case DELETE:
-			MOVIE_TITLE_TF.setEditable(true);
+			MOVIE_NO_TF.setEditable(true);
 			break;
 		case UPDATE:
-			MOVIE_TITLE_TF.setEditable(true);
+			MOVIE_NO_TF.setEditable(true);
 			break;
 		case UPDATE_CHANGE:
-			MOVIE_TITLE_TF.setEditable(false);
+			MOVIE_NO_TF.setEditable(false);
+			MOVIE_TITLE_TF.setEditable(true);
 			MOVIE_GENRE_TF.setEditable(true);
 			MOVIE_COUNTRY_TF.setEditable(true);
 			MOVIE_TIME_TF.setEditable(true);
 			MOVIE_DIRECTIO_TF.setEditable(true);
 			break;
 		case SEARCH:
-			MOVIE_GENRE_TF.setEditable(true);
+			MOVIE_TITLE_TF.setEditable(true);
 			break;
 		case NONE:
+			MOVIE_NO_TF.setEditable(false);
 			MOVIE_TITLE_TF.setEditable(false);
 			MOVIE_GENRE_TF.setEditable(false);
 			MOVIE_COUNTRY_TF.setEditable(false);
@@ -219,6 +221,7 @@ public class MoviePage extends JFrame implements ActionListener {
 	}
 
 	public void clear() {
+		MOVIE_NO_TF.setText("");
 		MOVIE_TITLE_TF.setText("");
 		MOVIE_GENRE_TF.setText("");
 		MOVIE_COUNTRY_TF.setText("");
