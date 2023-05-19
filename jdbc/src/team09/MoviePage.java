@@ -62,7 +62,7 @@ public class MoviePage extends JFrame implements ActionListener {
 		setLocation(dim.width / 2 - getWidth() / 2, dim.height / 2 - getHeight() / 2);
 
 		JPanel left = new JPanel();
-		left.setLayout(new GridLayout(5, 1));
+		left.setLayout(new GridLayout(6, 1));
 
 		JPanel pMOVIE_No = new JPanel();
 		pMOVIE_No.add(new JLabel("영화 번호"));
