@@ -30,7 +30,7 @@ public class MoviePage extends JFrame implements ActionListener {
 	public static final int UPDATE_CHANGE = 4;
 	public static final int SEARCH = 5;
 
-	JTextField MOVIE_NO_TF, MOVIE_TITLE_TF, MOVIE_GENRE_TF, MOVIE_COUNTRY_TF, MOVIE_TIME_TF, MOVIE_DIRECTIO_TF;
+	JTextField MOVIE_NO_TF,MOVIE_TITLE_TF, MOVIE_GENRE_TF, MOVIE_COUNTRY_TF, MOVIE_TIME_TF, MOVIE_DIRECTOR_TF;
 	JButton addB, deleteB, updateB, searchB, cancelB;
 
 	JTable table;
@@ -43,7 +43,7 @@ public class MoviePage extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public MoviePage() throws Exception {
-		
+
 		setTitle("◆◆◆ 영화 관리 프로그램 ◆◆◆");
 		/*
 		 * setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); setBounds(100, 100, 450,
@@ -67,7 +67,7 @@ public class MoviePage extends JFrame implements ActionListener {
 		JPanel pMOVIE_No = new JPanel();
 		pMOVIE_No.add(new JLabel("영화 번호"));
 		pMOVIE_No.add(MOVIE_NO_TF = new JTextField(10));
-		
+
 		JPanel pMOVIE_Name = new JPanel();
 		pMOVIE_Name.add(new JLabel("영화제목"));
 		pMOVIE_Name.add(MOVIE_TITLE_TF = new JTextField(10));
@@ -79,14 +79,14 @@ public class MoviePage extends JFrame implements ActionListener {
 		JPanel pMOVIE_Time = new JPanel();
 		pMOVIE_Time.add(new JLabel("상영시간"));
 		pMOVIE_Time.add(MOVIE_TIME_TF = new JTextField(10));
-		
+
 		JPanel pMOVIE_Country = new JPanel();
 		pMOVIE_Country.add(new JLabel("국가"));
 		pMOVIE_Country.add(MOVIE_COUNTRY_TF = new JTextField(10));
-		
+
 		JPanel pMOVIE_DIRECTOR = new JPanel();
 		pMOVIE_DIRECTOR.add(new JLabel("감독"));
-		pMOVIE_DIRECTOR.add(MOVIE_DIRECTIO_TF = new JTextField(10));
+		pMOVIE_DIRECTOR.add(MOVIE_DIRECTOR_TF = new JTextField(10));
 
 		left.add(pMOVIE_No);
 		left.add(pMOVIE_Name);
@@ -141,7 +141,7 @@ public class MoviePage extends JFrame implements ActionListener {
 		MOVIE_GENRE_TF.setEditable(false);
 		MOVIE_COUNTRY_TF.setEditable(false);
 		MOVIE_TIME_TF.setEditable(false);
-		MOVIE_DIRECTIO_TF.setEditable(false);
+		MOVIE_DIRECTOR_TF.setEditable(false);
 	}
 
 	public void setEditable(int n) {
@@ -151,7 +151,7 @@ public class MoviePage extends JFrame implements ActionListener {
 			MOVIE_GENRE_TF.setEditable(true);
 			MOVIE_COUNTRY_TF.setEditable(true);
 			MOVIE_TIME_TF.setEditable(true);
-			MOVIE_DIRECTIO_TF.setEditable(true);
+			MOVIE_DIRECTOR_TF.setEditable(true);
 			break;
 		case DELETE:
 			MOVIE_NO_TF.setEditable(true);
@@ -161,14 +161,14 @@ public class MoviePage extends JFrame implements ActionListener {
 			break;
 		case UPDATE_CHANGE:
 			MOVIE_NO_TF.setEditable(false);
-			MOVIE_TITLE_TF.setEditable(true);
+			MOVIE_TITLE_TF.setEditable(false);
 			MOVIE_GENRE_TF.setEditable(true);
 			MOVIE_COUNTRY_TF.setEditable(true);
 			MOVIE_TIME_TF.setEditable(true);
-			MOVIE_DIRECTIO_TF.setEditable(true);
+			MOVIE_DIRECTOR_TF.setEditable(true);
 			break;
 		case SEARCH:
-			MOVIE_TITLE_TF.setEditable(true);
+			MOVIE_GENRE_TF.setEditable(true);
 			break;
 		case NONE:
 			MOVIE_NO_TF.setEditable(false);
@@ -176,7 +176,7 @@ public class MoviePage extends JFrame implements ActionListener {
 			MOVIE_GENRE_TF.setEditable(false);
 			MOVIE_COUNTRY_TF.setEditable(false);
 			MOVIE_TIME_TF.setEditable(false);
-			MOVIE_DIRECTIO_TF.setEditable(false);
+			MOVIE_DIRECTOR_TF.setEditable(false);
 		}
 	}
 
@@ -226,7 +226,7 @@ public class MoviePage extends JFrame implements ActionListener {
 		MOVIE_GENRE_TF.setText("");
 		MOVIE_COUNTRY_TF.setText("");
 		MOVIE_TIME_TF.setText("");
-		MOVIE_DIRECTIO_TF.setText("");
+		MOVIE_DIRECTOR_TF.setText("");
 	}
 
 	public void initDisplay() {
@@ -237,7 +237,7 @@ public class MoviePage extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) throws Exception {
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -260,7 +260,7 @@ public class MoviePage extends JFrame implements ActionListener {
 					setEnable(ADD); // 컴퍼넌트의 활성화 상태 변경 - ADD 상태 변경
 				} else { // 두번째 [삽입] 버튼을 누른 경우 - ADD 상태
 					// 학생정보를 입력받아 STUDENT 테이블에 삽입하는 메소드 호출
-//					addMovie();
+					addMovie();
 				}
 			} else if (c == updateB) {
 				if (cmd != UPDATE && cmd != UPDATE_CHANGE) { // 첫번째 [변경] 버튼을 누른 경우 - NONE 상태
@@ -331,49 +331,66 @@ public class MoviePage extends JFrame implements ActionListener {
 		}
 
 	}
-/*
-	// 미완
-	public void addMovie() {
+	
+public void addMovie() {
 		
-//		String MOVIE_NO_Temp = MOVIE_NAME_TF.getText();
-//		if (MOVIE_NO_Temp.equals("")) {
-//			JOptionPane.showMessageDialog(this, "영화넘버를 반드시 입력해 주세요.");
-//			MOVIE_NAME_TF.requestFocus();
-//			return;
-//		}
-//
-//		String noReg = "^[1-9][0-9]{3}$";
-//
-//		if (!Pattern.matches(noReg, MOVIE_NO_Temp)) {// 정규표현식과 입력값의 입력패턴이 다른 경우
-//			JOptionPane.showMessageDialog(this, "넘버는 ~~~~ 입력해 주세요.");
-//			MOVIE_NAME_TF.requestFocus();
-//			return;
-//		}
-//
-//		int MOVIE_NO = Integer.parseInt(MOVIE_NO_Temp);// 문자열을 정수값으로 변환하여 변수에 저장
-//
-//		if (MovieDAOImpl.getDao().selectAllMovieList(MOVIE_NO) != null) {
-//			JOptionPane.showMessageDialog(this, "이미 사용중인 학번을 입력 하였습니다.");
-//			MOVIE_NAME_TF.requestFocus();
-//			return;
-//		}
 
 		
-		String MOVIE_TITLE = MOVIE_GENRE_TF.getText();
+		String MOVIE_TITLE = MOVIE_TITLE_TF.getText();
 
 		if (MOVIE_TITLE.equals("")) {
 			JOptionPane.showMessageDialog(this, "영화제목을 반드시 입력해 주세요.");
-			MOVIE_GENRE_TF.requestFocus();
+			MOVIE_TITLE_TF.requestFocus();
 			return;
 		}
 
-		String MOVIE_TITLEReg = "^[가-힣]{2,5}$";
-		if (!Pattern.matches(MOVIE_TITLEReg, MOVIE_TITLE)) {
-			JOptionPane.showMessageDialog(this, "영화제목은은 2~5 범위의 한글로만 입력해 주세요.");
+		//int MOVIE_NO = Integer.parseInt(MOVIE_NO_Temp);// 문자열을 정수값으로 변환하여 변수에 저장
+//★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+		//if (MovieDAOImpl.getDao().selectAllMovieList() != null) {
+		//	JOptionPane.showMessageDialog(this, "이미 사용중인 제목을 입력 하였습니다.");
+		//	MOVIE_TITLE_TF.requestFocus();
+		//	return;
+		//}
+		
+		//String MOVIE_TITLEReg = "^[가-힣]{2,5}$";
+		//if (!Pattern.matches(MOVIE_TITLEReg, MOVIE_TITLE)) {
+		//	JOptionPane.showMessageDialog(this, "영화제목은은 2~5 범위의 한글로만 입력해 주세요.");
+		//	MOVIE_GENRE_TF.requestFocus();
+		//	return;
+		//}
+
+		String MOVIE_GENRE = MOVIE_GENRE_TF.getText();
+		
+		if (MOVIE_GENRE.equals("")) {
+			JOptionPane.showMessageDialog(this, "장르를 반드시 입력해 주세요.");
 			MOVIE_GENRE_TF.requestFocus();
 			return;
 		}
-
+		
+		String MOVIE_TIME = MOVIE_TIME_TF.getText();
+		
+		if (MOVIE_TIME.equals("")) {
+			JOptionPane.showMessageDialog(this, "시간을 반드시 입력해 주세요.");
+			MOVIE_TIME_TF.requestFocus();
+			return;
+		}
+		
+		String MOVIE_TIMEReg = "^[0-9]+$";
+		
+		if (!Pattern.matches(MOVIE_TIMEReg, MOVIE_TIME)) {// 정규표현식과 입력값의 입력패턴이 다른 경우
+			JOptionPane.showMessageDialog(this, "시간은 숫자로 입력해 주세요.");
+			MOVIE_TIME_TF.requestFocus();
+			return;
+		}
+		
+		//String MOVIE_GENREReg = "[가-힣][a-z][A-Z]$";
+		//if (!Pattern.matches(MOVIE_GENREReg, MOVIE_GENRE)) {
+		//	JOptionPane.showMessageDialog(this, "장르를 형식에 맞게 입력해 주세요.");
+		//	MOVIE_COUNTRY_TF.requestFocus();
+		//	return;
+		//}
+		
+		
 		String MOVIE_COUNTRY = MOVIE_COUNTRY_TF.getText();
 
 		if (MOVIE_COUNTRY.equals("")) {
@@ -382,33 +399,19 @@ public class MoviePage extends JFrame implements ActionListener {
 			return;
 		}
 
-		String MOVIE_COUNTRYREG = "[가-힣][a-z][A-Z]$";
+		String MOVIE_COUNTRYREG = "[가-힣][a-zA-Z]*$";
 		if (!Pattern.matches(MOVIE_COUNTRYREG, MOVIE_COUNTRY)) {
 			JOptionPane.showMessageDialog(this, "국가를 형식에 맞게 입력해 주세요.");
 			MOVIE_COUNTRY_TF.requestFocus();
 			return;
 		}
 
-		String MOVIE_GENRE = MOVIE_TIME_TF.getText();
 
-		if (MOVIE_GENRE.equals("")) {
-			JOptionPane.showMessageDialog(this, "장르를 반드시 입력해 주세요.");
-			MOVIE_TIME_TF.requestFocus();
-			return;
-		}
-		
-		String MOVIE_GENREReg = "[가-힣][a-z][A-Z]$";
-		if (!Pattern.matches(MOVIE_GENREReg, MOVIE_GENRE)) {
-			JOptionPane.showMessageDialog(this, "장르를 형식에 맞게 입력해 주세요.");
-			MOVIE_COUNTRY_TF.requestFocus();
-			return;
-		}
+		String MOVIE_DIRECTOR = MOVIE_DIRECTOR_TF.getText();
 
-		String USER_EMAIL = MOVIE_DIRECTIO_TF.getText();
-
-		if (USER_EMAIL.equals("")) {
-			JOptionPane.showMessageDialog(this, "생년월일을 반드시 입력해 주세요.");
-			MOVIE_DIRECTIO_TF.requestFocus();
+		if (MOVIE_DIRECTOR.equals("")) {
+			JOptionPane.showMessageDialog(this, "감독을 반드시 입력해 주세요.");
+			MOVIE_DIRECTOR_TF.requestFocus();
 			return;
 		}
 
@@ -420,174 +423,127 @@ public class MoviePage extends JFrame implements ActionListener {
 //		}
 
 		MovieDTO movie = new MovieDTO();
-		movie.setUSER_NO(MOVIE_NO);
-		movie.setUSER_ID(MOVIE_TITLE);
-		movie.setUSER_PW(MOVIE_COUNTRY);
-		movie.setUSER_NAME(MOVIE_GENRE);
-		movie.setUSER_EMAIL(USER_EMAIL);
+		movie.setMOVIE_TITLE(MOVIE_TITLE);
+		movie.setMOVIE_GENRE(MOVIE_GENRE);
+		movie.setMOVIE_TIME(MOVIE_TIME);
+		movie.setMOVIE_COUNTRY(MOVIE_COUNTRY);
+		movie.setMOVIE_DIRECTOR(MOVIE_DIRECTOR);
 
-		int rows = UserDAOImpl.getDao().insertUser(movie);
+		int rows = MovieDAOImpl.getDao().insertMovie(movie);
 
-		JOptionPane.showMessageDialog(this, rows + "명의 user정보를 삽입 하였습니다.");
-
-		displayAllMovie();// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 출력
-		initDisplay();// 모든 컴퍼넌트 초기화
-
-	}
-
-	public void modifyUser() {
-
-		int USER_NO = Integer.parseInt(MOVIE_TITLE_TF.getText());// 학번을 반환받아 저장
-
-		// JTextField 컴퍼넌트에 입력된 변경값을 반환받아 저장
-		String USER_ID = MOVIE_GENRE_TF.getText();
-
-		if (USER_ID.equals("")) {
-			JOptionPane.showMessageDialog(this, "이름을 반드시 입력해 주세요.");
-			MOVIE_GENRE_TF.requestFocus();
-			return;
-		}
-
-		String USER_IDReg = "^[가-힣]{2,5}$";
-		if (!Pattern.matches(USER_IDReg, USER_ID)) {
-			JOptionPane.showMessageDialog(this, "이름은 2~5 범위의 한글로만 입력해 주세요.");
-			MOVIE_GENRE_TF.requestFocus();
-			return;
-		}
-
-		String USER_PW = MOVIE_COUNTRY_TF.getText();
-
-		if (USER_PW.equals("")) {
-			JOptionPane.showMessageDialog(this, "전화번호를 반드시 입력해 주세요.");
-			MOVIE_COUNTRY_TF.requestFocus();
-			return;
-		}
-
-		String USER_PWReg = "(01[016789])-\\d{3,4}-\\d{4}";
-		if (!Pattern.matches(USER_PWReg, USER_PW)) {
-			JOptionPane.showMessageDialog(this, "전화번호를 형식에 맞게 입력해 주세요.");
-			MOVIE_COUNTRY_TF.requestFocus();
-			return;
-		}
-
-		String USER_NAME = MOVIE_TIME_TF.getText();
-
-		if (USER_NAME.equals("")) {
-			JOptionPane.showMessageDialog(this, "주소를 반드시 입력해 주세요.");
-			MOVIE_TIME_TF.requestFocus();
-			return;
-		}
-
-		String USER_EMAIL = MOVIE_DIRECTIO_TF.getText();
-
-		if (USER_EMAIL.equals("")) {
-			JOptionPane.showMessageDialog(this, "생년월일을 반드시 입력해 주세요.");
-			MOVIE_DIRECTIO_TF.requestFocus();
-			return;
-		}
-
-		String USER_EMAILReg = "(19|20)\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])";
-		if (!Pattern.matches(USER_EMAILReg, USER_EMAIL)) {
-			JOptionPane.showMessageDialog(this, "생년월일을 형식에 맞게 입력해 주세요.");
-			MOVIE_DIRECTIO_TF.requestFocus();
-			return;
-		}
-
-		MovieDTO user = new MovieDTO();
-		user.setUSER_NO(USER_NO);
-		user.setUSER_ID(USER_ID);
-		user.setUSER_PW(USER_PW);
-		user.setUSER_NAME(USER_NAME);
-		user.setUSER_EMAIL(USER_EMAIL);
-
-		int rows = UserDAOImpl.getDao().insertUser(user);
-
-		JOptionPane.showMessageDialog(this, rows + "명의 user정보를 삽입 하였습니다.");
+		JOptionPane.showMessageDialog(this, rows + "개의 영화정보를 삽입 하였습니다.");
 
 		displayAllMovie();// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 출력
 		initDisplay();// 모든 컴퍼넌트 초기화
 
 	}
-
-	public void removeUser() {
-
-		String USER_ID = MOVIE_GENRE_TF.getText();
-		if (USER_ID.equals("")) {
-			JOptionPane.showMessageDialog(this, "USER_ID_TF을 반드시 입력해 주세요.");
-			MOVIE_GENRE_TF.requestFocus();
-			return;
-		}
-
-		String USER_IDReg = "^[1-9][0-9]{3}$";
-		if (!Pattern.matches(USER_IDReg, USER_ID)) {
-			JOptionPane.showMessageDialog(this, "USER_ID_TF은 4자리 숫자로만 입력해 주세요.");
-			MOVIE_GENRE_TF.requestFocus();
-			return;
-		}
-
-		int no = Integer.parseInt(USER_ID);
-
-		// 학번을 전달받아 STUDENT 테이블에 저장된 해당 학번의 학생정보를 삭제하는
-		// DAO 클래스의 메소드 호출
-		int rows = UserDAOImpl.getDao().deleteUser(no);
-
-		if (rows > 0) {
-			JOptionPane.showMessageDialog(this, rows + "명의 학생정보를 삭제 하였습니다.");
-			displayAllMovie();
-		} else {
-			JOptionPane.showMessageDialog(this, "삭제할 학번의 학생정보가 없습니다.");
-		}
-
-		initDisplay();
-
-	}
-
-	public void searchNameUSer() {
-
-		String USER_NAME = MOVIE_TIME_TF.getText();
-
-		if (USER_NAME.equals("")) {
-			JOptionPane.showMessageDialog(this, "이름을 반드시 입력해 주세요.");
-			MOVIE_TIME_TF.requestFocus();
-			return;
-		}
-
-		String USER_NAMEReg = "^[가-힣]{2,5}$";
-		if (!Pattern.matches(USER_NAMEReg, USER_NAME)) {
-			JOptionPane.showMessageDialog(this, "이름은 2~5 범위의 한글로만 입력해 주세요.");
-			MOVIE_TIME_TF.requestFocus();
-			return;
-		}
-
-		// 이름을 전달받아 STUDENT 테이블에 저장된 해당 이름의 학생정보를 검색하여 반환
-		// 하는 DAO 클래스의 메소드 호출
-		List<MovieDTO> userList = UserDAOImpl.getDao().selectNameUserList(USER_NAME);
-
-		if (userList.isEmpty()) {
-			JOptionPane.showMessageDialog(this, "검색된 학생정보가 없습니다.");
-			return;
-		}
-		DefaultTableModel model = (DefaultTableModel) table.getModel();
-
-		// JTable 컴퍼넌트 초기화 - 기존 출력행 삭제 처리
-		for (int i = model.getRowCount(); i > 0; i--) {
-			model.removeRow(0);
-		}
-
-		for (MovieDTO user : userList) {
-			// Vector 객체 생성 -> JTable 컴퍼넌트에 추가될 하나의 행을 저장하기 위한 객체
-			Vector<Object> rowData = new Vector<>();
-			// StudentDTO 객체의 필드값을 vector 객체의 요소로 추가
-			rowData.add(user.getUSER_NO());
-			rowData.add(user.getUSER_ID());
-			rowData.add(user.getUSER_PW());
-			rowData.add(user.getUSER_NAME());
-			rowData.add(user.getUSER_EMAIL());
-
-			model.addRow(rowData);
-		}
-	}
-
-	*/
+	 
 	
+	/*
+	 * public void modifyUser() {
+	 * 
+	 * int USER_NO = Integer.parseInt(MOVIE_TITLE_TF.getText());// 학번을 반환받아 저장
+	 * 
+	 * // JTextField 컴퍼넌트에 입력된 변경값을 반환받아 저장 String USER_ID =
+	 * MOVIE_GENRE_TF.getText();
+	 * 
+	 * if (USER_ID.equals("")) { JOptionPane.showMessageDialog(this,
+	 * "이름을 반드시 입력해 주세요."); MOVIE_GENRE_TF.requestFocus(); return; }
+	 * 
+	 * String USER_IDReg = "^[가-힣]{2,5}$"; if (!Pattern.matches(USER_IDReg,
+	 * USER_ID)) { JOptionPane.showMessageDialog(this, "이름은 2~5 범위의 한글로만 입력해 주세요.");
+	 * MOVIE_GENRE_TF.requestFocus(); return; }
+	 * 
+	 * String USER_PW = MOVIE_COUNTRY_TF.getText();
+	 * 
+	 * if (USER_PW.equals("")) { JOptionPane.showMessageDialog(this,
+	 * "전화번호를 반드시 입력해 주세요."); MOVIE_COUNTRY_TF.requestFocus(); return; }
+	 * 
+	 * String USER_PWReg = "(01[016789])-\\d{3,4}-\\d{4}"; if
+	 * (!Pattern.matches(USER_PWReg, USER_PW)) { JOptionPane.showMessageDialog(this,
+	 * "전화번호를 형식에 맞게 입력해 주세요."); MOVIE_COUNTRY_TF.requestFocus(); return; }
+	 * 
+	 * String USER_NAME = MOVIE_TIME_TF.getText();
+	 * 
+	 * if (USER_NAME.equals("")) { JOptionPane.showMessageDialog(this,
+	 * "주소를 반드시 입력해 주세요."); MOVIE_TIME_TF.requestFocus(); return; }
+	 * 
+	 * String USER_EMAIL = MOVIE_DIRECTIO_TF.getText();
+	 * 
+	 * if (USER_EMAIL.equals("")) { JOptionPane.showMessageDialog(this,
+	 * "생년월일을 반드시 입력해 주세요."); MOVIE_DIRECTIO_TF.requestFocus(); return; }
+	 * 
+	 * String USER_EMAILReg =
+	 * "(19|20)\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"; if
+	 * (!Pattern.matches(USER_EMAILReg, USER_EMAIL)) {
+	 * JOptionPane.showMessageDialog(this, "생년월일을 형식에 맞게 입력해 주세요.");
+	 * MOVIE_DIRECTIO_TF.requestFocus(); return; }
+	 * 
+	 * MovieDTO user = new MovieDTO(); user.setUSER_NO(USER_NO);
+	 * user.setUSER_ID(USER_ID); user.setUSER_PW(USER_PW);
+	 * user.setUSER_NAME(USER_NAME); user.setUSER_EMAIL(USER_EMAIL);
+	 * 
+	 * int rows = UserDAOImpl.getDao().insertUser(user);
+	 * 
+	 * JOptionPane.showMessageDialog(this, rows + "명의 user정보를 삽입 하였습니다.");
+	 * 
+	 * displayAllMovie();// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 출력 initDisplay();// 모든
+	 * 컴퍼넌트 초기화
+	 * 
+	 * }
+	 * 
+	 * public void removeUser() {
+	 * 
+	 * String USER_ID = MOVIE_GENRE_TF.getText(); if (USER_ID.equals("")) {
+	 * JOptionPane.showMessageDialog(this, "USER_ID_TF을 반드시 입력해 주세요.");
+	 * MOVIE_GENRE_TF.requestFocus(); return; }
+	 * 
+	 * String USER_IDReg = "^[1-9][0-9]{3}$"; if (!Pattern.matches(USER_IDReg,
+	 * USER_ID)) { JOptionPane.showMessageDialog(this,
+	 * "USER_ID_TF은 4자리 숫자로만 입력해 주세요."); MOVIE_GENRE_TF.requestFocus(); return; }
+	 * 
+	 * int no = Integer.parseInt(USER_ID);
+	 * 
+	 * // 학번을 전달받아 STUDENT 테이블에 저장된 해당 학번의 학생정보를 삭제하는 // DAO 클래스의 메소드 호출 int rows =
+	 * UserDAOImpl.getDao().deleteUser(no);
+	 * 
+	 * if (rows > 0) { JOptionPane.showMessageDialog(this, rows +
+	 * "명의 학생정보를 삭제 하였습니다."); displayAllMovie(); } else {
+	 * JOptionPane.showMessageDialog(this, "삭제할 학번의 학생정보가 없습니다."); }
+	 * 
+	 * initDisplay();
+	 * 
+	 * }
+	 * 
+	 * public void searchNameUSer() {
+	 * 
+	 * String USER_NAME = MOVIE_TIME_TF.getText();
+	 * 
+	 * if (USER_NAME.equals("")) { JOptionPane.showMessageDialog(this,
+	 * "이름을 반드시 입력해 주세요."); MOVIE_TIME_TF.requestFocus(); return; }
+	 * 
+	 * String USER_NAMEReg = "^[가-힣]{2,5}$"; if (!Pattern.matches(USER_NAMEReg,
+	 * USER_NAME)) { JOptionPane.showMessageDialog(this,
+	 * "이름은 2~5 범위의 한글로만 입력해 주세요."); MOVIE_TIME_TF.requestFocus(); return; }
+	 * 
+	 * // 이름을 전달받아 STUDENT 테이블에 저장된 해당 이름의 학생정보를 검색하여 반환 // 하는 DAO 클래스의 메소드 호출
+	 * List<MovieDTO> userList = UserDAOImpl.getDao().selectNameUserList(USER_NAME);
+	 * 
+	 * if (userList.isEmpty()) { JOptionPane.showMessageDialog(this,
+	 * "검색된 학생정보가 없습니다."); return; } DefaultTableModel model = (DefaultTableModel)
+	 * table.getModel();
+	 * 
+	 * // JTable 컴퍼넌트 초기화 - 기존 출력행 삭제 처리 for (int i = model.getRowCount(); i > 0;
+	 * i--) { model.removeRow(0); }
+	 * 
+	 * for (MovieDTO user : userList) { // Vector 객체 생성 -> JTable 컴퍼넌트에 추가될 하나의 행을
+	 * 저장하기 위한 객체 Vector<Object> rowData = new Vector<>(); // StudentDTO 객체의 필드값을
+	 * vector 객체의 요소로 추가 rowData.add(user.getUSER_NO());
+	 * rowData.add(user.getUSER_ID()); rowData.add(user.getUSER_PW());
+	 * rowData.add(user.getUSER_NAME()); rowData.add(user.getUSER_EMAIL());
+	 * 
+	 * model.addRow(rowData); } }
+	 * 
+	 */
+
 }

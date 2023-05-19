@@ -62,4 +62,34 @@ public class MovieDAOImpl extends JdbcDAO implements MovieDAO {
 		return MovieList;
 	
 }
+
+	@Override
+	public int insertMovie(MovieDTO movie) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int rows = 0;
+
+		try {
+			con = getConnection();
+			
+			String sql = "insert into MOVIE_INFO(MOVIE_NO,MOVIE_TITLE, MOVIE_GENRE, MOVIE_TIME, MOVIE_COUNTRY, MOVIE_DIRECTOR) values(MOVIE_SEQ.NEXTVAL, ?, ?, ?, ?,?)";
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, movie.getMOVIE_TITLE());
+			pstmt.setString(2, movie.getMOVIE_GENRE());
+			pstmt.setString(3, movie.getMOVIE_TIME());
+			pstmt.setString(4, movie.getMOVIE_COUNTRY());
+			pstmt.setString(5, movie.getMOVIE_DIRECTOR());
+
+			rows = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println("error) insertMovie() 메소드의 SQL 오류 = " + e.getMessage());
+
+		} finally {
+			close(con, pstmt);
+		}
+		return rows;
+	}
 }
