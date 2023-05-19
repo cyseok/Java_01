@@ -78,8 +78,10 @@ public class LoginPage extends JFrame {
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				String temp = textField.getText();
 				System.out.println(temp);
+				
 			}
 		});
 		

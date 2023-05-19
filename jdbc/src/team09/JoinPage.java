@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -83,9 +84,15 @@ public class JoinPage extends JFrame {
 		textField_3.setColumns(10);
 		
 		JButton btnNewButton = new JButton("가입하기");
+		
 		btnNewButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.");
+				dispose();
+				
 			}
+
 		});
 		btnNewButton.setBounds(64, 395, 97, 23);
 		contentPane.add(btnNewButton);

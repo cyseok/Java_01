@@ -2,7 +2,7 @@ package team09;
 
 import java.util.List;
 
-import xyz.itwill.student.UserDTO_1;
+import team09.UserDTO;
 
 public interface UserDAO {
 	

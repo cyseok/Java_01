@@ -247,8 +247,13 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 		return studentList;
 	}
 
+	@Override
+	public List<UserDTO_1> selectAllUserList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	
 
 }
-

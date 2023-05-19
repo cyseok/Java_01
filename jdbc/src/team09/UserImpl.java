@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import xyz.itwill.student.UserDTO_1;
-
 
 public class UserImpl extends JdbcDAO implements UserDAO{
 
@@ -138,7 +136,7 @@ public class UserImpl extends JdbcDAO implements UserDAO{
 						user.setUSER_ID(rs.getString("USER_ID"));
 						user.setUSER_PW(rs.getString("USER_PW"));
 						user.setUSER_NAME(rs.getString("USER_NAME"));
-						user.setUSER_EMAIL(rs.getString("USER_EMAIL").substring(0, 10));
+						user.setUSER_EMAIL(rs.getString("USER_EMAIL"));
 						
 					}
 				} catch (SQLException e) {
@@ -177,7 +175,7 @@ public class UserImpl extends JdbcDAO implements UserDAO{
 				user.setUSER_ID(rs.getString("USER_ID"));
 				user.setUSER_PW(rs.getString("USER_PW"));
 				user.setUSER_NAME(rs.getString("USER_NAME"));
-				user.setUSER_EMAIL(rs.getString("USER_EMAIL").substring(0, 10));
+				user.setUSER_EMAIL(rs.getString("USER_EMAIL"));
 				
 				//DTO 객체를 List 객체의 요소로 추가 
 				UserList.add(user);
@@ -214,7 +212,7 @@ public class UserImpl extends JdbcDAO implements UserDAO{
 				user.setUSER_ID(rs.getString("USER_ID"));
 				user.setUSER_PW(rs.getString("USER_PW"));
 				user.setUSER_NAME(rs.getString("USER_NAME"));
-				user.setUSER_EMAIL(rs.getString("USER_EMAIL").substring(0, 10));
+				user.setUSER_EMAIL(rs.getString("USER_EMAIL"));
 				
 				//DTO 객체를 List 객체의 요소로 추가 
 				UserList.add(user);

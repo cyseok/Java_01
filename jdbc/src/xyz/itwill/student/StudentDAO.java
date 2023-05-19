@@ -25,7 +25,7 @@ public interface StudentDAO {
 	List<UserDTO_1> selectNameStudentList(String name);
 	
 	// STUDENT 테이블에 저장된 모든 학생정보를 검색하여 반환하는 메소드
-	List<UserDTO_1> selectAllStudentList();
+	List<UserDTO_1> selectAllUserList();
 	
 
 }

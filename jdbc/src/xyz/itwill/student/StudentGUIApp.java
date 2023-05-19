@@ -243,7 +243,7 @@ public class StudentGUIApp extends JFrame implements ActionListener {
 					setEnable(ADD);  //컴퍼넌트의 활성화 상태 변경 - ADD 상태 변경					
 				} else {  //두번째 [삽입] 버튼을 누른 경우 - ADD 상태
 					//학생정보를 입력받아 STUDENT 테이블에 삽입하는 메소드 호출
-					addStudent();
+					addUser();
 				}
 			} else if (c == updateB) {
 				if (cmd != UPDATE && cmd != UPDATE_CHANGE) {  //첫번째 [변경] 버튼을 누른 경우 - NONE 상태
@@ -319,7 +319,7 @@ public class StudentGUIApp extends JFrame implements ActionListener {
 	//JTextField 컴퍼넌트로 입력된 학생정보를 제공받아 STUDENT 테이블에 삽입하여 저장하고 
 	//STUDENT 테이블에 저장된 모든 학생정보를 검색하여 JTable 컴퍼넌트에 출력하는 메소드
 	// => 컴퍼넌트 초기화 및 NONE 상태 변경
-	public void addStudent() {
+	public void addUser() {
 		String noTemp = noTF.getText();  // JTextField 컴퍼넌트 입력값 저장
 		
 		if(noTemp.equals("")) {

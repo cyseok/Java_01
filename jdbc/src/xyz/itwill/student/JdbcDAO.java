@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import oracle.ucp.jdbc.PoolDataSource;
 import oracle.ucp.jdbc.PoolDataSourceFactory;
@@ -73,6 +74,11 @@ public abstract class JdbcDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public List<UserDTO_1> selectAllStudentList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
