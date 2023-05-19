@@ -22,8 +22,6 @@ public class LoginPage extends JFrame {
 	private JTextField textFieldID;
 	private JPasswordField textFieldPW;
 
-	JoinPage joinPage = new JoinPage();
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -86,6 +84,7 @@ public class LoginPage extends JFrame {
 		btnJoin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				JoinPage joinPage = new JoinPage();
 				joinPage.setVisible(true);
 			}
 		});
@@ -102,8 +101,14 @@ public class LoginPage extends JFrame {
 		if (id.equals(user.getUSER_ID()) && pw.equals(user.getUSER_PW())) {
 
 			System.out.println("Success");
-			JoinPage dialog = new JoinPage();
-			dialog.setVisible(true);
+			MoviePage dialog;
+			try {
+				dialog = new MoviePage();
+				dialog.setVisible(true);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			System.out.println("Incorrect contents");
 		}

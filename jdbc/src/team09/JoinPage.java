@@ -32,6 +32,7 @@ public class JoinPage extends JFrame {
 				try {
 					JoinPage frame = new JoinPage();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,28 +50,30 @@ public class JoinPage extends JFrame {
 		contentPane.setLayout(null);
 
 		setTitle("회원가입");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 
 		c.add(new JLabel("아이디 "));
 		textFieldID = new JTextField(20);
 		c.add(textFieldID);
-		
+
 		c.add(new JLabel("비밀번호 "));
 		textFieldPW = new JPasswordField(18);
 		c.add(textFieldPW);
-		
+
 		c.add(new JLabel("이름 "));
 		textFieldName = new JTextField(20);
 		c.add(textFieldName);
-		
+
 		c.add(new JLabel("이메일 "));
 		textFieldEmail = new JTextField(20);
 		c.add(textFieldEmail);
 
 		setSize(300, 180);
 		setVisible(true);
+		
+		
 
 		JButton btnSubmit = new JButton("가입하기");
 		btnSubmit.addActionListener(new ActionListener() {
@@ -88,8 +91,6 @@ public class JoinPage extends JFrame {
 		btnSubmit.setBounds(64, 395, 97, 23);
 		contentPane.add(btnSubmit);
 	}
-	
-	
 
 	public void sendInfo(String id, String pw, String name, String Email) {
 
@@ -106,7 +107,7 @@ public class JoinPage extends JFrame {
 			textFieldID.requestFocus();
 			return;
 		}
-		
+
 		// 비밀번호 정규표현식
 		if (pw.equals("")) {
 			JOptionPane.showMessageDialog(this, "비밀번호를 반드시 입력해 주세요.");
@@ -120,7 +121,7 @@ public class JoinPage extends JFrame {
 			textFieldPW.requestFocus();
 			return;
 		}
-		
+
 		// 이름 정규표현식
 		if (name.equals("")) {
 			JOptionPane.showMessageDialog(this, "이름을 반드시 입력해 주세요.");
@@ -134,7 +135,7 @@ public class JoinPage extends JFrame {
 			textFieldName.requestFocus();
 			return;
 		}
-		
+
 		// 이메일 정규표현식
 		if (Email.equals("")) {
 			JOptionPane.showMessageDialog(this, "이메일을 반드시 입력해 주세요.");
@@ -148,7 +149,7 @@ public class JoinPage extends JFrame {
 			textFieldEmail.requestFocus();
 			return;
 		}
-		
+
 		UserDTO user = new UserDTO();
 		user.setUSER_ID(id);
 		user.setUSER_PW(pw);
@@ -158,8 +159,6 @@ public class JoinPage extends JFrame {
 		int rows = UserDAOImpl.getDao().insertUser(user);
 
 		System.out.println(rows + "명의 유저 정보를 삽입했습니다.");
-		
-		dispose();
 
 	}
 
