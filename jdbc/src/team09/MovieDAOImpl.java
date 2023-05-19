@@ -92,4 +92,44 @@ public class MovieDAOImpl extends JdbcDAO implements MovieDAO {
 		}
 		return rows;
 	}
+	
+	@Override
+	public int deleteMovie(int movie) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int rows = 0;
+
+		try {
+			con = getConnection();
+
+			String sql = "delete from MOVIE_INFO where MOVIE_NO=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, movie);
+
+			rows = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("error) deleteMovie() 메소드의 SQL 오류 = " + e.getMessage());
+
+		} finally {
+			close(con, pstmt);
+		}
+		return rows;
+	}
+	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

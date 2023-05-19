@@ -77,4 +77,5 @@ public abstract class JdbcDAO {
 			e.printStackTrace();
 		}
 	}
+
 }
