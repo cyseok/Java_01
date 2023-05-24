@@ -23,25 +23,22 @@ public class MovieDAOImpl extends JdbcDAO implements MovieDAO {
 	}
 
 	@Override
-	public List<MovieDTO> selectAllMovieList() {
-		
-	
+	public List<MovieDTO> selectTitleMoiveList(String name) {
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<MovieDTO> MovieList = new ArrayList<>();
-
+		List<MovieDTO> movieList = new ArrayList<>();
 		try {
 			con = getConnection();
 
-			String sql = "select * from MOVIE_INFO order by MOVIE_NO";
+			String sql = "select * from MOVIE_INFO where REPLACE(MOVIE_TITLE,' ', '') like '%'||?||'%' order by MOVIE_NO";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
 
 			rs = pstmt.executeQuery();
 
-			// 검색행이 0개 이상인 경우 반복문 사용
 			while (rs.next()) {
-				// 하나의 검색행을 DTO 객체로 매핑 처리
 				MovieDTO movie = new MovieDTO();
 				movie.setMOVIE_NO(rs.getInt("MOVIE_NO"));
 				movie.setMOVIE_TITLE(rs.getString("MOVIE_TITLE"));
@@ -50,74 +47,192 @@ public class MovieDAOImpl extends JdbcDAO implements MovieDAO {
 				movie.setMOVIE_COUNTRY(rs.getString("MOVIE_COUNTRY"));
 				movie.setMOVIE_DIRECTOR(rs.getString("MOVIE_DIRECTOR"));
 
-				// DTO 객체를 List 객체의 요소로 추가
-				MovieList.add(movie);
+				movieList.add(movie);
+
+			}
+		} catch (SQLException e) {
+			System.out.println("[에러]selectTitleMoiveList() 메소드의 SQL 오류 = " + e.getMessage());
+		} finally {
+			close(con, pstmt, rs);
+		}
+
+		return movieList;
+	}
+
+	@Override
+	public List<MovieDTO> selectAllMovieList() {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<MovieDTO> movieList = new ArrayList<>();
+		try {
+			con = getConnection();
+
+			String sql = "select * from MOVIE_INFO order by MOVIE_NO";
+			pstmt = con.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				MovieDTO movie = new MovieDTO();
+				movie.setMOVIE_NO(rs.getInt("MOVIE_NO"));
+				movie.setMOVIE_TITLE(rs.getString("MOVIE_TITLE"));
+				movie.setMOVIE_GENRE(rs.getString("MOVIE_GENRE"));
+				movie.setMOVIE_TIME(rs.getString("MOVIE_TIME"));
+				movie.setMOVIE_COUNTRY(rs.getString("MOVIE_COUNTRY"));
+				movie.setMOVIE_DIRECTOR(rs.getString("MOVIE_DIRECTOR"));
+
+				movieList.add(movie);
 			}
 		} catch (SQLException e) {
 			System.out.println("[에러]selectAllStudentList() 메소드의 SQL 오류 = " + e.getMessage());
 		} finally {
 			close(con, pstmt, rs);
 		}
-
-		return MovieList;
-	
-}
+		return movieList;
+	}
 
 	@Override
+
 	public int insertMovie(MovieDTO movie) {
-		
+
 		Connection con = null;
+
 		PreparedStatement pstmt = null;
+
 		int rows = 0;
 
 		try {
+
 			con = getConnection();
-			
+
 			String sql = "insert into MOVIE_INFO(MOVIE_NO,MOVIE_TITLE, MOVIE_GENRE, MOVIE_TIME, MOVIE_COUNTRY, MOVIE_DIRECTOR) values(MOVIE_SEQ.NEXTVAL, ?, ?, ?, ?,?)";
+
 			pstmt = con.prepareStatement(sql);
-			
+
 			pstmt.setString(1, movie.getMOVIE_TITLE());
+
 			pstmt.setString(2, movie.getMOVIE_GENRE());
+
 			pstmt.setString(3, movie.getMOVIE_TIME());
+
 			pstmt.setString(4, movie.getMOVIE_COUNTRY());
+
 			pstmt.setString(5, movie.getMOVIE_DIRECTOR());
 
 			rows = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
+
 			System.out.println("error) insertMovie() 메소드의 SQL 오류 = " + e.getMessage());
 
 		} finally {
-			close(con, pstmt);
-		}
-		return rows;
-	}
-	
-	@Override
-	public int deleteMovie(int movie) {
 
+			close(con, pstmt);
+
+		}
+
+		return rows;
+
+	}
+
+	@Override
+	public int updateMovie(MovieDTO movie) {
+		// TODO Auto-generated method stub
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		int rows = 0;
+		int movieList = 0;
 
 		try {
 			con = getConnection();
 
-			String sql = "delete from MOVIE_INFO where MOVIE_NO=?";
+			String sql = "update MOVIE_INFO set MOVIE_TITLE=?, MOVIE_GENRE=?, MOVIE_TIME=?, MOVIE_COUNTRY=?, MOVIE_DIRECTOR=? where MOVIE_NO=?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, movie);
+			pstmt.setString(1, movie.getMOVIE_TITLE());
+			pstmt.setString(2, movie.getMOVIE_GENRE());
+			pstmt.setString(3, movie.getMOVIE_TIME());
+			pstmt.setString(4, movie.getMOVIE_COUNTRY());
+			pstmt.setString(5, movie.getMOVIE_DIRECTOR());
+			pstmt.setInt(6, movie.getMOVIE_NO());
 
-			rows = pstmt.executeUpdate();
-			
+			movieList = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("error) deleteMovie() 메소드의 SQL 오류 = " + e.getMessage());
+			System.out.println("error) updateUser() 메소드의 SQL 오류 = " + e.getMessage());
 
 		} finally {
 			close(con, pstmt);
 		}
-		return rows;
+		return movieList;
 	}
-	
+
+	@Override
+	public MovieDTO selectMovie(String no) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		MovieDTO movie = null;
+		try {
+			con = getConnection();
+
+			String sql = "select * from MOVIE_INFO where MOVIE_NO = ? order by MOVIE_NO";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				movie = new MovieDTO();
+				movie.setMOVIE_NO(rs.getInt("MOVIE_NO"));
+				movie.setMOVIE_TITLE(rs.getString("MOVIE_TITLE"));
+				movie.setMOVIE_GENRE(rs.getString("MOVIE_GENRE"));
+				movie.setMOVIE_TIME(rs.getString("MOVIE_TIME"));
+				movie.setMOVIE_COUNTRY(rs.getString("MOVIE_COUNTRY"));
+				movie.setMOVIE_DIRECTOR(rs.getString("MOVIE_DIRECTOR"));
+			}
+		} catch (SQLException e) {
+			System.out.println("[에러]selectAllStudentList() 메소드의 SQL 오류 = " + e.getMessage());
+		} finally {
+			close(con, pstmt, rs);
+		}
+		return movie;
+	}
+
+	@Override
+
+	public int deleteMovie(int movie) {
+
+		Connection con = null;
+
+		PreparedStatement pstmt = null;
+
+		int rows = 0;
+
+		try {
+
+			con = getConnection();
+
+			String sql = "delete from MOVIE_INFO where MOVIE_NO=?";
+
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setInt(1, movie);
+
+			rows = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+
+			System.out.println("error) deleteMovie() 메소드의 SQL 오류 = " + e.getMessage());
+
+		} finally {
+
+			close(con, pstmt);
+
+		}
+
+		return rows;
+
+	}
 
 }
 

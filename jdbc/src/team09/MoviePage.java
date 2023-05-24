@@ -571,5 +571,7 @@ public class MoviePage extends JFrame implements ActionListener {
 		initDisplay();
 
 	}
+	
+	
 
 }
