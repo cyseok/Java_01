@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML_img</title>
+</head>
+<body>
+	<h1>img 태그</h1>
+	<hr>
+	<!-- img 태그 : 이미지 파일을 제공받아 출력 -->
+	<!-- => 웹에서 사용하는 이미지 파일 : GIF, PNG, JPEG 등 -->
+	<!-- alt 속성 : 출력 이미지에 대한 설명을 속성값으로 설정 -> 음성지원 -->
+	<!-- src 속성 : 이미지 파일의 경로(URL 주소)를 속성값으로 설정 -->
+	<!-- => src 속성으로 설정된 이미지 파일이 없는 경우 '404 상태코드 오류' -->
+	<img alt="네이버 로고" src="https://s.pstatic.net/static/www/mobile/edit/20230523_1095/upload_1684820919920LbUfO.png">
+	<hr>
+	<!-- img 태그의 폭을 변경해 이미지 크기 변경 가능 -->
+	<!-- => 이미지의 폭을 변경하면 높이는 자동 변경 -->
+	<img alt="고양이" src="http://localhost:8000/web/html/cat.jpg" width="500">
+	
+	<!-- 웹문서와 동일 서버에 존재하는 웹자원(WebContext)은 
+		URL 주소에서 서버 접속 관련 정보 (프로토콜, 서버명, 포트번호)를 생각할 수 있다. -->
+	<!-- => 절대경로 표현방식 : 웹자원의 경로를 최상위 디렉토리(Root Directory)를 기준으로 표현  -->
+	<img alt="고양이" src="/web/html/cat.jpg" width="400">
+
+	<!-- 상대경로 표현 방법 : 웹자원의 경로를 현재 요청한 웹문서의 경로를 기준으로 표현 -->
+	<img alt="고양이" src="./cat.jpg" width="300">
+	
+	<!-- 절대경로 -->
+	<img alt="강아지" src="/web/html/images/dog.jpg" width="250">
+	<!-- 상대경로 -->
+	<img alt="강아지" src="images/dog.jpg" width="200">
+	
+</body>
+</html>

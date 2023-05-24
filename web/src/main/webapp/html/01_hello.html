@@ -1,7 +1,6 @@
 <!-- MarkUp Language 주석문 -->
 
-<!-- HTML(Hyper Text MarkUp Language) : 태그(Tag)를 사용하여 웹문서를
- 구조적으로 표현하기 위한 언어 -->
+<!-- HTML(Hyper Text MarkUp Language) : 태그(Tag)를 사용하여 웹문서를 구조적으로 표현하기 위한 언어 -->
 <!-- => 브라우저 엔진에 의해 해석되어 실행(출력)되는 언어 
 = CSL(Client Script Language : HTML, CSS, JavaScript)  -->
 
@@ -25,11 +24,77 @@
 <!-- charset 속성 : HTML 문서의 문자형태(Character Set - Encording)를 속성값으로 제공 -->
 <!-- => 브라우저가 HTML 문서를 해석하여 실행하기 위한 문자의 인코딩 방식을 제공 -->
 <!-- => 기본속성값 : ISO-8859-1(서유럽어) -->
+<!-- => 한글관련 charset : euc-kr(완성형), utf-8(조합형) -->
 <meta charset="UTF-8">
 
-<title>Insert title here</title>
+<!-- title 태그 : HTML 문서의 제목을 출력 -->
+<title>HTML 수업</title>
 </head>
-<body>
 
+<!-- body 태그 : 웹문서를 출력하기 위한 영역을 제공하기 위한 태그(= Document) -->
+<!-- => 하위태그 : header(머리부), navi(메뉴), section(몸체부)[article(본문), aside(보조문)], footer(꼬리부), h1, p, img, form 등  -->
+<!-- => body 태그의 하위태그를 Box Model 태그로 표현할 수 있고 
+		블럭 레벨 태그와 인라인 레벨 태그로 구분 -->
+<!-- 블럭 레벨 태그 : 하나의 태그가 전체 라인을 모두 사용하는 태그 -->
+		<!-- => div, h1, p, ol, ul 등 -->
+<!-- 인라인 레벨 태그 : 하나의 태그가 라인의 일부만 사용하는 태그 -->
+		<!-- => span, img, input, select 등 -->
+<!-- ★인라인 레벨 태그는 하위태그로 블럭 레벨 태그 사용 불가 -->
+<body>
+	<!-- hn 태그 : 태그 내용을 문단의 제목으로 출력 n:1~6 -> 제목크기 -->
+	<!-- align 속성 : 태그 내용을 정렬하기 위한속성 -> left, right, center, justify -->
+	<!-- title 속성 : 툴팁 기능을 이용하여 설명문(속성값)을 제공 -->
+	<h1 align="left" title="문단의 제목을 표현합니다.">문단제목-1</h1>
+	<h2 align="center">문단제목-2</h2>
+	<h3 align="right">문단제목-3</h3>
+	<h4 align="justify">문단제목-4</h4>
+	<h5>문단제목-5</h5>
+	<h6>문단제목-6</h6>
+	<!-- hr 태그 : 수평선을 출력하기 위한 태그 -->
+	<hr>
+	<!-- width 속성 : 태그의 폭을 변경하기 위한속성  -> 속성값 = 크기 -->
+	<!-- 크기 or 위치를 표현하기 위한 단위 : px(기본) -> 절대값, %(백분율) -> 상대값 -->
+	<hr align="center" width="600">
+	<hr align="center" width="70%">
+	
+	<!-- p 태그 : 태그내용을 문단으로 출력 -->
+	<!-- => 태그내용이 박스모델의 폭을 벗어날 경우 자동 줄바꿈 처리 -->
+	<!-- => HTML 문서에서 Enter로 줄바꿈 처리불가, 다수의 공백은 하나의 공백으로 처리 -->
+	<p>CSL(Client Script Language -> HTML, CSS, JavaScript)와 
+		SSL(Server Script Language -> Servlet, JSP)를 배우도록 하겠습니다.</p> 
+	
+	<!-- br 태그 : 줄바꿈 처리 -->
+	<p>HTML은 웹문서를 구조적으로 표현하기 위한 언어이며<br>CSS는 웹문서를 디자인하기 위한 언어입니다. </p>
+	
+	<!-- HTML에서 사용 불가능한 문자는 회피문자(Escape Character)로 표현 -->
+	<!-- => &nbsp; : 공백, &lt; : < 문자, &gt : > 문자, &amp : & 문자 등 -->
+	<p>&lt;홍길동&gt;님 &amp;&lt;임꺽정&gt;님&nbsp;&nbsp;&nbsp;반갑습니다.</p>
+	
+	<!-- pre 태그 : 태그내용을 그대로 출력 -->
+	<pre>홍길동님,    만나서 반갑습니다.
+	안녕!</pre>
+	
+	<!-- div 태그 : 범위를 설정하기 위한 태그 -> 블럭 레벨 태그 -->
+	<!-- span 태그 : 범위를 설정하기 위한 태그 -> 인라인 레벨 태그 -->
+	<!-- style 속성 : CSS 스타일 관련 속성과 속성값 설정 -->
+	<div style="font-size: 24px;">오늘은 <span style="color: red;">2023년 05월 24일 수요일</span>입니다. 내일은 <span style="color: blue;">목요일</span>입니다</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
