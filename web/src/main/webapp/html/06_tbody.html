@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML_tbody</title>
+<style type="text/css">
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid black;
+	width: 100px;
+	padding: 20px;
+	text-align: center;
+}
+caption {
+	font-size: 24px;
+
+}
+</style>
+</head>
+<body>
+	<h1>tbody 태그</h1>
+	<hr>
+	<!-- HTML5에서는 표를 구조적으로 표현하기 위해 thead, tbody, tfoot 태그사용 -->
+	
+	<!-- summary 속성 : 표에 대한 설명을 속성값으로 설정 -->
+	<table summary="객실 안내">
+		<!-- cpation 태그 : 표 제목을 출력하기 위한 태그 -->
+		<caption>객실표</caption>
+		<thead>
+			<tr>
+				<th>건물명</th><th>방이름</th><th>크기</th><th>가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- rowspan 속성 : 병합할 행의 개수를 설정 -->
+			<!-- colspan 속성 : 병합할 열의 개수를 설정 -->
+			<tr>
+				<td rowspan="3">고양이</td><td>방1</td><td>4인실</td><td>120,000</td>
+			</tr>
+			<tr>
+				<td>방2</td><td>2인실</td><td>70,000</td>
+			</tr>
+			<tr>
+				<td>방3</td><td>6인실</td><td colspan="1">150,000</td>
+			</tr>
+		</tbody>
+		<tfoot>
+		</tfoot>
+		
+	</table>
+	
+
+</body>
+</html>
