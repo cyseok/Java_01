@@ -21,19 +21,33 @@
 	<!-- placeholder 속성의 입력태그에 입력값이 입력되면 설명문이 없어짐. -->
 	<!-- readonly 속성 : 입력태그를 읽기전용으로 사용하는 속성 -> 생략가능 -->
 	<!-- disabled 속성 : 입력태그를 비활성화 처리하는 속성 -> 생략가능 -->
+	<!-- checked 속성 : 우선 선택이 되게하는 설정 -->
 	
 	<!-- type 속성값 -->
 	<!-- => hidden : 입력태그를 숨겨 값을 입력받지 않고 요청 웹프로그램에게 필요한 값을 전달 -->
 	<!-- => text : 문자값을 입력받아 전달 -->
 	<!-- => password : 문자값을 입력받아 전달 -> 입력값이 특정문자로 변환되어 표시 -->
-	
+	<!-- => radio : name 속성값이 같은 입력태그 중 하나를 선택해 전달 -->
+	<!-- checkbox : name 속성값이 같은 입력태그 중 하나 이상을 선택해 전달 -->
+	<!-- file : 파일을 전달 -->
+	<!-- email(HTML5) : 이메일을 입력받아 전달 -> 이메일 검증 처리 -->
+	<!-- number(HTML5) : 숫자값을 입력받아 전달 -> 증가 또는 감소 버튼 제공, 최소 최대값 검증 가능 -->
+		
 	<form action="#" method="post">
 		<input type="hidden" name="num" value="1000" >
 		<p>아이디 : <input type="text" name="id" size="20" maxlength="10" 
 			autofocus="autofocus" required="required"><br></p>
 		<p>비밀번호 : <input type="password" name="passwd" placeholder="비밀번호 작성"></p>
 		<p>이름 : <input type="text" name="name" value="홍길동" readonly="readonly" disabled="disabled"></p>
-		
+		<p>성별 : <input type="radio" name="gender" value="M">남자
+			<input type="radio" name="gender" value="W" checked="checked">여자</p>
+		<p>취미 : <input type="checkbox" name="hobby" value="독서">독서
+			<input type="checkbox" name="hobby" value="게임">게임
+			<input type="checkbox" name="hobby" value="등산">등산
+			<input type="checkbox" name="hobby" value="낚시">낚시</p>
+		<p>사진 : <input type="file" name="profiel"></p>
+		<p>이메일 : <input type="email" name="email"></p>
+		<p>나이 : <input type="number" name="age" min="1" max="100"></p>
 		
 		<button type="submit">회원가입</button>
 	</form>
