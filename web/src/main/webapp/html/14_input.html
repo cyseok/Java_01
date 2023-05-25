@@ -22,6 +22,8 @@
 	<!-- readonly 속성 : 입력태그를 읽기전용으로 사용하는 속성 -> 생략가능 -->
 	<!-- disabled 속성 : 입력태그를 비활성화 처리하는 속성 -> 생략가능 -->
 	<!-- checked 속성 : 우선 선택이 되게하는 설정 -->
+	<!-- min 속성 -->
+	<!-- max 속성 -->
 	
 	<!-- type 속성값 -->
 	<!-- => hidden : 입력태그를 숨겨 값을 입력받지 않고 요청 웹프로그램에게 필요한 값을 전달 -->
@@ -32,6 +34,9 @@
 	<!-- file : 파일을 전달 -->
 	<!-- email(HTML5) : 이메일을 입력받아 전달 -> 이메일 검증 처리 -->
 	<!-- number(HTML5) : 숫자값을 입력받아 전달 -> 증가 또는 감소 버튼 제공, 최소 최대값 검증 가능 -->
+	<!-- tel(HTML5) : 전화번호 형식의 문자값을 입력받음 -> 스마트 기기의 입력패드 변경기능 -->
+	<!-- url(HTML5) : URL 형식의 문자값 입력받음 -> 스마트 기기의 입력패드 변경기능 -->
+	<!-- search(HTML5) : 검색관련 문자값 입력받음 -> 스마트 기기의 자동완성 기능 -->
 		
 	<form action="#" method="post">
 		<input type="hidden" name="num" value="1000" >
@@ -48,6 +53,9 @@
 		<p>사진 : <input type="file" name="profiel"></p>
 		<p>이메일 : <input type="email" name="email"></p>
 		<p>나이 : <input type="number" name="age" min="1" max="100"></p>
+		<p>전화번호 : <input type="tel" name="phone"></p>
+		<p>SNS : <input type="url" name="sns"></p>
+		<p>검색 : <input type="search" name="keyword"></p>
 		
 		<button type="submit">회원가입</button>
 	</form>
