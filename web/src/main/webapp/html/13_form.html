@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML_form</title>
+</head>
+<body>
+ 	<h1>form 태그</h1>
+	<hr>
+	<!-- form 태그 : 웹프로그램을 요청해 사용자로부터 입력값을 전달 -->
+	<!-- 하위태그로 반드시 사용자로부터 값을 입력받기 위한 입력태그와 
+		제출이벤트(Submit Event)를 발생하는 태그를 작성해야함. -->
+	<!-- 제출이벤트(Submit Event) : form 태그를 사용하여 웹프로그램을 요청하기 위한 이벤트 -->
+	<!-- action 속성 : form 태그를 사용하여 요청할 웹프로그램의 URL 주소를 설정 -->
+	
+	<!-- method 속성 : 웹프로그램을 요청하는 요청방식(GET or POST)을 설정 -->
+	<!-- => 웹프로그램의 요청방식에 따라 사용자 입력값을 전달하는 방법이 다름 -->
+	<!-- GET : 사용자 입력값을 URL 주소의 질의문자열(QueryString)으로 전달 -->
+	<!-- => 보안을 필요로하지 않는 소량의 값을 전달할 때 -->
+	<!-- POST : 사용자 입력값을 리퀘스트 메시지의 몸체부에 저장하여 전달 -->
+	<!-- => 보안을 필요로하는 대량의 값을 전달할 때 -->
+	
+	<!-- 리퀘스트 메시지(Request Message) : 클라이언트의 모든 정보를 담아 웹프로그램에 전달하는 객체 -->
+	<!-- => 머리부(Header)와 몸체부(Body)로 구분 -->
+	<!-- => GET 방식으로 웹프로그램을 작성하면 리퀘스트 메시지의 몸체부는 미사용됨 -->
+	
+	<!-- enctype 속성 : [application/x-www-form-urlencoded], [multipart/form-data],
+		[text/plain] 중 하나를 설정 -->
+		<!-- => [application/x-www-form-urlencoded] : 사용자 입력값을 문자값으로 전달 -->
+		<!-- => [multipart/form-data] : 사용자 입력값을 원시값으로 전달 -> 파일을 입력받아 전달 -->
+		<!-- => [text/plain] : 사용자 입력값을 문자값으로 전달 -->
+	<form action="13.action.html" method="get" 
+		enctype="application/x-www-form-urlencoded"></form>
+		
+	
+</body>
+</html>
