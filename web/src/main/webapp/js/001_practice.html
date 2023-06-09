@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+  function check() {
+    if(document.fr.id.value.length == 0) {
+    // 아이디가 입력되지 않은 경우(""이랑 동일함)
+      alert("아이디를 입력하세요");
+  	  document.fr.id.focus();
+  	  return;
+      // 현재 함수 실행 종료 후 빠져나감
+   	  // 리턴 안하면 submit() 함수 실행됨...
+    }else if(document.fr.passwd.value = "") {
+      alert("패스워드를 입력하세요");
+      document.fr.passwd.focus();
+      return;
+    }else if(document.fr.ta.value == "") {
+      alert("자기소개를 입력하세요");
+      document.fr.ta.focus();
+      return;
+    }
+    document.fr.submit();
+    // 여기서 함수 실행하지 않고 폼 태그 안에 submit 버튼 만들어도 됨
+  }
+ </script>
+
+  <form id="fr" action="test.html">
+    아이디 <input type="text" name="id" required="required"><br>
+    비밀번호 <input type="password" id="passwd" required="required"><br>
+    자기소개 <textarea rows="5" cols="20" name="ta" required="required"></textarea><br>
+    <input type="button" value="입력값 확인" onclick="check()">
+  </form>
+  <div id="infoArea"></div>
+ 
+</body>
+	
+
+
+</html>
