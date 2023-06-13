@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>effect</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<style type="text/css">
+#divBox {
+			width: 80px;
+			height: 80px;
+			background-color: skyblue;
+			border: 5px solid blue;
+			margin-top: 20px;
+		}
+
+</style>
+
+<script type="text/javascript">
+
+$(function() {
+
+    $("#fadeInBtn").on("click", function() {
+
+        $("#divBox").fadeIn(fast);  // id가 "divBox"인 요소를 점점 나타나게 함.
+
+    });
+
+    $("#fadeOutBtn").on("click", function() {
+
+        $("#divBox").fadeOut(1000); // id가 "divBox"인 요소를 점점 사라지게 함.
+
+    });
+    
+    $("#slideUpBtn").on("click", function() {
+
+        $("#divBox").slideUp();   // id가 "divBox"인 요소를 올라가면서 사라지게 함.
+
+    });
+
+    $("#slideDownBtn").on("click", function() {
+
+        $("#divBox").slideDown(); // id가 "divBox"인 요소를 내려오면서 나타나게 함.
+
+    });
+    
+    $("#stopBtn").on("click", function() {
+
+        // id가 "divBox"인 요소에서 실행 중인 모든 이펙트 효과를 즉시 중지시킴.
+
+        $("#divBox").stop();
+
+    });
+
+
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<h1></h1>
+<p></p>
+<button id="fadeInBtn">fadeIn</button>
+<button id="fadeOutBtn">fadeOut</button>
+<button id="slideUpBtn">slideUp</button>
+<button id="slideDownBtn">slideDown</button>
+<button id="stopBtn">stop</button>
+<div id="divBox"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+</head>
+<body>
+	<script>
+		$(function() {
+			$("ul").on("click", "a", function(event) {
+				event.preventDefault();					// <a>요소의 클릭시 기본 동작인 링크의 작동을 중지시킴.
+				$("#text").append("이 링크는 동작하지 않습니다!<br>");
+			});
+			$("button").one("click", function() {
+				$("ul").append('<li><a href="/jquery/intro">jQuery</a></li>');
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<h1>이벤트의 위임</h1>
+	<p>아래 버튼을 눌러 링크를 추가하고, 링크를 클릭해 보세요!</p>
+	<ul>
+		<li><a href="/html/intro">HTML</a></li>
+		<li><a href="/css/intro">CSS</a></li>
+	</ul>
+	<button>리스트 아이템 추가</button>
+	<p id="text"></p>
+	
+</body>
+
+</html>
