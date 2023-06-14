@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 // 
 
 
+
 public class HelloServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -71,7 +72,13 @@ public class HelloServlet extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 		
-		
+		// 6. 서블릿 클래스를 서블릿(웹프로그램)으로 실행되도록 설정
+		// => [web.xml] 파일에서 서블릿 클래스를 서블릿으로 등록하고 
+		//     서블릿을 요청할 수 있는 URL 주소를 매핑 설정
+		// 클라이언ㄴ트가 매핑된 URL 주소의 서블릿을 요청하면 WAS 프로그램은 서블릿에 대한 클래스를
+		//  객체로 생성하여 요청 처리 메소드를 호출하고 처리결과를 클라이언트에게 전달하여 응답
+		// => 클라이언트가 요청한 서블릿에 대한 클래스가 이미 객체로 생성되어 있는 경우 
+		//     요청 처리 메소드만 호출하여 실행된다.
 		
 	}
 }
