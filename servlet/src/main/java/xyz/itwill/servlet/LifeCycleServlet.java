@@ -38,7 +38,7 @@ public class LifeCycleServlet extends HttpServlet {
 		System.out.println("#생성자 호출 -> (객체 생성)#");
 	}
 	
-	// 서블릿 객체가 생성된 후 WAS에서 자동으로 한 번만 호출되는 메소드
+	// ★★서블릿 객체가 생성된 후 WAS에서 자동으로 한 번만 호출되는 메소드
 	// => 객체 생성 후 초기화 명령 실행
 	@Override
 	public void init(ServletConfig config) throws ServletException {

@@ -46,7 +46,7 @@ public class HelloServlet extends HttpServlet {
 		// => HttpServletResponse.setContentType(String mimeType[;charset=encoding]) 메소드 호출
 		// => response 메시지의 몸체부에 저장될 파일 형태를 변경하는 메소드
 		// => 응답 파일이 문서파일인 경우 문자형태(CharacterSet - Encoding) 설정
-		// 기본 응답파일 형태 : text/html;charset=iso-8859-1 -> 서유럽어로된 HTML 문서로만 응답가능
+		// ★기본 응답파일 형태 : text/html;charset=iso-8859-1 -> 서유럽어로된 HTML 문서로만 응답가능
 		response.setContentType("text/html;charset=utf-8");  // 한글로 응답 가능하게 함
 		
 		// 4. 응답파일을 생성하기 위한 출력스트림을 반환받아 저장
