@@ -24,7 +24,9 @@ public class JoinServlet extends HttpServlet {
 		//전달하거나 에러페이지로 이동되도록 처리
 		//HttpServletRequest.getMethod() : 서블릿을 요청한 요청방식(GET or POST)을 반환하는 메소드
 		if(request.getMethod().equals("GET")) {//서블릿을 비정상적으로 요청한 경우
+			
 			/*
+			 ★★
 			//HttpServletResponse.sendError(int sc) : 클라이언트에게 에러코드(4XX or 5XX)를
 			//전달하여 응답하는 메소드
 			// => 상태코드(StatusCode)는 HttpServletResponse 인터페이스의 정의된 상수 사용 
@@ -71,7 +73,7 @@ public class JoinServlet extends HttpServlet {
 		String name=request.getParameter("name");
 		String email=request.getParameter("email");
 		String gender=request.getParameter("gender");
-		// ★동일한 이름으로 전달되는 값이 여러개 있는 경우 getParameterValues() 메소드 호출 
+		// ★★동일한 이름으로 전달되는 값이 여러개 있는 경우 getParameterValues() 메소드 호출 
 		// String hobby=request.getParameter("hobby");//첫번째 전달값만 반환받아 저장
 		// HttpServletRequest.getParameter(String name) : 매개변수로 전달받은 이름의 모든
 		// 전달값을 문자열 배열(String[])로 반환하는 메소드
