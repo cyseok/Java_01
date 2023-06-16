@@ -88,6 +88,12 @@ public class SessionServlet extends HttpServlet {
 				//=========================================================================
 				// HttpSession.removeAttribute(String attributeName) : HttpSession 객체에 저장된
 				//  속성값을 삭제하는 메소드 -> 매개변수에 속성값을 구분하기 위한 속성명 전달
+				session.removeAttribute("now");
+				
+				//======================================================================
+				// HttpSession.invalidate() : 바인딩 세션을 언바인딩 하여 무효화 처리하는 메소드
+				// => 바인딩된  HttpSession 객체 제거
+				session.invalidate();
 				
 				out.println("</body>");
 				out.println("</html>");
