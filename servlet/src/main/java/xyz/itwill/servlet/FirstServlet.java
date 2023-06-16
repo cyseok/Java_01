@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class FirstServlet
- */
 
 // 어노테이션(Annotation) : API 문서에 특별한 설명을 제공하기 위해 만들어진 기능
 // => 프로그램 작성에 필요한 특별한 의미를 제공하거나 실행에 필요한 정보를 제공하는 기능
