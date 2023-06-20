@@ -31,10 +31,10 @@ public class DataSourceServlet extends HttpServlet {
 		BasicDataSource dataSource = new BasicDataSource();
 		
 		// BasicDataSource 객체에 저장된 다수의 Connection 객체를 생성하기 위한 정보를 메소드를 호출해 변경
-		dataSource.setDriverClassName("oracle,jdbc.driver.OracleDriver");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
 		dataSource.setUsername("scott");
-		dataSource.setPassword("tiget");
+		dataSource.setPassword("tiger");
 		
 		dataSource.setInitialSize(10);  // 최초 생성될 Connection 객체의 개수 변경
 		dataSource.setMaxIdle(10);  // 대기 상태의 Connection 객체의 개수 변경

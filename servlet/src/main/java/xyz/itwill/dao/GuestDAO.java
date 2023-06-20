@@ -86,7 +86,7 @@ public class GuestDAO extends JdbcDAO {
 	
 	//====================================================================================
 	//방명록 게시글번호를 전달받아 GUEST 테이블에 저장된 행을 삭제하고 삭제행의 갯수를 반환하는 메소드
-	public int delete(int num) {
+	public int deleteGuest(int num) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
