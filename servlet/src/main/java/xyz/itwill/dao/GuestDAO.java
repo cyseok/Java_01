@@ -17,7 +17,7 @@ public class GuestDAO extends JdbcDAO {
 	
 	private GuestDAO() {
 		// TODO Auto-generated constructor stub
-	}
+	} 
 	
 	static {
 		_dao=new GuestDAO();

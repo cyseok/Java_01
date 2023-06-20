@@ -35,6 +35,7 @@ public class DataSourceServlet extends HttpServlet {
 		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
 		dataSource.setUsername("scott");
 		dataSource.setPassword("tiget");
+		
 		dataSource.setInitialSize(10);  // 최초 생성될 Connection 객체의 개수 변경
 		dataSource.setMaxIdle(10);  // 대기 상태의 Connection 객체의 개수 변경
 		dataSource.setMaxTotal(15);  // 생성 가능한 최대 Connection 객체의 개수 변경
