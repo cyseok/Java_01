@@ -13,19 +13,17 @@ import javax.sql.DataSource;
 // => WAS 프로그램에 의해 관리되는 DataSource 객체를 제공받아 필드값으로 저장 -> 정적영역에 작성하여 한번만 실행
 // => DataSource 객체로부터 Connection 객체를 제공받아 반환하는 메소드
 // => 매개변수로 전달받은 JDBC 관련 객체를 제거하는 메소드
-public abstract class JdbcDAO {
+public abstract class JdbcDAO {//상속만을 목적으로 작성된 클래스
 	private static DataSource dataSource;
 	
 	static {
-		
 		try {
-			dataSource = (DataSource)new InitialContext().lookup("java:comp/env/jdbc/oracle");
-			
+			dataSource=(DataSource)new InitialContext().lookup("java:comp/env/jdbc/oracle");
 		} catch (NamingException e) {
 			e.printStackTrace();
-
-		}
+		}	
 	}
+	
 	 // DataSource 객체로부터 Connection 객체를 제공받아 반환하는 메소드
 	public Connection getConnection() throws SQLException {
 		return dataSource.getConnection();
