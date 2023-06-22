@@ -44,8 +44,9 @@ public class GuestInsertServlet extends HttpServlet {
 		// GUEST 테이블에 행을 삽입한 DAO 클래스의 메소드를 호출한다.
 		GuestDAO.getDAO().insertGuest(guest);
 		
-		// 클라이언트에게 URL 주소를 전달하여 응답처리
+		// ★★클라이언트에게 URL 주소를 전달하여 응답처리
 		// => 클라이언트는 전달받은 URL 주소의 서블릿을 요청하여 실행결과를 응답받아 출력
+		// HttpServletResponse.sendRedirect(String location) 
 		response.sendRedirect("list.itwill");
 		
 	}

@@ -13,7 +13,8 @@
 	</error-page>
 	-->
 	
-	<!-- error-code : 에러코드를 설정하기 위한 엘리먼트 -->
+	<!-- error-code : 에러코드를 설정하기 위한 엘리먼트 
+	Exception 으로 처리하는건 번거로워서 코드로 처리해준다. -->
 	<error-page>
 		<error-code>500</error-code>
 		<location>/error/error_500.jsp</location>

@@ -8,9 +8,13 @@
  => JSP 문서에 대한 서블릿 클래스가 이미 생성되어 있는 경우 객체를 이용하여 요청 처리 메소드실행
  => JSP 문서가 변경된 후 클라이언트에 의해 요청되면 다시 JSP 문서를 해석하여 서블릿 클래스 생성 --%>
  <% // 이 영역에 Java 명령을 작성한다.
+ 
  Date now = new Date();
  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초 SSS");
  String displayNow = dateFormat.format(now);
+ 
+
+ 
  %>
 <!DOCTYPE html>
 <html>
@@ -42,7 +46,7 @@
 	<script type="text/javascript">
 	setInterval(function() {
 		location.reload();
-	}, 1000);
+	}, 10);
 	</script>
 	
 
