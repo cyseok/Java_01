@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <h1>메일페이지</h1>
-<a href="index.jsp?category=mail">메일</a>&nbsp;&nbsp;
 <a href="index.jsp?category=blog">블로그</a>&nbsp;&nbsp;
 <a href="index.jsp?category=cafe">카페</a>&nbsp;&nbsp;
 <hr>
