@@ -11,7 +11,7 @@
 <body>
 	<h1>회원정보등록</h1>
 	<hr>
-	<form action="non_useBean_action.jsp" method="post"></form>
+	<form action="non_useBean_action.jsp" method="post">
 	<table>
 		<tr>
 			<td>이름</td>
@@ -29,9 +29,8 @@
 			
 			<td colspan="2"><button type="submit">회원등록</button> </td>
 		</tr>
-		
-		
 	</table>
+	</form>
 
 </body>
 </html>
