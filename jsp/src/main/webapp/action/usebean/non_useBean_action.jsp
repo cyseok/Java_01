@@ -56,7 +56,7 @@ forward 이동하는 JSP 문서 -> 요청에 대한 처리만 제공한다. --%>
 	request.getRequestDispatcher("non_useBean_display").forward(request, response);
 	
 %>
-jsp
+
 
 
 

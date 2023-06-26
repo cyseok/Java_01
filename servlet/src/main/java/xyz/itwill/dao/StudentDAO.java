@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import xyz.itwill.dto.StudentDTO;
 
 // DAO(Data Access Object)클래스 : 테이블에 행 삽입, 삭제, 변경, 검색하는 SQL 명령을 전달하여
@@ -26,6 +25,7 @@ public class StudentDAO extends JdbcDAO {
 	static {
 		_dao = new StudentDAO();
 	}
+	
 	public static StudentDAO getDAO() {
 		return _dao;
 	}
