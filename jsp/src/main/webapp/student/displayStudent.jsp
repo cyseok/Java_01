@@ -3,12 +3,14 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- STUDNET 테이블에 저장된 모든 학생정보를 검색하여 클라이언트에게 전달하여 응답하는 JSP 문서
- => 클래스를 객체로 만들어서 사용 --%>
+<%-- STUDENT 테이블에 저장된 모든 학생정보를 검색하여 클라이언트에게 전달하여 응답하는 JSP 문서 --%>
+<%-- => [학생추가] 태그를 클릭한 경우 [insertFormStudent.jsp] 문서를 요청하여 이동 --%>
+<%-- => 학생정보 출력태그의 [변경] 태그를 클릭한 경우 [updateFormStident.jsp] 문서를 요청하여 이동 -> 학생번호 전달 --%>
+<%-- => 학생정보 출력태그의 [삭제] 태그를 클릭한 경우 [deleteStudent.jsp] 문서를 요청하여 이동 -> 학생번호 전달 --%>
 <%
 	// STUDENT 테이블에 저장된 모든 정보를  LIST 객체로 반환하는 DAO 클래스의 메소드 이용
 	// selectStudentList() : select 명령의 실행 결과를 가져와준다.
-	List<StudentDTO> studentList = StudentDAO.getDAO().selectStudentList();
+	List<StudentDTO> studentList=StudentDAO.getDAO().selectStudentList();
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,7 +24,7 @@
 	<table align="center" cellspacing="0" cellpadding="1" width="800">
 		<tr align="right">
 			<td>
-				<input type="button" value="학생추가">
+				<input type="button" value="학생추가" onclick="location.href='insertFormStudent.jsp';">
 			</td>
 		</tr>
 	</table>
@@ -38,23 +40,17 @@
 		</tr>
 		
 		<!-- 학생정보 출력-->
-		<% for(StudentDTO student : studentList) {  %>
+		<% for(StudentDTO student : studentList) { %>
 		<tr align="center">
 			<td width="100"><%=student.getNo() %></td>				
 			<td width="100"><%=student.getName() %></td>				
 			<td width="150"><%=student.getPhone() %></td>				
 			<td width="250"><%=student.getAddress() %></td>				
-			<td width="100"><%=student.getBirthday() %></td>				
+			<td width="100"><%=student.getBirthday().substring(0, 10) %></td>				
 			<td width="50"><input type="button" value="삭제"></td>				
-			<td width="50"><input type="button" value="변경"></td>				
+			<td width="50"><input type="button" value="변경" onclick="location.href='updateFormStudent.jsp?no=<%=student.getNo()%>';"></td>				
 		</tr>	
 		<% } %>
 	</table>
 </body>
 </html>
-
-
-
-
-
-
