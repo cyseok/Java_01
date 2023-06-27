@@ -2,12 +2,13 @@
 <%@page import="xyz.itwill.dto.StudentDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%-- 학생정보를 전달받아 STUDENT 테이블에 저장된 학생정보를 변경하고 [displayStudent.jsp] 문서를 
+요청할 수 있는 URL 주소를 클라이언트에게 전달하여 응답하는 JSP 문서--%>
 <%
+
 	if(request.getMethod().equals("GET")) {
-	session.setAttribute("message", "비정상적인 방법으로 페이지를 요청 하였습니다.");
-	response.sendRedirect("displayStudent.jsp");  //클라이언트에게 URL 주소 전달
-	return;
+		response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+		return;
 	}
 
 	//POST 방식으로 요청하여 전달된 값에 대한 캐릭터셋 변경
@@ -19,22 +20,20 @@
 	String phone=request.getParameter("phone");
 	String address=request.getParameter("address");
 	String birthday=request.getParameter("birthday");
-
+	
 	//DTO 클래스로 객체를 생성하여 전달값으로 필드값 변경
 	StudentDTO student=new StudentDTO();
 	student.setNo(no);	
 	student.setName(name);	
 	student.setPhone(phone);	
 	student.setAddress(address);	
-	student.setBirthday(birthday);
+	student.setBirthday(birthday);	
 	
-	if(StudentDAO.getDAO().selectStudent(no)==null) { //학생번호가 없는 경유
-		session.setAttribute("message", "존재하지않는 학생번호를 입력 하였습니다. 다시 입력해 주세요.");
-		session.setAttribute("student", student);
-		response.sendRedirect("updateFormStudent.jsp"); //클라이언트에게 URL 주소 전달
-		return;
-	}
+	
+	//학생정보를 전달받아 STUDENT 테이블의 행으로 삽입하는 DAO 클래스의 메소드 호출
 	StudentDAO.getDAO().updateStudent(student);
 	
-	response.sendRedirect("displayStudent");
+	//클라이언트에게 URL 주소 전달
+	response.sendRedirect("displayStudent.jsp");
+
 %>
