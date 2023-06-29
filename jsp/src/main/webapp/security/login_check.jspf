@@ -1,0 +1,16 @@
+<%@page import="xyz.itwill.dto.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%-- 비로그인 상태의 사용자가 요청한 경우 에러메시지 출력하는 문서로 이동하도록 URL 주소전달
+ => include Directive에서 사용하기 위한 파일 --%>
+<%
+	//바인딩된 세션에서 권한 관련 정보의 속성값을 객체(로그인 상태의 사용자정보)로 반환받아 저장
+	MemberDTO loginMember=(MemberDTO)session.getAttribute("loginMember");
+
+	if(loginMember==null) {  // 비로그인 상태의 사용자가 요청한 경우
+		out.println("<script type='text/javascript'>");
+		out.println("location.href='"+request.getContextPath()+"/index.jsp?group=error&worker=error_400'");
+		out.println("</script>");
+		return;
+	}
+%>

@@ -70,14 +70,8 @@ legend {
 		<li>
 			<label for="passwd">비밀번호</label>
 			<input type="password" name="passwd" id="passwd">
-			<div id="passwdMsg" class="error">비밀번호를 입력해 주세요.</div>
+			<span style=""></span>
 			<div id="passwdRegMsg" class="error">비밀번호는 영문자,숫자,특수문자가 반드시 하나이상 포함된 6~20 범위의 문자로만 작성 가능합니다.</div>
-		</li>
-		<li>
-			<label for="passwd">비밀번호 확인</label>
-			<input type="password" name="repasswd" id="repasswd">
-			<div id="repasswdMsg" class="error">비밀번호 확인을 입력해 주세요.</div>
-			<div id="repasswdMatchMsg" class="error">비밀번호와 비밀번호 확인이 서로 맞지 않습니다.</div>
 		</li>
 		<li>
 			<label for="name">이름</label>

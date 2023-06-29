@@ -19,7 +19,7 @@
 	String id=request.getParameter("id");
 	String passwd=Utility.encrypt(request.getParameter("passwd"));//전달값을 암호화 처리하여 저장
 	String name=request.getParameter("name");
-	String email=request.getParameter("email");
+	String email=request.getParameter("email"); 
 	String mobile=request.getParameter("mobile1")+"-"
 		+request.getParameter("mobile2")+"-"+request.getParameter("mobile3");
 	String zipcode=request.getParameter("zipcode");
