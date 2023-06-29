@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import xyz.itwill.dto.MemberDTO;
+
 
 public class MemberDAO extends JdbcDAO {
 	private static MemberDAO _dao;
@@ -190,6 +192,9 @@ public class MemberDAO extends JdbcDAO {
 			return id;
 			
 		}
+		
+	
+	
 }
 
 

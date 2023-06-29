@@ -105,7 +105,7 @@ public class StudentDAO extends JdbcDAO {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		StudentDTO studnet=null;
+		StudentDTO student=null;
 		try {
 			con=getConnection();
 			
@@ -116,19 +116,19 @@ public class StudentDAO extends JdbcDAO {
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
-				studnet=new StudentDTO();
-				studnet.setNo(rs.getInt("no"));
-				studnet.setName(rs.getString("name"));
-				studnet.setPhone(rs.getString("phone"));
-				studnet.setAddress(rs.getString("address"));
-				studnet.setBirthday(rs.getString("birthday"));
+				student=new StudentDTO();
+				student.setNo(rs.getInt("no"));
+				student.setName(rs.getString("name"));
+				student.setPhone(rs.getString("phone"));
+				student.setAddress(rs.getString("address"));
+				student.setBirthday(rs.getString("birthday"));
 			}
 		} catch (SQLException e) {
 			System.out.println("[에러]selectStudent() 메소드의 SQL 오류 = "+e.getMessage());
 		} finally {
 			close(con, pstmt, rs);
 		}
-		return studnet;
+		return student;
 	}
 
 	//STUDENT 테이블에 저장된 모든 학생정보를 검색하여 List 객체로 반환하는 메소드
@@ -136,7 +136,7 @@ public class StudentDAO extends JdbcDAO {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		List<StudentDTO> studnetList=new ArrayList<>();
+		List<StudentDTO> studentList=new ArrayList<>();
 		try {
 			con=getConnection();
 			
@@ -146,20 +146,20 @@ public class StudentDAO extends JdbcDAO {
 			rs=pstmt.executeQuery();
 			
 			while(rs.next()) {
-				StudentDTO studnet=new StudentDTO();
-				studnet.setNo(rs.getInt("no"));
-				studnet.setName(rs.getString("name"));
-				studnet.setPhone(rs.getString("phone"));
-				studnet.setAddress(rs.getString("address"));
-				studnet.setBirthday(rs.getString("birthday"));
+				StudentDTO student=new StudentDTO();
+				student.setNo(rs.getInt("no"));
+				student.setName(rs.getString("name"));
+				student.setPhone(rs.getString("phone"));
+				student.setAddress(rs.getString("address"));
+				student.setBirthday(rs.getString("birthday"));
 				
-				studnetList.add(studnet);
+				studentList.add(student);
 			}
 		} catch (SQLException e) {
-			System.out.println("[에러]selectStudentList() 메소드의 SQL 오류 = "+e.getMessage());
+			System.out.println("[에러] selectStudentList() 메소드의 SQL 오류 = "+e.getMessage());
 		} finally {
 			close(con, pstmt, rs);
 		}
-		return studnetList;
+		return studentList;
 	}
 }
