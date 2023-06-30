@@ -1,3 +1,4 @@
+<%@page import="xyz.itwill.util.Utility"%>
 <%@page import="xyz.itwill.dto.ReviewDTO"%>
 <%@page import="xyz.itwill.dao.ReviewDAO"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
@@ -83,8 +84,16 @@ URL 주소를 전달하여 응답
 	ReviewDTO review = new ReviewDTO();
 	review.setNum(num);
 	review.setReviewid(loginMember.getId());
-	review.setSubject(subject);
-	review.setContent(content);
+	// 사용자로부터 입력받아 전달된 값에 태그관련 문자값이 존재할 경우 문제 발생
+	// => XSS(Cross Site Script) 공격 : 사용자로부터 악의적인 스크립트를 입력받아 페이지의 이상이 생기거나
+	//		다른 사용자의 사용방해 또는 쿠키 및 기다 개인 정보를 특정 사이트로 전송하는 공격방법
+	//	review.setSubject(subject);
+	
+	// XSS 공격을 방어하기 위해 전달값을 변환하여 필드값으로 저장
+	//review.setSubject(Utility.stripTag(subject));  //사용자가 입력한 태그 관련 문자열을 제거하여 저장
+	review.setSubject(Utility.escapeTag(subject));  //사용자가 입력한 태그를 문자열로 처리하여 저장
+	review.setContent(Utility.escapeTag(content));
+
 	review.setReviewimg(reviewimg);
 	review.setRef(ref);
 	review.setRestep(restep);

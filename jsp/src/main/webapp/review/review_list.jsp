@@ -163,6 +163,7 @@ td {
 				<td colspan="5">검색된 게시글이 없습니다.</td>
 			</tr>
 		<% } else { %>
+		
 			<%-- List 객체의 요소(ReviewDTO 객체)를 하나씩 제공받아 처리하기 위한 반복문 --%>
 			<% for(ReviewDTO review : reviewList) {  %>
 			<tr>
@@ -172,23 +173,26 @@ td {
 				
 				<%-- 제목 --%>
 				<td class="subject">
+				
 					<%-- 게시글이 답글인 경우에 대한 응답 처리 --%>
 					<% if(review.getRestep()!=0) {  //검색된 게시글이 답글인 경우 %>
 						<%-- 게시글의 깊이를 제공받아 왼쪽 여백 설정 --%>
 						<span style="margin-left: <%=review.getRelevel()*20%>px;">└[답글]</span>
 					<% } %>
+					
 					<%-- 게시글의 상태를 비교하여 제목과 링크를 구분하여 응답 처리 --%>
-					<% if(review.getStatus()==1) {  //일반 게시글인 경우 %>
-						<a href="#"><%=review.getSubject()%></a>					
-					<% } else if(review.getStatus()==2) {  //비밀 게시글인 경우 %>
+				<% if(review.getStatus()==1) {//일반 게시글인 경우 %>
+						<a href="<%=request.getContextPath()%>/index.jsp?group=review&worker=review_detail&num=<%=review.getNum()%>&pageNum=<%=pageNum%>&search=<%=search%>&keyword=<%=keyword%>"><%=review.getSubject()%></a>					
+					<% } else if(review.getStatus()==2) {//비밀 게시글인 경우 %>
 						<span class="subject_hidden">비밀글</span>
+						
 						<%-- 로그인 상태의 사용자가 게시글 작성자이거나 관리자인 경우 --%>
-						<% if(loginMember!=null && (loginMember.getId().equals(review.getReviewid()) || loginMember.getMemberStatus()==9)) { %>)
-							<a href="#"><%=review.getSubject()%></a>					
+						<% if(loginMember!=null && (loginMember.getId().equals(review.getReviewid()) || loginMember.getMemberStatus()==9)) { %>
+							<a href="<%=request.getContextPath()%>/index.jsp?group=review&worker=review_detail&num=<%=review.getNum()%>&pageNum=<%=pageNum%>&search=<%=search%>&keyword=<%=keyword%>">"><%=review.getSubject()%></a>					
 						<% } else { %>
 							게시글 작성자 또는 관리자만 확인 가능합니다.
 						<% } %>
-					<% } else if(review.getStatus()==0) {  //삭제 게시글인 경우 %>
+					<% } else if(review.getStatus()==0) {//삭제 게시글인 경우 %>
 						<span class="subject_hidden">삭제글</span>
 						작성자 또는 관리자에 의해 삭제된 게시글입니다.
 					<% } %>
