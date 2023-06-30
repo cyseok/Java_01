@@ -77,19 +77,20 @@ public class ReviewDAO extends JdbcDAO{
 					    (SELECT EMPNO, ENAME, SAL FROM EMP ORDER BY SAL DESC) TEMP)
 					    WHERE RANKING BETWEEN 6 AND 10;
 				*/
-				String sql="select * from (select rownum rn, temp.* from (select num, member.id"
-						+ ", name, subject, content, regdate, readcount, ref, restep, relevel"
-						+ ", ip, status from review join member on review.id=member.id "
-						+ "order by ref desc, restep) temp) where rn between ? and ?";
+				String sql="select * from (select rownum rn, temp.* from (select num, reviewid"
+						+ ", name, subject, content, reviewimg, regdate, readcount, ref, restep"
+						+ ", relevel,ip, status from review join member on reviewid=id order by"
+						+ " ref desc, restep) temp) where rn between ? and ?";
 					pstmt=con.prepareStatement(sql);
 					pstmt.setInt(1, startRow);
 					pstmt.setInt(2, endRow);
-				} else {  //게시글 검색 기능을 사용한 경우
-					String sql="select * from (select rownum rn, temp.* from (select num, member.id"
-						+ ", name, subject, content, regdate, readcount, ref, restep, relevel"
-						+ ", ip, status from review join member on review.id=member.id"
-						+ " where "+search+" like '%'||?||'%' and status <> 0"
-						+ " order by ref desc, restep) temp) where rn between ? and ?";
+					
+				} else {//게시글 검색 기능을 사용한 경우
+					String sql="select * from (select rownum rn, temp.* from (select num, reviewid"
+						+ ", name, subject, content, reviewimg, regdate, readcount, ref, restep"
+						+ ", relevel,ip, status from review join member on reviewid=id where "
+						+ search + " like '%'||?||'%' and status <> 0 order by ref desc, restep)"
+						+ " temp) where rn between ? and ?";
 					pstmt=con.prepareStatement(sql);
 					pstmt.setString(1, keyword);
 					pstmt.setInt(2, startRow);
@@ -106,6 +107,7 @@ public class ReviewDAO extends JdbcDAO{
 				review.setName(rs.getString("name"));
 				review.setSubject(rs.getString("subject"));
 				review.setContent(rs.getString("content"));
+				review.setReviewimg(rs.getString("reviewimg"));
 				review.setRegdate(rs.getString("regdate"));
 				review.setReadcount(rs.getInt("readcount"));
 				review.setRef(rs.getInt("ref"));
@@ -163,17 +165,18 @@ public class ReviewDAO extends JdbcDAO{
 		try {
 			con=getConnection();
 			
-			String sql = "insert into review values(?,?,?,?,sysdate,0,?,?,?,?,?)";
+			String sql = "insert into review values(?,?,?,?,?,sysdate,0,?,?,?,?,?)";
 				pstmt=con.prepareStatement(sql);
 				pstmt.setInt(1, review.getNum());
 				pstmt.setString(2, review.getReviewid());
 				pstmt.setString(3, review.getSubject());
 				pstmt.setString(4, review.getContent());
-				pstmt.setInt(5, review.getRef());
-				pstmt.setInt(6, review.getRestep());
-				pstmt.setInt(7, review.getRelevel());
-				pstmt.setString(8, review.getIp());
-				pstmt.setInt(9, review.getStatus());
+				pstmt.setString(5, review.getReviewimg());
+				pstmt.setInt(6, review.getRef());
+				pstmt.setInt(7, review.getRestep());
+				pstmt.setInt(8, review.getRelevel());
+				pstmt.setString(9, review.getIp());
+				pstmt.setInt(10, review.getStatus());
 				
 				rows = pstmt.executeUpdate();
 				
@@ -183,8 +186,29 @@ public class ReviewDAO extends JdbcDAO{
 			close(con, pstmt);
 		}
 		return rows;
+	}
+	//=====================================================================================
+	// 부모글 관련 정보를 전달받아 review 테이블의 restep 컬럼의 값을 변경하고 변경 행 개수 반환
+	public int updateRestep(int ref, int restep) {
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		int rows=0;
 		
-		
+		try {
+			con=getConnection();
+			
+			String sql="update review set restep=restep+1 where ref=? and restep>?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, ref);
+			pstmt.setInt(1, restep);
+			
+			rows=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("[에러]updateRestep() 메소드의 SQL 오류 = "+e.getMessage());
+		} finally {
+			close(con, pstmt);
+		}
+		return rows;
 	}
 }
 
