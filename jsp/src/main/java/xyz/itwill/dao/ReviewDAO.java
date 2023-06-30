@@ -102,7 +102,7 @@ public class ReviewDAO extends JdbcDAO{
  			while(rs.next()) {
 				ReviewDTO review=new ReviewDTO();
 				review.setNum(rs.getInt("num"));
-				review.setId(rs.getString("id"));
+				review.setReviewid(rs.getString("reviewid"));
 				review.setName(rs.getString("name"));
 				review.setSubject(rs.getString("subject"));
 				review.setContent(rs.getString("content"));
@@ -166,7 +166,7 @@ public class ReviewDAO extends JdbcDAO{
 			String sql = "insert into review values(?,?,?,?,sysdate,0,?,?,?,?,?)";
 				pstmt=con.prepareStatement(sql);
 				pstmt.setInt(1, review.getNum());
-				pstmt.setString(2, review.getId());
+				pstmt.setString(2, review.getReviewid());
 				pstmt.setString(3, review.getSubject());
 				pstmt.setString(4, review.getContent());
 				pstmt.setInt(5, review.getRef());
