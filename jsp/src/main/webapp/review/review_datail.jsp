@@ -7,6 +7,7 @@
 <%-- 글번호를 전달받아 review 테이블에 저장된 게시글을 검색하여 클라이언트에게 전달하여 응답하는 JSP 문서
 => 페이지 번호, 검색대상, 검색단어는 반환받아 [review_list.jsp] 문서를 요청할 때 전달 --%>
 <%
+
 	if(request.getParameter("num")==null) {  // 전달값이 없는 경우
 		out.println("<script type='text/javascript'>");
 		out.println("location.href='"+request.getContextPath()+"/index.jsp?group=error&worker=error_400'");
@@ -22,7 +23,7 @@
 	String keyword = request.getParameter("keyword");
 	
 	// 글 번호를 전달받아 review 테이블에 저장된 게시글을 검색하여 DTO 객체로 반환하는 DAO 클래스
-	ReviewDTO review = ReviewDAO.getDAO().selectRiview(num);
+	ReviewDTO review = ReviewDAO.getDAO().selectReview(num);
 	
 	if(review==null) {  // 검색된 게시글이 없는 경우 -> 에러페이지 이동
 		out.println("<script type='text/javascript'>");
@@ -38,10 +39,10 @@
 	if(review.getStatus()==2) {  // 비밀글인 경우
 		// 비로그인이거나 로그인 사용자가 게시글 작성자와 관리자가 아닌 경우 -> 에러페이지 이동
 		if(loginMember==null || !loginMember.getId().equals(review.getReviewid()) && loginMember.getMemberStatus()!=9) {
-			out.println("<script type='text/javascript'>");
-			out.println("location.href='"+request.getContextPath()+"/index.jsp?group=error&worker=error_400'");
-			out.println("</script>");
-			return;
+	out.println("<script type='text/javascript'>");
+	out.println("location.href='"+request.getContextPath()+"/index.jsp?group=error&worker=error_400'");
+	out.println("</script>");
+	return;
 		}
 	}
 	

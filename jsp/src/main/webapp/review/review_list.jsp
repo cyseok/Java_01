@@ -13,6 +13,8 @@
 => [글쓰기] 태그를 클릭한 경우 [review/review_write.jsp] 문서 요청 -> 로그인 상태의 사용자에게만 제공 --%>
 
 <%
+
+
 	// 검색처리에 필요한 전달값(검색대상과 검색 단어)을 반환받아 저장
 	String search = request.getParameter("search");
 	if(search==null) {
@@ -36,7 +38,7 @@
 	
 	// review 테이블에 저장된 전체 게시글의 개수를 검색하여 반환하는 DAO 클래스의 메소드 호출
 	// => 게시글 검색기능 미구현시 호출되는 메소드
-	int totalReview = ReviewDAO.getDAO().selectRiviewCount(search, keyword);
+	int totalReview = ReviewDAO.getDAO().selectReviewCount(search, keyword);
 	
 	// 전체 페이지의 개수를 계산하여 저장
 	// 나머지가 있으면 + 1

@@ -12,6 +12,8 @@
 <%@include file = "/security/login_check.jspf" %>
 
 <%
+
+
 	if(request.getParameter("num")==null) {  // 전달값이 없는 경우
 		out.println("<script type='text/javascript'>");
 		out.println("location.href='"+request.getContextPath()+"/index.jsp?group=error&worker=error_400'");
@@ -27,7 +29,7 @@
 	String keyword = request.getParameter("keyword");
 	
 	// 글 번호를 전달받아 review 테이블에 저장된 게시글을 검색하여 DTO 객체로 반환하는 DAO 클래스
-	ReviewDTO review = ReviewDAO.getDAO().selectRiview(num);
+	ReviewDTO review = ReviewDAO.getDAO().selectReview(num);
 	
 	if(review==null) {  // 검색된 게시글이 없는 경우 -> 에러페이지 이동
 		out.println("<script type='text/javascript'>");

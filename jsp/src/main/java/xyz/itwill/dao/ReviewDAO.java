@@ -26,7 +26,7 @@ public class ReviewDAO extends JdbcDAO{
 	
 	//=====================================================================================
 	// review 테이블에 저장된 게시글 중 검색 처리된 전체 게시글의 개수를 검색하여 반환하는 메소드
-	public int selectRiviewCount(String search, String keyword) {
+	public int selectReviewCount(String search, String keyword) {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
@@ -213,7 +213,7 @@ public class ReviewDAO extends JdbcDAO{
 	
 	//=====================================================================================
 	// 글 번호를 전달받아 review 테이블에 저장된 게시글을 검색하여 DTO 객체로 반환하는 메소드
-	public ReviewDTO selectRiview(int num) {
+	public ReviewDTO selectReview(int num) {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs = null;
@@ -285,25 +285,37 @@ public class ReviewDAO extends JdbcDAO{
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		int rows=0;
-		
 		try {
 			con=getConnection();
 			
-			String sql="update review set subject=?, content=?, reviewimg=?, status=? where num=?";
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, review);
-			pstmt.setInt(2, restep);
+			//동적 SQL 기능을 사용하여 컬럼값 변경을 다르게 설정 
+			if(review.getReviewimg()!=null) {
+				String sql="update review set subject=?,content=?,reviewimg=?,status=? where num=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, review.getSubject());
+				pstmt.setString(2, review.getContent());
+				pstmt.setString(3, review.getReviewimg());
+				pstmt.setInt(4, review.getStatus());
+				pstmt.setInt(5, review.getNum());
+			} else {
+				String sql="update review set subject=?,content=?,status=? where num=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, review.getSubject());
+				pstmt.setString(2, review.getContent());
+				pstmt.setInt(3, review.getStatus());
+				pstmt.setInt(4, review.getNum());
+			}
 			
 			rows=pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("[에러]updateReview() 메소드의 SQL 오류 = "+e.getMessage());
+			System.out.println("[에러]updateReView() 메소드의 SQL 오류 = "+e.getMessage());
 		} finally {
 			close(con, pstmt);
 		}
 		return rows;
+		
 	}
 }
-
 
 
 
