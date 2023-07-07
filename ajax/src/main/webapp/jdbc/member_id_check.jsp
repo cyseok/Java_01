@@ -18,9 +18,9 @@
 	AjaxMemberDTO ajaxMember=AjaxMemberDAO.getDAO().selectAjaxMember(id);
 %>
 <result>
-	<% if(ajaxMember!=null) {//아이디로 검색된 회원정보가 있는 경우 - 아이디 중복(아이디 사용 불가능) %>
+	<% if(ajaxMember!=null) {  //아이디로 검색된 회원정보가 있는 경우 - 아이디 중복(아이디 사용 불가능) %>
 	<code>impossible</code>	
-	<% } else {//아이디로 검색된 회원정보가 있는 경우 - 아이디 미중복(아이디 사용 가능) %>
+	<% } else {  //아이디로 검색된 회원정보가 있는 경우 - 아이디 미중복(아이디 사용 가능) %>
 	<code>possible</code>	
 	<% } %>
 </result>
