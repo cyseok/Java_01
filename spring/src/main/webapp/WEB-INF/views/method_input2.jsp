@@ -9,6 +9,7 @@
 <body>
 	<h1>입력페이지</h1>
 	<hr>
+	<!-- ★ post 방식은  form 태그를 이용해 전달해야 한다. -->
 	<form action="method" method="post">
 		이름 : <input type="text" name="name"> 
 		<button type="submit">전송</button>
