@@ -7,5 +7,56 @@
 	<!-- root-context.xml : 모든 Front Controller에서 객체로 사용될 클래스를 Spring Bean으로
 	등록하기 위한 Spring Bean Configuration File -->
 	<!-- => DAO 클래스 작성에 필요한 클래스를 Spring Bean으로 등록 -->
-	<!-- => DataSource, SqlSessionFactory, SqlSession, TransactionManager 등 -->	
-</beans>
+	<!-- => DataSource, SqlSessionFactory, SqlSession, TransactionManager 등 -->
+	
+	<!-- ========================================================================================= -->
+	<!-- DataSource 관련 클래스를 Spring Bean으로 등록 -> DBCP(DataBase Connection Pool) -->
+	<!-- => DataSource 객체 필드에 Connection 객체 생성에 필요한 값을 필드에 저장되도록 값 주입 -> Setting 인젝션 처리 -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="scott"/>
+		<property name="password" value="tiger"/>
+	</bean>
+	<!-- ========================================================================================= -->
+	<!-- SqlSessionFactory 관련 클래스를 Spring Bean으로 등록 -->
+	<!-- => SqlSessionFactoryBean 객체 필드에 객체 생성에 필요한 값을 인젝션 처리 -->
+	<!-- => 필드에 SpqSession 객체를 생성하기 위한 값이 저장되도록 객체 주입 Setting 인젝션 처리 ->  -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+		<!-- configLocation 필드에 Mybatis Framework의 환경설정파일에 경로가 저장되도록 설정 -->
+		<!-- => SpringMVC Framework에서 사용하는 스프링 컨테이너(WebApplicationContext 객체)는 [src/main/webapp] 폴더를 최상위 폴더로 처리하여 파일 경로를 제공 -->
+		<!-- <property name="configLocation" value="/WEB-INF/spring/mybatis-config.xml"/> -->
+		<!-- [src/main/java] 폴더 또는 [src/main/resources] 폴더에 환경설정파일이 있는 경우 classpath 접두사를 사용하여 스프링 컨데이너로 접근 -->
+		
+		<!-- => 폴더의 패키지에 작성된 환경설정파일은 파일 시스템 경로 표현하여 접근 가능 -->
+		<!-- <property name="configLocation" value="classpath:xyz/itwill/config/mybatis-config.xml"/> -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<!--                                                                                       -->
+		<!-- dataSource 필드에 DataSource 관련 클래스의 Spring Bean이 저장되도록 설정 - DI -->
+		<!--  -->
+		<property name="dataSource" ref="dataSource"/>
+		<!--                                                                                       -->
+		<!-- typeAliasesPackage 필드에 DTO 클래스를 작성한 패키지를 저장하도록 설정 -->
+		<!-- → XML 기반의 매퍼파일(MapperFile)에서 Java 자료형 대신 사용할 별칭을 제공하기 위해 
+			Mybatis 환경설정파일의 typeAliases 엘리먼트 package 엘리먼트와 유사한 기능 제공 -->
+		<property name="typeAliasesPackage" value="xyz.itwill10.dto"/>
+		<!--                                                                                       -->
+		<!-- mapperLocations 필드에 List 객체를 생성하여 저장되도록 설정 -->
+		<!-- => List 객체의 요소에는 XML 기반의 매퍼 파일의 경로가 요소값으로 저장되도록 추가 - 매퍼 등록 -->
+		<property name="mapperLocations">
+			<list>
+				<!-- [src/main/java] 폴더의 패키지에 매퍼 파일을 작성하기 위한 classpath 접두사 사용  -->
+				<value>classpath:xyz/itwill10/mapper/*.xml</value>
+			</list>
+		</property>				
+	</bean>
+	<!-- ========================================================================================= -->
+	<!-- SqlSession 관련 클래스를 Spring Bean으로 등록 -->
+	<!-- → SqlSessionTemplate 클래스로 객체를 생성하기 위한 생성자 매개변수에 SqlSessionFactory 객체를 전달하여 필드 초기화 처리 - DI -->
+	<!-- destroy-method 속성을 사용하여 Spring Bean 소멸전 clearCache 메소드가 자동 호출되도록 설정 -->
+	<!-- → clearCache 메소드는 SqlSessionTemplate 객체 소멸전 SqlSessionTemplate 객체에 의해 사용된 JDBC 관련 객체를 정리하는 메소드 -->
+	<!-- → DAO 클래스의 메소드에서 SqlSession 객체 사용후 close() 메소드를 호출하지 않도록 설정 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession" destroy-method="clearCache">
+		<constructor-arg ref="sqlSessionFactoryBean"/>
+	</bean>
+</beans>	

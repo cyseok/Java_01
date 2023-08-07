@@ -17,7 +17,18 @@
 	<annotation-driven />
 	<!-- ================================================================================ -->
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
+	<!-- <resources mapping="/resources/**" location="/resources/" /> -->
+	
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- resources : 클라이언트 요청을 Front Controller가 직접 응답 처리되도록 설정하는 엘리먼트 -->
+	<!-- → 클라이언트의 리소스 파일 요청에 대한 응답 처리를 위해 사용하는 엘리먼트 -->
+	<!-- mapping 속성 : 클라이언트에 의해 요청되는 리소스 파일의 요청 URL 주소 패턴을 속성값으로 설정 -->
+	<!-- → [**] 패턴 문자를 속성값으로 사용한 경우 현재 폴더 및 하위 폴더의 리소스 파일 요청 가능 -->
+	<!-- location 속성 : 클라이언트 요청에 의해 리소스 파일을 검색하기 위한 폴더를 속성값으로 설정 -->
+	<!-- <resources mapping="/resources/**" location="/resources/" /> -->
+	<resources mapping="/images/**" location="/resources/images/" />
+	<resources mapping="/css/**" location="/resources/css/" />
+	<resources mapping="/js/**" location="/resources/js/" />
 	<!-- ================================================================================ -->
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- InternalResourceViewResolver 클래스를 Spring Bean으로 등록 -->
@@ -31,5 +42,8 @@
 	<!-- base-package 속성 : 스프링 어노테이션을 검색하기 위해 어노테이션을 사용한 클래스의 패키지를 속성값으로 설정 -->
 	<!-- <context:component-scan base-package="xyz.itwill.controller" /> --><!-- 기존 코드 -->
 	<!-- xyz.itwill10.controller 패키지에 요청 처리 클래스(Model)를 작성하고 스프링 어노테이션을 Spring Bean으로 등록 -->
-	<context:component-scan base-package="xyz.itwill10.controller" /><!-- 새로 작성한 코드 -->	
+	<context:component-scan base-package="xyz.itwill10.controller" /><!-- 새로 작성한 코드 -->
+	<!-- ================================================================================ -->
+	<!-- xyz.itwill10.dao 패키지에 DAO 클래스를 작성하고 스프링 어노테이션을 이용하여 Spring Bean으로 등록 -->
+	<context:component-scan base-package="xyz.itwill10.dao" />	
 </beans:beans>
