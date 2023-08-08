@@ -163,7 +163,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
-			<scope>test</scope>
+			 <!-- <scope>test</scope> -->
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/xerces/xercesImpl -->
@@ -219,12 +219,12 @@
 		    <version>${org.springframework-version}</version>
 		</dependency>
 		<!-- ============================================================================= -->
-		<!-- ============================================================================= -->
 		<!-- → Mybatis Framework 관련 라이브러리 -->
 		<dependency>
  			<groupId>org.mybatis</groupId>
  	    	<artifactId>mybatis</artifactId>
  			<version>3.5.11</version>
+		<!-- ============================================================================= -->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -234,6 +234,25 @@
   		  <artifactId>mybatis-spring</artifactId>
   		  <version>2.1.0</version>
 		</dependency>		
+		<!-- ============================================================================= -->
+		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+		<!-- => 퍼시스턴스 프레임워크(Persistence Framework)에 의해 발생되는 로그 이벤트를
+		Spring Framework의 로그 구현체로 기록하기 위한 기능을 제공하는 라이브러리 -->
+		<dependency>
+		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+		    <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+		    <version>1.16</version>
+		</dependency>
+		<!-- ============================================================================= -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<!-- => Spring Framework를 이용하여 테스트 프로그램 작성에 필요한 기능을 제공하는 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+			<!-- <scope>test</scope> -->
+		</dependency>
+		<!-- ============================================================================= -->
 		
 	</dependencies>
 	
