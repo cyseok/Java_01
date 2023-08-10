@@ -229,6 +229,7 @@
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<!-- → Spring Framework에 Mybatis Framework 기능을 제공하기 위한 라이브러리 -->
+		<!-- ★ error 발생하면 버전 2로 낮추기 -->
 		<dependency>
   		  <groupId>org.mybatis</groupId>
   		  <artifactId>mybatis-spring</artifactId>
@@ -251,6 +252,23 @@
 		    <artifactId>spring-test</artifactId>
 		    <version>${org.springframework-version}</version>
 			<!-- <scope>test</scope> -->
+		</dependency>
+		
+		<!-- ============================================================================= -->
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-extras -->
+		<!-- => TilesView 기능을 제공하기 위한 라이브러리 --> 
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-extras</artifactId>
+		    <version>3.0.8</version>
+		</dependency>
+		<!-- ============================================================================= -->
+		<!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
+		<!-- => 암호화 처리 기능을 제공하기 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.mindrot</groupId>
+		    <artifactId>jbcrypt</artifactId>
+		    <version>0.4</version>
 		</dependency>
 		<!-- ============================================================================= -->
 		

@@ -14,7 +14,7 @@ import xyz.itwill10.service.StudentService;
 // >> 테스트 프로그램(JUit)- 단위 프로그램(모듈) 테스트 >> HTML 문서를 JSP 문서로 변환 >> 토합 프로그램 테스트 - 브라우저 이용
 // >> 통합 프로그램 테스트 -> 브라우저 이용
 
-// Mybatis 프레임워크에서 발생되는 로그 이벤트를 Spring 프레임워크의 로그 구현체로 기록하는 방법
+// ★Mybatis 프레임워크에서 발생되는 로그 이벤트를 Spring 프레임워크의 로그 구현체로 기록하는 방법
 // 1.log4jdbc-log4j2-jdbc4 라이브러리를 프로젝트에 빌드 처리 - 메이븐 : pom.xml
 // 2.Spring Bean Configuration File(root-context.xml)에서 DataSource 관련 클래스를 Spring Bean으로 
 // 등록한 bean 엘리먼트의 driverClassName 필드와 url 필드의 값을 변경 
