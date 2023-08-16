@@ -8,6 +8,6 @@ import xyz.itwill.dto.Notice;
 		int insertNotice(Notice notice);
 		int updateNotice(Notice notice);
 		int deleteNotice(String noticeNum);
-		List<Notice> selectNoticeList(String noticeTitle, String noticeContent);
+		List<Notice> selectNoticeList();
 	}
 
