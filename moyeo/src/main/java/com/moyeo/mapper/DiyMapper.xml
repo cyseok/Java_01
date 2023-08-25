@@ -16,7 +16,7 @@
         		diy_price,
         		diy_map,
         		diy_regdate,
-        		love_ldx,
+        		love_idx,
         		diy_title,
         		diy_content1,
         		diy_content2,
@@ -25,15 +25,15 @@
         		diy_content5)
         
         VALUES(
-                #{diyIdx},
-                #{usesrinfoId},
-                #{diyStartDate},
-                #{diyEndDate},
+                to_char(#{diyIdx}, 'yyyy-mm-dd'),
+                to_char(#{userinfoId}, 'yyyy-mm-dd'),
+                #{diyStartdate},
+                #{diyEnddate},
                 #{diyPeople},
                 #{diyLoc},
-                #{diyPrice}, 
+                to_char(#{diyPrice}, 'fml999,999,999'), 
                 #{diyMap},
-                sysdate,
+               to_char(sysdate, 'yyyy-mm-dd amhh:mi:ss day'),
                 #{loveIdx},
                 #{diyTitle},
                 #{diyContent1},
@@ -41,7 +41,7 @@
                 #{diyContent3},
                 #{diyContent4},
                 #{diyContent5})
-	</insert>
+                	</insert>
 
 	<select id="selectDiyList" resultType="Diy">
         SELECT 
@@ -60,7 +60,7 @@
                 ,diyContent2
                 ,diyContent3
                 ,diyContent4
-                ,diyContent5
+                ,diyContent5)
         FROM diy, love 
         WHERE loveidx=(SELECT COUNT(loveCheck)
                         FROM love

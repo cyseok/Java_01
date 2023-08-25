@@ -62,7 +62,7 @@
             <div class="progress-bar"></div>
           </div>
       
-          <a href="diy_form2" class="progress-wizard-dot">
+          <a href="diy_list" class="progress-wizard-dot">
             <div class="progress-wizard-content">
               <i class="fas fa-dollar-sign" aria-hidden="true"></i>
               <span class="d-block">2. Payment info</span>
@@ -96,7 +96,7 @@
                 <label for="exampleInputText">출발일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YY">
+                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YYYY">
                 </div>
                 </div>
     
@@ -105,7 +105,7 @@
                 <label for="exampleInputText">도착일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YY">
+                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YYYY">
                 </div>
               </div>
         

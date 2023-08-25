@@ -8,7 +8,8 @@ import lombok.Data;
 public class Diy {
         private int diyIdx;
         private String userinfoId;
-        private String diyDate;
+        private String diyStartdate;
+        private String diyEnddate;
         private int diyPeople;
         private String diyLoc;
         private int diyPrice;
