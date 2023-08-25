@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moyeo.mapper.NoticeMapper">
+	<insert id="insertNotice">
+		<selectKey resultType="int" keyProperty="noticeNum" order="BEFORE">
+			SELECT notice_seq.nextval
+		</selectKey>
+		INSERT INTO notice 
+			VALUES(#{noticeNum},
+				   #{noticeTitle},
+				   #{noticeContent},
+				   #{noticeRegdate},
+				   #{noticeStatus});
+	</insert>
+	
+	<update id="updateNotice">
+		UPDATE 
+			notice 
+		SET
+			noticeTitle = #{noticeTitle},
+			noticeContent = #{noticeContent},
+			noticeRegdate = #{noticeRegdate},
+			noticeStatus = #{noticeStatus}
+		WHERE noticeNum = #{noticeNum}
+	</update>
+	
+	<delete id="deleteNotice">
+		DELETE FROM 
+			notice 
+		WHERE noticeNum = #{noticeNum}
+	</delete>	
+	
+	<select id="selectNoticeList" resultType="Notice">
+		SELECT 
+			noticeNum,
+		    noticeTitle,
+	        noticeContent,
+	        noticeRegdate,
+	        noticeStatus
+		FROM notice 
+		WHERE noticeTitle like '%' || #{@keyword} || '%'
+				or noticeContent like '%' || #{@keyword} || '%'
+		ORDER BY noticeStatus desc, noticeRegdate
+	</select>
+</mapper>
