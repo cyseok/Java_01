@@ -9,7 +9,7 @@ public interface DiyDAO {
 	int insertDiy(Diy diy);
 	int updateDiy(Diy diy);
 	
-	// *** String 인지 물어보
+	// *** String 인지 물어보기
 	Diy getUserinfoId(Userinfo id);
 	
 	int deleteDiy(String userinfoId);

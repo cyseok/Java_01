@@ -16,7 +16,7 @@
         		diy_price,
         		diy_map,
         		diy_regdate,
-        		diy_introduction
+        		diy_introduction,
         		love_idx,
         		diy_title,
         		diy_content1,
@@ -27,7 +27,7 @@
         
         VALUES(
                 #{diyIdx},
-                #{userinfoId},
+                (select id from userinfo where id = #{id},
                 to_char(#{diyStartdate}, 'yyyy-mm-dd'),
                 to_char(#{diyEnddate}, 'yyyy-mm-dd'),
                 #{diyPeople},
@@ -65,7 +65,7 @@
         		diy_content3,
         		diy_content4,
         		diy_content5
-        FROM diy d
+        FROM diy
         ORDER BY diy_regdate desc;
 	</select>
 	
@@ -94,13 +94,13 @@
 -->
 
 	<update id="updateDiy">
-        update diy
+        UPDATE diy
         <set>
-        	<if test="diyStartDate != null and diyStartDate != ''">
+        	<if test="diyStartdate != null and diyStartdate != ''">
         		 diy_startdate=#{diyStartDate},
         	</if>
         	
-        	<if test="diyEndDate != null and diyEndDate != ''">
+        	<if test="diyEnddate != null and diyEnddate != ''">
         		 diy_enddate=#{diyEndDate},
         	</if>
         	
@@ -121,11 +121,15 @@
         	</if>
         	
 			<if test="diyRegdate != null and diyRegdate != ''">
-        		 diy_modifydate=#{SYSTIMESTAMP},
+        		 diy_modifydate=SYSTIMESTAMP,
         	</if>
         	
         	<if test="diyTitle != null and diyTitle != ''">
         		 diy_title=#{diyTitle},
+        	</if>
+        	
+        	<if test="diyTitle != null and diyTitle != ''">
+        		 diy_introduction=#{diyIntroduction},
         	</if>
         	
         	<if test="diyContent1 != null and diyContent1 != ''">
@@ -145,9 +149,10 @@
         	</if>
         	
         	<if test="diyContent5 != null and diyContent5 != ''">
-        		 diy_content5=#{diyContent5},
+        		 diy_content5=#{diyContent5}
         	</if>
-       </set>
-        where userinfo_id=#{userinfoId}
+        </set>
+
+        <!-- WHERE userinfo_id=#{userinfoId} -->
 	</update>
 </mapper>

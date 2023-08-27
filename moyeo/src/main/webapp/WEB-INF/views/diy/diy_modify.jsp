@@ -93,7 +93,7 @@
         <h3 class="text-capitalize mb-5">personal info</h3>
 
 
-        <form action="/moyeo/diy/diy_add" name="diyAdd" method="post" target="_blank">
+        <form action="/moyeo/diy/diy_detail" name="diyAdd" method="post" target="_blank">
      	   <div class="row">
      	   
      	   
@@ -103,7 +103,7 @@
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
                   <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyStartdate }">
                 </div>
-                </div>
+               </div>
                 
   	  
     
@@ -199,36 +199,17 @@
     		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
 		  </div>
 		  
-
-
-
-          
-          <!-- 사용자 닉네임 받아오기  -->
-          <div class="form-group row">
-             <label for="staticEmail" class="col-sm-2 col-form-label">사용자 아이디</label>
-         	 <div class="col-sm-10">
-         		 <input type="text" readonly class="form-control-plaintext" id="staticEmail">
-         	 </div>
-          </div>
-          
-   	     <button id="addPhotoAndField" class="badge bg-secondary">추가</button>
-
- 
-          
-            <!-- badge bg-secondary : 버튼 이미지 클래스 -->
-    
-          
+		  
+		  <!--  추가 버튼 글 + 사진 스크립트 작성 -->
+			 <button id="addPhotoAndField" class="badge bg-secondary">추가</button>
     
           <div class="form-group form-check mb-9">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">졸리
-         	 <a href="">다</a>
+            <input type="checkbox" class="form-check-input" id="checkBox">
+            <label class="form-check-label" for="checkBox">졸리<a href="">다</a>
             </label>
           </div>
       </div>
-</form>	  
     
-   		 <form action="/moyeo/diy/diy_detail" method="get" target="_blank">
            <div class="text-center text-md-start text-lg-end">
             <button type="submit" class="btn btn-primary text-uppercase" id="enrollBtn">
               작성

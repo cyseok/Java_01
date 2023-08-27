@@ -92,26 +92,30 @@
       <div class="col-md-7 col-lg-8 order-1 order-md-0">
         <h3 class="text-capitalize mb-5">personal info</h3>
 
-
-        <form action="/moyeo/diy/diy_add" name="diyAdd" method="post" target="_blank">
      	   <div class="row">
+                  <div class="form-group row">
+                    <label for="userinfoId" class="col-sm-2 col-form-label">아이디</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="userinfoId" value="${userinfoId }">
+                    </div>
+                  </div>
      	   
      	   <!-- 작성버튼 없애기, 아이디가같으면 수정버튼 생성 -> modify로 이동, 다 수정할 수 없게 만들기              작성일, 수정일 보여지기 -->
               <div class="col-lg-6">
-                <label for="exampleInputText">출발일</label>
+                <label for="diyStartdate">출발일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyStartdate }">
+                  <input type="text" class="form-control border-0 bg-smoke" id="diyStartdate" name="dateRange" value="${diyStartdate }" readonly>
                 </div>
                 </div>
                 
   	  
     
              <div class="col-lg-6">
-                <label for="exampleInputText">도착일</label>
+                <label for="diyEnddate">도착일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyEnddate }">
+                  <input type="text" class="form-control border-0 bg-smoke" id="diyEnddate" name="dateRange" value="${diyEnddate }" readonly>
                 </div>
               </div>
         
@@ -119,36 +123,36 @@
     
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="inputName">인원</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyPeople" value="${diyEnddate }">
+                <label for="diyPeople">인원</label>
+                <input type="text" class="form-control border-0 bg-smoke" id="diyPeople" name="diyPeople" value="${diyEnddate }" readonly>
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="inputName">지역</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyLoc" value="${diyLoc }">
+                <label for="diyLoc">지역</label>
+                <input type="text" class="form-control border-0 bg-smoke" id="diyLoc" name="diyLoc" value="${diyLoc }" readonly>
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="inputName">비용</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyPrice" value="${diyPrice }">
+                <label for="diyPrice">비용</label>
+                <input type="text" class="form-control border-0 bg-smoke" id="diyPrice" name="diyPrice" value="${diyPrice }" readonly>
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="inputName">제목</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyTitle" value="${diyTitle }">
+                <label for="diyTitle">제목</label>
+                <input type="text" class="form-control border-0 bg-smoke" id="diyTitle" name="diyTitle" value="${diyTitle }" readonly>
               </div>
             </div>
            
            <div class="col-lg-6">
               <div class="form-group">
-                <label for="inputName">간단한 소개글</label>
-                <textarea class="form-control border-0 bg-smoke" rows="2" name="diyIntroduction">${diyIntroduction }</textarea>
+                <label for="diyIntrodution">간단한 소개글</label>
+                <textarea class="form-control border-0 bg-smoke" rows="2" id="diyIntrodution" name="diyIntroduction" readonly>${diyIntroduction }</textarea>
               </div>
             </div>
            
@@ -160,7 +164,7 @@
 		 	
           <div class="form-group mb-5" id="day1Block">
             <label for="exampleFormControlTextarea1">DAY 1</label>
-            <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7">${diyContent1 }</textarea>
+            <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7" readonly>${diyContent1 }</textarea>
           </div>
           
           <div class="form-group mb-5">
@@ -171,7 +175,7 @@
             
            <div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 2</label>
-            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
+            <textarea class="form-control border-0 bg-smoke" rows="7" readonly></textarea>
           </div>
           
           <div class="form-group mb-5">
@@ -181,7 +185,7 @@
             
            <div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 3</label>
-            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
+            <textarea class="form-control border-0 bg-smoke" rows="7" readonly></textarea>
           </div>
           
           <div class="form-group mb-5">
@@ -191,50 +195,34 @@
             
 			<div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 4</label>
-            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
+            <textarea class="form-control border-0 bg-smoke" rows="7" readonly></textarea>
           </div>
           
           <div class="form-group mb-5">
     		<label for="photoUpload">DAY 4 사진올리기</label>
     		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
 		  </div>
-		  
-
-
-
-          
-          <!-- 사용자 닉네임 받아오기  -->
-          <div class="form-group row">
-             <label for="staticEmail" class="col-sm-2 col-form-label">사용자 아이디</label>
-         	 <div class="col-sm-10">
-         		 <input type="text" readonly class="form-control-plaintext" id="staticEmail">
-         	 </div>
-          </div>
-          
-   	     <button id="addPhotoAndField" class="badge bg-secondary">추가</button>
-
- 
-          
-            <!-- badge bg-secondary : 버튼 이미지 클래스 -->
-    
-          
     
           <div class="form-group form-check mb-9">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">졸리
-         	 <a href="">다</a>
+            <label class="form-check-label" for="exampleCheck1">졸리<a href="">다</a>
             </label>
           </div>
-      </div>
-</form>	  
-    
-   		 <form action="/moyeo/diy/diy_detail" method="get" target="_blank">
-           <div class="text-center text-md-start text-lg-end">
-            <button type="submit" class="btn btn-primary text-uppercase" id="enrollBtn">
-              작성
+          
+          <!--  수정하기 버튼은 등록한 사용자,관리자만 나타나게 만들기
+          <div class="text-center text-md-start text-lg-end">
+            <button type="submit" class="btn btn-primary text-uppercase" id="">
+              수정하기
             </button>
            </div>
-         </form>
+            -->
+          
+           
+           <div class="text-center text-md-start text-lg-end">
+              <a href="${pageContext.request.contextPath}/diy/diy_list" class="btn btn-primary text-uppercase">목록으로</a>
+           </div>
+           
+   	   </div>
       </div>
     </div>
 </section>

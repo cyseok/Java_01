@@ -24,7 +24,7 @@
         <div class="col-lg-6">
           <div class="page-title-content">
             <div class="title-border">
-              <h2 class="text-uppercase text-white font-weight-bold">Booking step 2</h2>
+              <h2 class="text-uppercase text-white font-weight-bold">DIY List</h2>
             </div>
             <p class="text-white mb-0"></p>
           </div>
@@ -43,25 +43,6 @@
   <div class="container">
     <div class="row">
     <!-- ============================================================================== -->
-    <c:choose>
-    	<c:when test="${empty(selectDiyList) }">
-    		<tr align="center">
-				<td colspan="5">글정보가 없습니다.</td>
-			</tr>	
-    	</c:when>
-    	
-    	<c:forEach var="post" items="${posts}">
-     	  	 <div>
-          	  <img src="${post.image}" alt="Image">
-          	  <h2>${diyTitle}</h2>
-          	  <p>${diyIntroduction}</p>
-          	  <p>${diyStartdate}</p>
-          	  <p>${diyPeople}</p>
-          	  <p>${post.date}</p>
-        	</div>
-    	</c:forEach>
-    </c:choose>
-    <!-- ============================================================================== -->
         <div class="container">
         <div class="row">
         
@@ -71,18 +52,19 @@
 						<td colspan="5">글정보가 없습니다.</td>
 					</tr>	
     			</c:when>
-    	
-            <c:forEach var="post" items="${selectDiyList}">
+    			
+    		<c:otherwise>
+          	  <c:forEach var="post" items="${selectDiyList}">
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-transparent mb-7">
                         <a href="" class="position-relative">
                             <img class="card-img-top rounded lazyestload" data-src="${uploadPath}" src="${uploadPath}" alt="thumbnail">
-                            <div class="card-img-overlay card-hover-overlay rounded"></div>
+                            <!-- <div class="card-img-overlay card-hover-overlay rounded"></div> -->
                         </a>
 
                         <div class="card-body py-6">
                             <h3 class="mb-4">
-                                <a href="blog-single-right-sidebar.html" class="text-capitalize text-dark hover-text-primary">${diyTitle}</a>
+                               <a class="text-capitalize text-dark hover-text-primary">${diyTitle}</a>
                             </h3>
 
                             <div class="meta-post-sm mb-4">
@@ -121,10 +103,14 @@
                         </div>
                    	 </div>
              	   </div>
-         	 	 </c:forEach>
+         	   	  </c:forEach>
+         	 	 </c:otherwise>
         	   </c:choose>
         	 </div>
    		   </div>
+   		   <div class="text-center text-md-start text-lg-end">
+            <a href="${pageContext.request.contextPath}/diy/diy_add" class="btn btn-primary text-uppercase">작성하기</a>
+           </div>
   	   	</div>
 	 </div>
 

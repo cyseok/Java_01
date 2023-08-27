@@ -15,6 +15,8 @@ public class Diy {
         private int diyPrice;
         private String diyMap;
         private String diyRegdate;
+        private String diyModifydate;
+        private String diyIntroduction;
         private long loveIdx; //- love는 long
         private String diyTitle;
         private String diyContent1;

@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.moyeo.dto.Diy;
+import com.moyeo.dto.Userinfo;
 import com.moyeo.exception.DiyNotFoundException;
 import com.moyeo.service.DiyService;
+import com.moyeo.service.UserinfoService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -27,6 +29,9 @@ public class DiyController {
 	
 	@Autowired
 	private final DiyService diyService;
+	
+	@Autowired
+	private final UserinfoService userinfoService;
 	
 	// diy 페이지 요청
 	@GetMapping("/diy")
@@ -83,11 +88,14 @@ public class DiyController {
 	 */
 	
 	@PostMapping("/diy_add")
-	public String diyAdd ( Diy diy, Model model, String userinfoId) throws Exception {
+	public String diyAdd (Diy diy, Model model, Userinfo id) throws Exception {
+		
+		//model.addAttribute("imgIdxList",imgIdxList);
+		// String userinfoId = diyService.getUserinfoId(Userinfo id);
+		Diy userinfoId = diyService.getUserinfoId(id);
+		model.addAttribute("userinfoId", userinfoId);
 		
 		diyService.insertDiy(diy);
-		//model.addAttribute("imgIdxList",imgIdxList);
-		model.addAttribute("diy_detail", diyService.selectDiy(userinfoId));
 	
 		return "/diy_detail";
 		}

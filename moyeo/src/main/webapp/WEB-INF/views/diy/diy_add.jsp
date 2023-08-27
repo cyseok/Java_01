@@ -46,14 +46,17 @@
     <div class="mb-8"></div>
       <div class="row progress-wizard">
       
-        <div class="col-4 progress-wizard-step active">
+        
+      
+        <div class="col-4 progress-wizard-step incomplete">
           <div class="progress">
             <div class="progress-bar"></div>
           </div>
-          <a href="${pageContext.request.contextPath}/moyeo/diy/diy_add" class="progress-wizard-dot">
+      
+          <a href="diy_add" class="progress-wizard-dot">
             <div class="progress-wizard-content">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span class="d-block">1. DIY 글 작성 페이지</span>
+              <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+              <span class="d-block">DIY 작성 페이지</span>
             </div>
           </a>
         </div>
@@ -65,21 +68,8 @@
       
           <a href="diy_list" class="progress-wizard-dot">
             <div class="progress-wizard-content">
-              <i class="fas fa-dollar-sign" aria-hidden="true"></i>
-              <span class="d-block">2. Payment info</span>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col-4 progress-wizard-step incomplete">
-          <div class="progress">
-            <div class="progress-bar"></div>
-          </div>
-      
-          <a href="booking-step-3.html" class="progress-wizard-dot">
-            <div class="progress-wizard-content">
               <i class="fa fa-check" aria-hidden="true"></i>
-              <span class="d-block">3. Confirmation</span>
+              <span class="d-block">목록으로</span>
             </div>
           </a>
         </div>
@@ -92,21 +82,14 @@
         <h3 class="text-capitalize mb-5">personal info</h3>
 
 
-        <form action="${pageContext.request.contextPath}/moyeo/diy/diy_add" name="diyAdd" method="post" target="_blank">
+        <form action="diy_detail" name="diy_add" method="post" target="_blank">
      	   <div class="row">
-     	   
-     	     <div class="form-group row">
-            	 <label for="staticEmail" class="col-sm-2 col-form-label">사용자 아이디</label>
-         		 <div class="col-sm-10">
-         			 <input type="text" readonly class="form-control-plaintext" id="userinfoId">
-         		 </div>
-     	     </div>
-     	   
+
               <div class="col-lg-6">
                 <label for="exampleInputText">출발일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyStartdate }">
+                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YYYY">
                 </div>
                 </div>
                 
@@ -116,7 +99,7 @@
                 <label for="exampleInputText">도착일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyEnddate }">
+                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YYYY">
                 </div>
               </div>
         
@@ -125,35 +108,35 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">인원</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyPeople" value="${diyEnddate }">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyPeople" placeholder="ex) 3" >
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">지역</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyLoc" value="${diyLoc }">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyLoc" placeholder="ex) 서울">
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">비용</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyPrice" value="${diyPrice }">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyPrice" placeholder="ex) 10">
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">제목</label>
-                <input type="text" class="form-control border-0 bg-smoke" name="diyTitle" value="${diyTitle }">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyTitle" placeholder="ex) 3박 4일 강릉여행 후기!!">
               </div>
             </div>
            
            <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">간단한 소개글</label>
-                <textarea class="form-control border-0 bg-smoke" rows="2" name="diyIntroduction">${diyIntroduction }</textarea>
+                <textarea class="form-control border-0 bg-smoke" rows="2" name="diyIntroduction" placeholder="ex) 여행을 간단하게 소개해주세요"></textarea>
               </div>
             </div>
            
@@ -165,7 +148,7 @@
 		 	
           <div class="form-group mb-5" id="day1Block">
             <label for="exampleFormControlTextarea1">DAY 1</label>
-            <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7">${diyContent1 }</textarea>
+            <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7"></textarea>
           </div>
           
           <div class="form-group mb-5">
@@ -212,28 +195,20 @@
           
    	     <button id="addPhotoAndField" class="badge bg-secondary">추가</button>
 
- 
-          
-            <!-- badge bg-secondary : 버튼 이미지 클래스 -->
-    
-          
-    
           <div class="form-group form-check mb-9">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">졸리
-         	 <a href="">다</a>
+            <label class="form-check-label" for="exampleCheck1">졸리<a href="">다</a>
             </label>
           </div>
-      </div>
-</form>	  
+        </div>
     
-   		 <form action="/moyeo/diy/diy_detail" method="get" target="_blank">
            <div class="text-center text-md-start text-lg-end">
             <button type="submit" class="btn btn-primary text-uppercase" id="enrollBtn">
-              작성
+              작성하기
             </button>
            </div>
-         </form>
+	  </form>	  
+	  
       </div>
     </div>
 </section>
