@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.moyeo.dto.Diy;
+import com.moyeo.dto.Userinfo;
 import com.moyeo.mapper.DiyMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,6 @@ public class DiyDAOImpl implements DiyDAO {
 	@Override
 	public int insertDiy(Diy diy) {
 		// TODO Auto-generated method stub
-		System.out.println("DiyDAOImple 클래스 오류");
 		return sqlSession.getMapper(DiyMapper.class).insertDiy(diy);
 	}
 
@@ -32,24 +32,43 @@ public class DiyDAOImpl implements DiyDAO {
 	}
 
 	@Override
-	public int deleteDiy(String diyIdx) {
+	public Diy getUserinfoId(Userinfo id) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DiyMapper.class).deleteDiy(diyIdx);
+		return sqlSession.getMapper(DiyMapper.class).getUserinfoId(id);
 	}
-	
+
 	@Override
-	public Diy selectDiy(String diyTitle) {
+	public int deleteDiy(String userinfoId) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DiyMapper.class).selectDiy(diyTitle);
+		return sqlSession.getMapper(DiyMapper.class).deleteDiy(userinfoId);
 	}
-	
+
+	@Override
+	public Diy selectDiy(String userinfoId) {
+		// TODO Auto-generated method stub
+		return sqlSession.getMapper(DiyMapper.class).selectDiy(userinfoId);
+	}
 
 	@Override
 	public List<Diy> selectDiyList() {
 		// TODO Auto-generated method stub
 		return sqlSession.getMapper(DiyMapper.class).selectDiyList();
 	}
-	
+
+	@Override
+	public List<Diy> selectDiyList(String diyTitle) {
+		// TODO Auto-generated method stub
+		return sqlSession.getMapper(DiyMapper.class).selectDiyList(diyTitle);
+	}
+
+	@Override
+	public int selectDiyListCount() {
+		// TODO Auto-generated method stub
+		return sqlSession.getMapper(DiyMapper.class).selectDiyListCount();
+	}
+
+
+	// *** 내용으로도 검색하는거 만들기
 	
 
 }

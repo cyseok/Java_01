@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moyeo.mapper.ImgMapper">
+
+	<insert id="insertImg">
+
+        INSERT INTO img (
+        		img_idx,
+        		filename,
+        		uploadpath,
+        		pack_idx,
+        		diy_idx,
+        		review_idx,
+        		qa_idx,
+        		notice_idx)
+        VALUES(
+                #{imgIdx},
+                #{fileName},
+                #{uploadPath},
+                #{packIdx},
+                #{diyIdx}, 
+                #{reviewIdx},
+                #{qaIdx},
+                #{noticeIdx})
+    </insert>
+
+
+	<select id="selectImg">
+        SELECT 
+        		img_idx,
+        		filename,
+        		uploadpath,
+        		pack_idx,
+        		diy_idx,
+        		review_idx,
+        		qa_idx,
+        		notice_idx
+        FROM img
+        INNER JOIN diy ON img.diy_idx = diy.diy_idx
+        
+    
+	</select>
+</mapper>

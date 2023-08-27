@@ -5,11 +5,11 @@
   
   <head>
 <jsp:include page="/WEB-INF/views/inc/head.jsp"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  </head>     
-
-<body id="body" class="up-scroll">
-
+  </head>    
+   
+<body id="body" class="up-scroll">	
   <!-- ====================================
   ——— HEADER
   ===================================== -->
@@ -27,7 +27,7 @@
         <div class="col-lg-6">
           <div class="page-title-content">
             <div class="title-border">
-              <h2 class="text-uppercase text-white font-weight-bold">DIY 작성 페이</h2>
+              <h2 class="text-uppercase text-white font-weight-bold">DIY 작성 페이지</h2>
             </div>
             <p class="text-white mb-0"></p>
           </div>
@@ -43,13 +43,14 @@
 ===================================== -->
 <section class="py-8 py-md-10">
   <div class="container">
-    <div class="mb-8">
+    <div class="mb-8"></div>
       <div class="row progress-wizard">
+      
         <div class="col-4 progress-wizard-step active">
           <div class="progress">
             <div class="progress-bar"></div>
           </div>
-          <a href="${pageContext.request.contextPath}/javascript:void(0)" class="progress-wizard-dot">
+          <a href="${pageContext.request.contextPath}/moyeo/diy/diy_add" class="progress-wizard-dot">
             <div class="progress-wizard-content">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span class="d-block">1. DIY 글 작성 페이지</span>
@@ -82,30 +83,40 @@
             </div>
           </a>
         </div>
+        
        </div>
-        </div>
+    
     
     <div class="row">
       <div class="col-md-7 col-lg-8 order-1 order-md-0">
         <h3 class="text-capitalize mb-5">personal info</h3>
 
 
-        <form action="/moyeo/diy/diy_add" method="post" target="_blank">
+        <form action="${pageContext.request.contextPath}/moyeo/diy/diy_add" name="diyAdd" method="post" target="_blank">
      	   <div class="row">
+     	   
+     	     <div class="form-group row">
+            	 <label for="staticEmail" class="col-sm-2 col-form-label">사용자 아이디</label>
+         		 <div class="col-sm-10">
+         			 <input type="text" readonly class="form-control-plaintext" id="userinfoId">
+         		 </div>
+     	     </div>
+     	   
               <div class="col-lg-6">
                 <label for="exampleInputText">출발일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YYYY">
+                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyStartdate }">
                 </div>
                 </div>
-    
+                
+  	  
     
              <div class="col-lg-6">
                 <label for="exampleInputText">도착일</label>
                 <div class="form-group form-group-icon form-group-icon-default">
                   <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="" placeholder="DD/MM/YYYY">
+                  <input type="text" class="form-control border-0 bg-smoke" name="dateRange" value="${diyEnddate }">
                 </div>
               </div>
         
@@ -114,125 +125,118 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">인원</label>
-                <input type="text" class="form-control border-0 bg-smoke" placeholder="ex) 3">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyPeople" value="${diyEnddate }">
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">지역</label>
-                <input type="text" class="form-control border-0 bg-smoke" placeholder="ex) 서울">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyLoc" value="${diyLoc }">
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">비용</label>
-                <input type="text" class="form-control border-0 bg-smoke" placeholder="ex) 10">
-              </div>
-            </div>
-    
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="inputName">등록일(위치옮기)</label>
-                <input type="text" class="form-control border-0 bg-smoke" placeholder="빈칸">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyPrice" value="${diyPrice }">
               </div>
             </div>
     
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">제목</label>
-                <input type="text" class="form-control border-0 bg-smoke" placeholder="ex) 제목">
+                <input type="text" class="form-control border-0 bg-smoke" name="diyTitle" value="${diyTitle }">
               </div>
             </div>
-           </div>
+           
+           <div class="col-lg-6">
+              <div class="form-group">
+                <label for="inputName">간단한 소개글</label>
+                <textarea class="form-control border-0 bg-smoke" rows="2" name="diyIntroduction">${diyIntroduction }</textarea>
+              </div>
+            </div>
+           
     
-            <div class="form-group mb-5">
-            <label for="exampleFormControlTextarea1">DIY 내용1</label>
-            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
+          <div class="form-group mb-5">
+    		<label for="photoUpload">썸네일 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+		  </div>
+		 	
+          <div class="form-group mb-5" id="day1Block">
+            <label for="exampleFormControlTextarea1">DAY 1</label>
+            <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7">${diyContent1 }</textarea>
           </div>
+          
+          <div class="form-group mb-5">
+    		<label for="photoUpload">DAY 1 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+		  </div>
             
            <div class="form-group mb-5">
-            <label for="exampleFormControlTextarea1">DIY 내용2</label>
-            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
-          </div>
-            
-           <div class="form-group mb-5">
-            <label for="exampleFormControlTextarea1">DIY 내용3</label>
-            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
-          </div>
-            
-			<div class="form-group mb-5">
-            <label for="exampleFormControlTextarea1">DIY 내용4</label>
+            <label for="exampleFormControlTextarea1">DAY 2</label>
             <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
           </div>
           
           <div class="form-group mb-5">
-            <label for="exampleFormControlTextarea1">DIY 내용5</label>
+    		<label for="photoUpload">DAY 2 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+		  </div>
+            
+           <div class="form-group mb-5">
+            <label for="exampleFormControlTextarea1">DAY 3</label>
             <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
           </div>
+          
+          <div class="form-group mb-5">
+    		<label for="photoUpload">DAY 3 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+		  </div>
             
+			<div class="form-group mb-5">
+            <label for="exampleFormControlTextarea1">DAY 4</label>
+            <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
+          </div>
+          
+          <div class="form-group mb-5">
+    		<label for="photoUpload">DAY 4 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+		  </div>
+		  
 
+
+
+          
+          <!-- 사용자 닉네임 받아오기  -->
+ 
+          
+   	     <button id="addPhotoAndField" class="badge bg-secondary">추가</button>
+
+ 
+          
+            <!-- badge bg-secondary : 버튼 이미지 클래스 -->
     
           
     
           <div class="form-group form-check mb-9">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">졸리
-          <a href="다"></a>
+         	 <a href="">다</a>
             </label>
           </div>
+      </div>
+</form>	  
     
-          <div class="text-center text-md-start text-lg-end">
+   		 <form action="/moyeo/diy/diy_detail" method="get" target="_blank">
+           <div class="text-center text-md-start text-lg-end">
             <button type="submit" class="btn btn-primary text-uppercase" id="enrollBtn">
               작성
             </button>
-          </div>
-        </form>
-      </div>
-    
-      <div class="col-md-5 col-lg-4">
-        <h3 class="mb-5">DIY.........;;</h3>
-        <div class="card bg-smoke mb-6 mb-md-0">
-          <img class="card-img-top lazyestload" data-src="${pageContext.request.contextPath}/assets/img/booking/booking.jpg" src="${pageContext.request.contextPath}/assets/img/booking/booking.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h6 class="card-title text-dark">Maldives Tour</h6>
-
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-transparent border-top-0 px-0 py-4">
-                <span><i class="far fa-calendar-alt me-1" aria-hidden="true"></i>From:</span>
-                <span class="text-gray-color">25 Mar, 2019</span>
-              </li>
-            
-              <li class="list-group-item bg-transparent px-0 py-4 border-off-white">
-                <span><i class="far fa-calendar-alt me-1" aria-hidden="true"></i>To:</span>
-                <span class="text-gray-color">28 Mar, 2019</span>
-              </li>
-
-              <li class="list-group-item bg-transparent px-0 py-4 border-off-white">
-                <span><i class="fa fa-user me-1" aria-hidden="true"></i>Guests:</span>
-                <span class="text-gray-color">2 Adults, 1Child</span>
-              </li>
-
-              <li class="list-group-item bg-transparent px-0 py-4 d-none"></li>
-            </ul>
-          </div>
-
-          <div class="card-footer mt-6">
-            <h2 class="mb-0">
-              <span>Total:</span>
-              <span class="text-primary font-weight-bold">$6,500</span>
-            </h2>
-          </div>
-        </div>
+           </div>
+         </form>
       </div>
     </div>
-  </div>
 </section>
-
-
-
-  </div><!-- element wrapper ends -->
 
     <!-- ====================================
     ——— FOOTER SECTION
@@ -371,6 +375,7 @@
       </div>
     </div>
     
+
     
     <script>
     let enrollForm = $("#diy_form");
@@ -382,7 +387,56 @@
     });
 	</script>
     
-    
+	<script type="text/javascript">
+	
+	function submitCheck() {
+		if(dateRange.value=="") {
+			alert("날짜를 입력해주세요.");
+			return;
+		}
+		
+		var noReg=/\d{2}/g;
+		if(!noReg.test(diyPeople.value)) {
+			alert("인원은 숫자로만 입력해주세요.");
+			diyPeople.focus();
+			return;
+		}
+		
+		if(diyLoc.value=="") {
+			alert("지역을 입력해 주세요.");
+			diyLoc.focus();
+			return;
+		}
+		
+		var noReg=/\d{9}/g;
+		if(diyPrice.value=="") {
+			alert("비용은 숫자로만 입력해주세요.");
+			diyPrice.focus();
+			return;
+		}
+		
+		if(diyTitle.value=="") {
+			alert("제목을 입력해 주세요.");
+			diyTitle.focus();
+			return;
+		}
+
+		if(diyIntroduction.value=="") {
+			alert("소개글을 입력해 주세요.");
+			diyIntroduction.focus();
+			return;
+		}
+		
+		if(diyContent1.value=="") {
+			alert("내용을 입력해 주세요.");
+			diyContent1.focus();
+			return;
+		}
+
+		studentForm.submit();
+	} 
+	</script>
+
     
     
     
