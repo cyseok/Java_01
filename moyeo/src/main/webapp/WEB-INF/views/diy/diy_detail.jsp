@@ -93,12 +93,16 @@
         <h3 class="text-capitalize mb-5">personal info</h3>
 
      	   <div class="row">
-                  <div class="form-group row">
-                    <label for="userinfoId" class="col-sm-2 col-form-label">아이디</label>
-                    <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="userinfoId" value="${userinfoId }">
-                    </div>
-                  </div>
+     	   
+     	   <!-- 전체 input 태그 바꾸기 -->
+     	   	  <div class="form-group row">
+	            <label for="userinfoId" class="col-sm-2 col-form-label">아이디</label>
+	            <div class="col-sm-10">
+	              <input type="text" readonly class="form-control-plaintext" id="userinfoId" value="${diyDetail.userinfoId }" readonly>
+	            </div>
+	          </div>
+  
+                  
      	   
      	   <!-- 작성버튼 없애기, 아이디가같으면 수정버튼 생성 -> modify로 이동, 다 수정할 수 없게 만들기              작성일, 수정일 보여지기 -->
               <div class="col-lg-6">
@@ -142,6 +146,12 @@
               </div>
             </div>
     
+            <div class="col-md-6">
+	            <img class="card-img-top rounded lazyestload" id="diyThumbnail" data-src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" alt="Card image cap">
+	            <div class="card-img-overlay card-hover-overlay rounded"></div>
+	        </div>
+    
+          
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="diyTitle">제목</label>
@@ -149,62 +159,63 @@
               </div>
             </div>
            
+           
+           <!-- 다른것도 태그바꾸기 -->
            <div class="col-lg-6">
               <div class="form-group">
                 <label for="diyIntrodution">간단한 소개글</label>
-                <textarea class="form-control border-0 bg-smoke" rows="2" id="diyIntrodution" name="diyIntroduction" readonly>${diyDetail.diyIntroduction }</textarea>
+                <p class="form-control border-0 bg-smoke">${diyDetail.diyIntroduction }</p>
               </div>
             </div>
            
-    
-          <div class="form-group mb-5">
-    		<label for="photoUpload">썸네일 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload" value="${diyDetail.diyThumbnail }">
-		  </div>
+				<!-- day 1 사진 -->          
+        	  <div class="col-md-6">
+	            <img class="card-img-top rounded lazyestload" id="diyThumbnail" data-src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" alt="Card image cap">
+	            <div class="card-img-overlay card-hover-overlay rounded"></div>
+	        </div>
+            
 		 	
           <div class="form-group mb-5" id="day1Block">
             <label for="exampleFormControlTextarea1">DAY 1</label>
             <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7" readonly>${diyDetail.diyContent1 }</textarea>
           </div>
-          
-          <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 1 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload" value="${diyDetail.diyContent1Img }">
-		  </div>
+				
+          	<div class="col-md-6">
+          		<!-- day 2 사진 -->
+	            <img class="card-img-top rounded lazyestload" id="diyThumbnail" data-src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" alt="Card image cap">
+	            <div class="card-img-overlay card-hover-overlay rounded"></div>
+	        </div>
             
            <div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 2</label>
             <textarea class="form-control border-0 bg-smoke" rows="7" readonly>${diyDetail.diyContent2 }</textarea>
           </div>
           
-          <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 2 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload" value="${diyDetail.diyContent2Img }">
-		  </div>
+         	 <div class="col-md-6">
+         	 	<!-- day 3 사진 -->
+	            <img class="card-img-top rounded lazyestload" id="diyThumbnail" data-src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" alt="Card image cap">
+	            <div class="card-img-overlay card-hover-overlay rounded"></div>
+	        </div>
             
-           <div class="form-group mb-5">
+         	  <div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 3</label>
             <textarea class="form-control border-0 bg-smoke" rows="7" readonly>${diyDetail.diyContent3 }</textarea>
           </div>
           
-          <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 3 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload" value="${diyDetail.diyContent3Img }">
-		  </div>
-            
+             <div class="col-md-6">
+             	<!-- day 4 사진 -->
+	            <img class="card-img-top rounded lazyestload" id="diyThumbnail" data-src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" alt="Card image cap">
+	            <div class="card-img-overlay card-hover-overlay rounded"></div>
+	        </div>
+          
 			<div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 4</label>
             <textarea class="form-control border-0 bg-smoke" rows="7" readonly>${diyDetail.diyContent4 }</textarea>
           </div>
-          
-          <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 4 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload" value="${diyDetail.diyContent4Img }">
-		  </div>
     
           <div class="form-group form-check mb-9">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">졸리<a href="">다</a>
+            <label class="form-check-label" for="exampleCheck1">졸리<a href="https://www.naver.com/">다</a>
             </label>
           </div>
           

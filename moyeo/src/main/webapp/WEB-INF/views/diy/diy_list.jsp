@@ -47,7 +47,7 @@
         <div class="row">
         
           <c:choose>
-          		<c:when test="${empty(selectDiyList) }">
+          		<c:when test="${empty(diyList) }">
     				<tr align="center">
 						<td colspan="5">글정보가 없습니다.</td>
 					</tr>	
@@ -58,7 +58,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-transparent mb-7">
                         <a href="" class="position-relative">
-                            <img class="card-img-top rounded lazyestload" data-src="${diyList.diyThumbnail}" src="${diyList.diyThumbnail}" alt="thumbnail">
+                            <img class="card-img-top rounded lazyestload" data-src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" src="${pageContext.request.contextPath}/assets/img/blog/blog-01.jpg" alt="thumbnail">
                             <!-- <div class="card-img-overlay card-hover-overlay rounded"></div> -->
                         </a>
 
@@ -100,7 +100,7 @@
                                 </ul>
                             </div>
 
-                            <p class="mb-0">${diyIntroduction}</p>
+                            <p class="mb-0">${diyList.diyIntroduction}</p>
                         </div>
 
                         <div class="card-footer px-5">

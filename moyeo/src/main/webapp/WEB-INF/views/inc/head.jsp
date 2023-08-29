@@ -41,29 +41,7 @@
     <link href='${pageContext.request.contextPath}/assets/plugins/owl-carousel/owl.carousel.min.css' rel='stylesheet' media='screen'>
     <link href='${pageContext.request.contextPath}/assets/plugins/owl-carousel/owl.theme.default.min.css' rel='stylesheet' media='screen'>
 
-    
-  
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
     
 
     <!-- GOOGLE FONT -->
@@ -74,7 +52,7 @@
 
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/assets/img/favicon.png"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

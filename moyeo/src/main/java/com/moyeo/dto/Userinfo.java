@@ -1,5 +1,6 @@
 package com.moyeo.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 /*

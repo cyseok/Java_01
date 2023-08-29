@@ -1227,7 +1227,7 @@ class Carousel extends BaseComponent {
     config = { ...Default$9,
       ...Manipulator.getDataAttributes(this._element),
       ...(typeof config === 'object' ? config : {})
-    }
+    };
     typeCheckConfig(NAME$a, config, DefaultType$9);
     return config;
   }

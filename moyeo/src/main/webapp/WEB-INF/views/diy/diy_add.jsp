@@ -125,6 +125,12 @@
               </div>
             </div>
     
+          <div class="form-group mb-5">
+    		<label for="imgUpload">썸네일 올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="diyThumbnail" name="diyThumbnail">
+    		<div id="imagePreview"  style="height: 25px;line-height: 15px;margin-left: 200px;"></div>
+		  </div>
+		  
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="inputName">제목</label>
@@ -139,22 +145,21 @@
               </div>
             </div>
            
-    
           <div class="form-group mb-5">
-    		<label for="imgUpload">썸네일 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyThumbnail">
-    		<div id="imagePreview"></div>
+    		<label for="imgUpload">DAY 1 사진올리기</label>
+    		<div id="imagePreview" style="height: 25px;line-height: 15px;margin-left: 200px;"></div>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="diyContent1Img" name="diyContent1Img">
 		  </div>
-		 	
-          <div class="form-group mb-5" id="day1Block">
+          
+          <div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 1</label>
             <textarea class="form-control border-0 bg-smoke" name="diyContent1" rows="7"></textarea>
           </div>
-          
+            
           <div class="form-group mb-5">
-    		<label for="imgUpload">DAY 1 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent1Img">
-    		<div id="imagePreview"></div>
+    		<label for="imgUpload">DAY 2 사진올리기</label>
+    		<div id="imagePreview"  style="height: 25px;line-height: 15px;margin-left: 200px;"></div>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="diyContent2Img" name="diyContent2Img">
 		  </div>
             
            <div class="form-group mb-5">
@@ -163,33 +168,27 @@
           </div>
           
           <div class="form-group mb-5">
-    		<label for="imgUpload">DAY 2 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent2Img">
-    		<div id="imagePreview"></div>
+    		<label for="imgUpload">DAY 3 사진올리기</label>
+    		<div id="imagePreview"  style="height: 25px;line-height: 15px;margin-left: 200px;"></div>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="diyContent3Img" name="diyContent3Img">
 		  </div>
-            
+          
            <div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 3</label>
             <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
           </div>
           
           <div class="form-group mb-5">
-    		<label for="imgUpload">DAY 3 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent3Img">
-    		<div id="imagePreview"></div>
+    		<label for="imgUpload">sDAY 4 사진올리기</label>
+    		<div id="imagePreview"  style="height: 25px;line-height: 15px;margin-left: 200px;"></div>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="diyContent4Img" name="diyContent4Img">
 		  </div>
-            
+		  
 			<div class="form-group mb-5">
             <label for="exampleFormControlTextarea1">DAY 4</label>
             <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
           </div>
           
-          <div class="form-group mb-5">
-    		<label for="imgUpload">DAY 4 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent4Img">
-    		<div id="imagePreview"></div>
-		  </div>
-		  
            <div class="container mt-5">
 	        <div id="elementContainer" id="addButton" class="mt-3"></div>
 	        <button type="button" id="addButton" class="btn btn-hover btn-outline-secondary text-uppercase">

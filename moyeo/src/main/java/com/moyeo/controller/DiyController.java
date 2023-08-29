@@ -37,8 +37,8 @@ public class DiyController {
 		return "diy/diy";
 	}
 	// diy 자세히보기
-	@GetMapping("/diy_detail")
-	public String diyDetail(Model model, int diyIdx) {
+	@PostMapping("/diy_detail")
+	public String diyDetail(Model model,@RequestParam(name = "diyIdx", required = false) Integer diyIdx) {
 		model.addAttribute("diyDetail", diyService.selectDiy(diyIdx));
 		return "diy/diy_detail";
 	}

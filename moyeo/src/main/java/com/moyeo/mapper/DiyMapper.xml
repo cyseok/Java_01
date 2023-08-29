@@ -78,7 +78,8 @@
         		diy_content3,
         		diy_content4img,
         		diy_content4)
-        FROM diy;
+        FROM diy
+        WHERE diy_idx=#{diyIdx}
 	</select>
 	
 	
@@ -93,7 +94,7 @@
         		love_idx,
         		diy_introduction
         FROM diy  
-        ORDER BY diy_regdate DESC;
+        ORDER BY diy_regdate DESC
     </select>
        
        

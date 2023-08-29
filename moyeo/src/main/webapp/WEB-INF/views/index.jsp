@@ -3,15 +3,9 @@
 <!DOCTYPE html>
 <html lang="utf-8">
   
-  <head>
-	<jsp:include page="/WEB-INF/views/inc/head.jsp"/>
-  </head>     
 
 <body id="body" class="up-scroll">
 
- 
- <jsp:include page="/WEB-INF/views/inc/header.jsp"/>
- 
   <div class="main-wrapper packages-grid">
 
 <!-- ====================================
@@ -307,7 +301,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-4">
         <div class="card card-hover mb-5 mb-lg-0">
-          <a href="mo_package_animal.html" class="position-relative">
+          <a href="mo_package_animal.jsp" class="position-relative">
             <img class="card-img-top lazyestload" data-src="assets/img/home/deal/deal-01.jpg" src="assets/img/home/deal/deal-01.jpg" alt="Card image cap">
             
             <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
@@ -545,42 +539,7 @@
 
 
 
-<jsp:include page="/WEB-INF/views/inc/footer.jsp"/>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- Javascript -->
-    <script src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery-3.4.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/plugins/menuzord/js/menuzord.js"></script>
-    
-    <script src='${pageContext.request.contextPath}/assets/plugins/isotope/isotope.min.js'></script>
-    <script src='${pageContext.request.contextPath}/assets/plugins/images-loaded/js/imagesloaded.pkgd.min.js'></script>
-    <script src='${pageContext.request.contextPath}/assets/plugins/fancybox/jquery.fancybox.min.js'></script>
-    
-    <script src='${pageContext.request.contextPath}/assets/plugins/selectric/jquery.selectric.min.js'></script>
-    <script src='${pageContext.request.contextPath}/assets/plugins/daterangepicker/js/moment.min.js'></script>
-    <script src='${pageContext.request.contextPath}/assets/plugins/daterangepicker/js/daterangepicker.min.js'></script>
-    
-    <script src="${pageContext.request.contextPath}/assets/plugins/lazyestload/lazyestload.js"></script>
-    <script src='${pageContext.request.contextPath}/assets/plugins/dzsparallaxer/dzsparallaxer.js'></script>
-    
-    
-    
-    
-    
-    <script src='${pageContext.request.contextPath}/assets/plugins/revolution/js/jquery.themepunch.tools.min.js'></script>
-    <script src='${pageContext.request.contextPath}/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js'></script>
-    <script src="${pageContext.request.contextPath}/assets/plugins/smoothscroll/SmoothScroll.js"></script>
-    
-    <script src="${pageContext.request.contextPath}/assets/js/star.js"></script>
   </body>
 </html>
+
