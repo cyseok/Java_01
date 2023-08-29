@@ -21,7 +21,7 @@
 ———	PAGE TITLE
 ===================================== -->
 <section class="page-title">
-  <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(assets/img/pages/page-title-bg7.jpg);">
+  <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(${pageContext.request.contextPath}/assets/img/pages/page-title-bg7.jpg);">
     <div class="container">
       <div class="row align-items-center justify-content-center" style="height: 200px;">
         <div class="col-lg-6">
@@ -56,7 +56,7 @@
           <a href="diy_add" class="progress-wizard-dot">
             <div class="progress-wizard-content">
               <i class="fas fa-dollar-sign" aria-hidden="true"></i>
-              <span class="d-block">DIY 작성 페이지</span>
+              <span class="d-block">DIY 작성</span>
             </div>
           </a>
         </div>
@@ -79,10 +79,9 @@
     
     <div class="row">
       <div class="col-md-7 col-lg-8 order-1 order-md-0">
-        <h3 class="text-capitalize mb-5">personal info</h3>
+        <h3 class="text-capitalize mb-5">여행 정보!</h3>
 
-
-        <form action="diy_detail" name="diy_add" method="post" target="_blank">
+        <form action="diy_detail" name="diy_add" method="post" target="_blank" enctype="multipart/form-data">
      	   <div class="row">
 
               <div class="col-lg-6">
@@ -142,8 +141,9 @@
            
     
           <div class="form-group mb-5">
-    		<label for="photoUpload">썸네일 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+    		<label for="imgUpload">썸네일 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyThumbnail">
+    		<div id="imagePreview"></div>
 		  </div>
 		 	
           <div class="form-group mb-5" id="day1Block">
@@ -152,8 +152,9 @@
           </div>
           
           <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 1 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+    		<label for="imgUpload">DAY 1 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent1Img">
+    		<div id="imagePreview"></div>
 		  </div>
             
            <div class="form-group mb-5">
@@ -162,8 +163,9 @@
           </div>
           
           <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 2 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+    		<label for="imgUpload">DAY 2 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent2Img">
+    		<div id="imagePreview"></div>
 		  </div>
             
            <div class="form-group mb-5">
@@ -172,8 +174,9 @@
           </div>
           
           <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 3 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+    		<label for="imgUpload">DAY 3 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent3Img">
+    		<div id="imagePreview"></div>
 		  </div>
             
 			<div class="form-group mb-5">
@@ -182,22 +185,21 @@
           </div>
           
           <div class="form-group mb-5">
-    		<label for="photoUpload">DAY 4 사진올리기</label>
-    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="photoUpload">
+    		<label for="imgUpload">DAY 4 사진올리기</label>
+    		<input type="file" class="btn btn-xs btn-outline-secondary text-uppercase" id="imgUpload" name="diyContent4Img">
+    		<div id="imagePreview"></div>
 		  </div>
 		  
-
-
-
-          
-          <!-- 사용자 닉네임 받아오기  -->
- 
-          
-   	     <button id="addPhotoAndField" class="badge bg-secondary">추가</button>
+           <div class="container mt-5">
+	        <div id="elementContainer" id="addButton" class="mt-3"></div>
+	        <button type="button" id="addButton" class="btn btn-hover btn-outline-secondary text-uppercase">
+	            Add DAY
+	        </button>
+	      </div>
 
           <div class="form-group form-check mb-9">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">졸리<a href="">다</a>
+            <label class="form-check-label" for="exampleCheck1">졸리<a href="https://www.naver.com/">다아아아아아</a>
             </label>
           </div>
         </div>
@@ -207,6 +209,7 @@
               작성하기
             </button>
            </div>
+           
 	  </form>	  
 	  
       </div>
@@ -349,22 +352,65 @@
         </div>
       </div>
     </div>
-    
 
-    
-    <script>
-    let enrollForm = $("#diy_form");
 
-    /* 상품 등록 버튼 */
-    $("#enrollBtn").on("click", function(e){
-        e.preventDefault();
-        diy_add.submit();
-    });
-	</script>
-    
+    <script >
+    const addButton = document.getElementById('addButton');
+    const elementContainer = document.getElementById('elementContainer');
+
+    // Counter for unique IDs
+    let counter = 5;
+
+    // Function to add new elements
+    function addNewDay() {
+    	 
+        const dayDiv = document.createElement('div');
+        dayDiv.classList.add('form-group', 'mb-5');
+
+        const dayLabel = document.createElement('label');
+        dayLabel.textContent = `DAY ${counter}`;
+
+        const textarea = document.createElement('textarea');
+        textarea.classList.add('form-control', 'border-0', 'bg-smoke');
+        textarea.rows = 7;
+
+        const uploadLabel = document.createElement('label');
+        uploadLabel.textContent = `Upload DAY ${counter} photo`;
+
+        const uploadInput = document.createElement('input');
+        uploadInput.type = 'file';
+        uploadInput.classList.add('btn', 'btn-xs', 'btn-outline-secondary', 'text-uppercase');
+
+        const deleteButton = document.createElement('button');
+        deleteButton.type = 'button';
+        deleteButton.classList.add('btn', 'btn-outline-secondary', 'text-uppercase');
+        deleteButton.textContent = 'Delete DAY';
+        deleteButton.addEventListener('click', () => {
+            elementContainer.removeChild(dayDiv);
+        });
+
+        dayDiv.appendChild(dayLabel);
+        dayDiv.appendChild(textarea);
+        dayDiv.appendChild(uploadLabel);
+        dayDiv.appendChild(uploadInput);
+        dayDiv.appendChild(deleteButton);
+
+        elementContainer.appendChild(dayDiv, dayLabel);
+
+    	 counter++;
+  
+        dayLabel.textContent = `DAY ${counter}`;
+    }
+
+    // Add event listener to the "Add DAY" button
+    addButton.addEventListener('click', addNewDay);
+    </script>
+
 	<script type="text/javascript">
 	
 	function submitCheck() {
+		let enrollForm = $("#diy_form");
+
 		if(dateRange.value=="") {
 			alert("날짜를 입력해주세요.");
 			return;
@@ -408,7 +454,10 @@
 			return;
 		}
 
-		studentForm.submit();
+		 $("#enrollBtn").on("click", function(e){
+		        e.preventDefault();
+		        diy_add.submit();
+		    });
 	} 
 	</script>
 

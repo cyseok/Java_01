@@ -9,13 +9,10 @@ public interface DiyDAO {
 	int insertDiy(Diy diy);
 	int updateDiy(Diy diy);
 	
-	// *** String 인지 물어보기
-	Diy getUserinfoId(Userinfo id);
+	int deleteDiy(int diyIdx);
 	
-	int deleteDiy(String userinfoId);
-	
-	// DIY 작성 디테일 페이지
-	Diy selectDiy(String userinfoId);
+	// DIY 작성 primary key인 diy_idx 값을 받아와서 detail 페이지에출
+	Diy selectDiy(int diyIdx);
 	
 	// 전체 글 검색
 	List<Diy> selectDiyList();

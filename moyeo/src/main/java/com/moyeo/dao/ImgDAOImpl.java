@@ -1,5 +1,8 @@
 package com.moyeo.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
@@ -20,9 +23,23 @@ public class ImgDAOImpl implements ImgDAO{
 	}
 
 	@Override
-	public Img selectImg(Img img) {
+	public int deleteImg(String img) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(ImgMapper.class).selectImg(img);
+		return 0;
 	}
+
+	@Override
+	public Img selectImg(String imgIdx) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Img> selectImgList(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 }

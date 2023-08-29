@@ -54,17 +54,17 @@
     			</c:when>
     			
     		<c:otherwise>
-          	  <c:forEach var="post" items="${selectDiyList}">
+          	  <c:forEach var="diyList" items="${diyList}">
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-transparent mb-7">
                         <a href="" class="position-relative">
-                            <img class="card-img-top rounded lazyestload" data-src="${uploadPath}" src="${uploadPath}" alt="thumbnail">
+                            <img class="card-img-top rounded lazyestload" data-src="${diyList.diyThumbnail}" src="${diyList.diyThumbnail}" alt="thumbnail">
                             <!-- <div class="card-img-overlay card-hover-overlay rounded"></div> -->
                         </a>
 
                         <div class="card-body py-6">
                             <h3 class="mb-4">
-                               <a class="text-capitalize text-dark hover-text-primary">${diyTitle}</a>
+                               <a class="text-capitalize text-dark hover-text-primary">${diyList.diyTitle}</a>
                             </h3>
 
                             <div class="meta-post-sm mb-4">
@@ -72,23 +72,28 @@
                                     <li class="meta-tag me-4 mb-1">
                                         <i class="fa fa-user text-gray-color" aria-hidden="true"></i>
                                         <a class="text-gray-color hover-text-primary">
-                                            <span class="ms-1 text-capitalize">${diyPeople}</span>
+                                            <span class="ms-1 text-capitalize">${diyList.diyPeople}</span>
                                         </a>
                                     </li>
                                     
                                     <li class="meta-tag text-gray-color me-4 mb-1">
 					                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-					                  <span class="ms-1 text-capitalize">${diyStartdate}</span>
+					                  <span class="ms-1 text-capitalize">${diyList.diyStartdate}</span>
 					                </li>
 					
 					                <li class="meta-tag text-gray-color me-4 mb-1">
 					                  <i class="fa fa fa-tags" aria-hidden="true"></i>
-					                  <span class="ms-1 text-capitalize">${diyLoc}</span>
+					                  <span class="ms-1 text-capitalize">${diyList.diyLoc}</span>
+					                </li>
+					                
+					                <li class="meta-tag text-gray-color me-4 mb-1">
+					                  <i class="fa fa-envelope" aria-hidden="true"></i>
+					                  <span class="ms-1 text-capitalize">${diyList.diyRegdate}</span>
 					                </li>
 					
 					                <li class="meta-tag text-gray-color me-4 mb-1">
 					                  <i class="fa fa-envelope" aria-hidden="true"></i>
-					                  <span class="ms-1 text-capitalize">${loveIdx}</span>
+					                  <span class="ms-1 text-capitalize">${diyList.loveIdx}</span>
 					                </li>
                                     
                                     <!-- Other meta tags... -->

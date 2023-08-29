@@ -12,5 +12,4 @@ public class Img {
 	private int reviewIdx;
 	private int qaIdx;
 	private int noticeIdx;
-
 }

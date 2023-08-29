@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.moyeo.dto.Diy;
-import com.moyeo.dto.Userinfo;
 import com.moyeo.mapper.DiyMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -32,21 +31,15 @@ public class DiyDAOImpl implements DiyDAO {
 	}
 
 	@Override
-	public Diy getUserinfoId(Userinfo id) {
+	public int deleteDiy(int diyIdx) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DiyMapper.class).getUserinfoId(id);
+		return sqlSession.getMapper(DiyMapper.class).deleteDiy(diyIdx);
 	}
 
 	@Override
-	public int deleteDiy(String userinfoId) {
+	public Diy selectDiy(int diyIdx) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DiyMapper.class).deleteDiy(userinfoId);
-	}
-
-	@Override
-	public Diy selectDiy(String userinfoId) {
-		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DiyMapper.class).selectDiy(userinfoId);
+		return sqlSession.getMapper(DiyMapper.class).selectDiy(diyIdx);
 	}
 
 	@Override

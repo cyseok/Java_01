@@ -3,17 +3,14 @@ package com.moyeo.mapper;
 import java.util.List;
 
 import com.moyeo.dto.Diy;
-import com.moyeo.dto.Userinfo;
 
 public interface DiyMapper {
 	int insertDiy(Diy diy);
 	int updateDiy(Diy diy);
-	Diy getUserinfoId(Userinfo id);
-	
-	int deleteDiy(String userinfoId);
+	int deleteDiy(int diyIdx);
 	
 	// DIY 작성 디테일 페이지
-	Diy selectDiy(String userinfoId);
+	Diy selectDiy(int diyIdx);
 	
 	// 전체 글 검색
 	List<Diy> selectDiyList();

@@ -15,13 +15,10 @@ public interface DiyService {
 	// void insertDiy (Diy diy);
 	void insertDiy(Diy diy);
 	void updateDiy(Diy diy);
-	void deleteDiy(String userinfoId);
-	
-	// id 받아와서 작성한 내용보이기
-	Diy getUserinfoId(Userinfo id);
+	void deleteDiy(int diyIdx);
 
 	// DIY 작성 디테일 페이지
-	Diy selectDiy(String userinfoId);
+	Diy selectDiy(int diyIdx);
 	
 	
 	// 전체 글 검색

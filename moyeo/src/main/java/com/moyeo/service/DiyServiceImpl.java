@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.moyeo.dao.DiyDAO;
-import com.moyeo.dao.UserinfoDAO;
 import com.moyeo.dto.Diy;
-import com.moyeo.dto.Userinfo;
 import com.moyeo.exception.DiyNotFoundException;
 
 import lombok.RequiredArgsConstructor;
@@ -19,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class DiyServiceImpl implements DiyService {
 	
 	private final DiyDAO diyDao;
+	
 	@Override
 	public void insertDiy(Diy diy) {
 		// TODO Auto-generated method stub
@@ -30,27 +29,21 @@ public class DiyServiceImpl implements DiyService {
 		// TODO Auto-generated method stub
 		diyDao.updateDiy(diy);
 	}
-
+	
 	@Override
-	public void deleteDiy(String userinfoId) {
+	public void deleteDiy(int diyIdx) {
 		// TODO Auto-generated method stub
-		Diy existDiy = diyDao.selectDiy(userinfoId);
+		Diy existDiy = diyDao.selectDiy(diyIdx);
 	    if (existDiy == null) {
 	        throw new DiyNotFoundException("작성한 글을 찾을 수 없습니다");
 	    }
-		diyDao.deleteDiy(userinfoId);
+		diyDao.deleteDiy(diyIdx);
 	}
 
 	@Override
-	public Diy getUserinfoId(Userinfo id) {
+	public Diy selectDiy(int diyIdx) {
 		// TODO Auto-generated method stub
-		return diyDao.getUserinfoId(id);
-	}
-
-	@Override
-	public Diy selectDiy(String userinfoId) {
-		// TODO Auto-generated method stub
-		return diyDao.selectDiy(userinfoId);
+		return diyDao.selectDiy(diyIdx);
 	}
 
 	@Override
@@ -68,9 +61,9 @@ public class DiyServiceImpl implements DiyService {
 		// TODO Auto-generated method stub
 		List<Diy> existDiy = diyDao.selectDiyList(diyTitle);
 	    if (existDiy == null) {
-	        throw new DiyNotFoundException("해당 제목 글이 없습니다");
+	        throw new DiyNotFoundException("해당 제목의 글이 없습니다");
 	    }
-		return diyDao.selectDiyList(diyTitle);
+		return existDiy;
 	}
 
 	@Override
@@ -78,6 +71,7 @@ public class DiyServiceImpl implements DiyService {
 		// TODO Auto-generated method stub
 		return diyDao.selectDiyListCount();
 	}
+	
 	
 	// 지도 추가하기
 	
